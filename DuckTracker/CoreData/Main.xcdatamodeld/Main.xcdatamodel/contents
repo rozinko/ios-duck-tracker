@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CoreDataTrack" representedClassName="CoreDataTrack" syncable="YES" codeGenerationType="class">
+        <attribute name="avgSpeed" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="distance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="gpxFilename" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageFilename" optional="YES" attributeType="String"/>
+        <attribute name="jsonAttributes" attributeType="String" defaultValueString=""/>
+        <attribute name="jsonRoute" attributeType="String" defaultValueString=""/>
+        <attribute name="maxSpeed" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="timestampFinish" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timestampStart" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timestampUpdate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String" defaultValueString=""/>
+        <attribute name="trackId" attributeType="String" defaultValueString=""/>
+        <attribute name="type" attributeType="String" defaultValueString=""/>
+        <attribute name="uniqueHash" attributeType="String" defaultValueString=""/>
+    </entity>
+</model>

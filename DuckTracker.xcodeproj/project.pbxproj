@@ -8,14 +8,83 @@
 
 /* Begin PBXBuildFile section */
 		30CFD2D52A6EC7F000C106BE /* DuckTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */; };
-		30CFD2D72A6EC7F000C106BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2D62A6EC7F000C106BE /* ContentView.swift */; };
 		30CFD2D92A6EC7F100C106BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2D82A6EC7F100C106BE /* Assets.xcassets */; };
 		30CFD2DC2A6EC7F100C106BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2DB2A6EC7F100C106BE /* Preview Assets.xcassets */; };
-		30CFD2DE2A6EC7F100C106BE /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2DD2A6EC7F100C106BE /* Persistence.swift */; };
-		30CFD2E12A6EC7F100C106BE /* DuckTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2DF2A6EC7F100C106BE /* DuckTracker.xcdatamodeld */; };
 		30CFD2EB2A6EC7F200C106BE /* DuckTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2EA2A6EC7F200C106BE /* DuckTrackerTests.swift */; };
 		30CFD2F52A6EC7F200C106BE /* DuckTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2F42A6EC7F200C106BE /* DuckTrackerUITests.swift */; };
 		30CFD2F72A6EC7F200C106BE /* DuckTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2F62A6EC7F200C106BE /* DuckTrackerUITestsLaunchTests.swift */; };
+		30CFD3042A6ECBF000C106BE /* WrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3032A6ECBF000C106BE /* WrapperView.swift */; };
+		30CFD3072A6ECC2500C106BE /* ActiveTrackProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3062A6ECC2500C106BE /* ActiveTrackProvider.swift */; };
+		30CFD3092A6ECC3C00C106BE /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3082A6ECC3C00C106BE /* DataProvider.swift */; };
+		30CFD30B2A6ECC5400C106BE /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD30A2A6ECC5400C106BE /* LocationProvider.swift */; };
+		30CFD30E2A6ECC8E00C106BE /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD30D2A6ECC8E00C106BE /* CoreDataProvider.swift */; };
+		30CFD3112A6ECCD600C106BE /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD30F2A6ECCD600C106BE /* Main.xcdatamodeld */; };
+		30CFD3142A6ECD0E00C106BE /* CoreDataTrack+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3132A6ECD0E00C106BE /* CoreDataTrack+Extensions.swift */; };
+		30CFD3162A6ECD2600C106BE /* CoreDataTrackAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3152A6ECD2600C106BE /* CoreDataTrackAttributes.swift */; };
+		30CFD3182A6ECD3D00C106BE /* CoreDataTrackPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3172A6ECD3D00C106BE /* CoreDataTrackPoint.swift */; };
+		30CFD31A2A6ECD5200C106BE /* CoreDataTrackRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3192A6ECD5200C106BE /* CoreDataTrackRoute.swift */; };
+		30CFD31D2A6ECDA200C106BE /* CLLocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD31C2A6ECDA200C106BE /* CLLocationDistance.swift */; };
+		30CFD31F2A6ECE8500C106BE /* CLLocationSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD31E2A6ECE8500C106BE /* CLLocationSpeed.swift */; };
+		30CFD3212A6ECE9B00C106BE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3202A6ECE9B00C106BE /* Color.swift */; };
+		30CFD3232A6ECEB000C106BE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3222A6ECEB000C106BE /* Date.swift */; };
+		30CFD3252A6ECEC100C106BE /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3242A6ECEC100C106BE /* Double.swift */; };
+		30CFD3272A6ECED200C106BE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3262A6ECED200C106BE /* String.swift */; };
+		30CFD3292A6ECEE900C106BE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3282A6ECEE900C106BE /* UIImage.swift */; };
+		30CFD32C2A6EE1A400C106BE /* ActiveTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD32B2A6EE1A400C106BE /* ActiveTrack.swift */; };
+		30CFD32E2A6EE1B700C106BE /* ActiveTrackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD32D2A6EE1B700C106BE /* ActiveTrackType.swift */; };
+		30CFD3302A6EE1C700C106BE /* InfoTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD32F2A6EE1C700C106BE /* InfoTrack.swift */; };
+		30CFD3322A6EE1DD00C106BE /* InfoTrackPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3312A6EE1DD00C106BE /* InfoTrackPoint.swift */; };
+		30CFD3342A6EE1F000C106BE /* InfoTrackRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3332A6EE1F000C106BE /* InfoTrackRoute.swift */; };
+		30CFD3362A6EE20400C106BE /* TrackPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3352A6EE20400C106BE /* TrackPoint.swift */; };
+		30CFD3392A6EE22700C106BE /* ActiveTrackScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3382A6EE22700C106BE /* ActiveTrackScreen.swift */; };
+		30CFD33B2A6EE23600C106BE /* HistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD33A2A6EE23600C106BE /* HistoryScreen.swift */; };
+		30CFD33D2A6EE24800C106BE /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD33C2A6EE24800C106BE /* MainScreen.swift */; };
+		30CFD3402A6EE26C00C106BE /* TestingComponentLocNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD33F2A6EE26C00C106BE /* TestingComponentLocNowView.swift */; };
+		30CFD3442A6EE29F00C106BE /* ActiveTrackFinishButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3432A6EE29F00C106BE /* ActiveTrackFinishButtonView.swift */; };
+		30CFD3462A6EE2B100C106BE /* ActiveTrackFinishModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3452A6EE2B100C106BE /* ActiveTrackFinishModalView.swift */; };
+		30CFD3482A6EE2D500C106BE /* ActiveTrackStartPauseResumeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3472A6EE2D500C106BE /* ActiveTrackStartPauseResumeButtonView.swift */; };
+		30CFD34B2A6EE2F300C106BE /* ActiveTrackInfoGPSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD34A2A6EE2F300C106BE /* ActiveTrackInfoGPSView.swift */; };
+		30CFD34D2A6EE30400C106BE /* ActiveTrackInfoSpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD34C2A6EE30400C106BE /* ActiveTrackInfoSpeedView.swift */; };
+		30CFD34F2A6EE31300C106BE /* ActiveTrackInfoTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD34E2A6EE31300C106BE /* ActiveTrackInfoTypeView.swift */; };
+		30CFD3512A6EE32400C106BE /* ActiveTrackInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3502A6EE32400C106BE /* ActiveTrackInfoView.swift */; };
+		30CFD3542A6EE34A00C106BE /* ActiveTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3532A6EE34A00C106BE /* ActiveTrackMapView.swift */; };
+		30CFD3562A6EE35800C106BE /* AppleActiveTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3552A6EE35800C106BE /* AppleActiveTrackMapView.swift */; };
+		30CFD3582A6EE36700C106BE /* AppleActiveTrackMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3572A6EE36700C106BE /* AppleActiveTrackMapViewDelegate.swift */; };
+		30CFD35C2A6EE39600C106BE /* FilledStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD35B2A6EE39600C106BE /* FilledStyle.swift */; };
+		30CFD35F2A6EE3BB00C106BE /* CommonInformerButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD35E2A6EE3BB00C106BE /* CommonInformerButtonStyle.swift */; };
+		30CFD3612A6EE3CC00C106BE /* CommonInformerEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3602A6EE3CC00C106BE /* CommonInformerEnums.swift */; };
+		30CFD3632A6EE3DB00C106BE /* CommonInformerFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3622A6EE3DB00C106BE /* CommonInformerFullView.swift */; };
+		30CFD3652A6EE3EB00C106BE /* CommonInformerShortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3642A6EE3EB00C106BE /* CommonInformerShortView.swift */; };
+		30CFD3672A6EE3FA00C106BE /* CommonInformerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3662A6EE3FA00C106BE /* CommonInformerView.swift */; };
+		30CFD36A2A6EE41500C106BE /* CommonStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3692A6EE41500C106BE /* CommonStack.swift */; };
+		30CFD36D2A6EE44400C106BE /* TrackInfoCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD36C2A6EE44400C106BE /* TrackInfoCircleView.swift */; };
+		30CFD36F2A6EE45400C106BE /* TrackInfoCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD36E2A6EE45400C106BE /* TrackInfoCommonView.swift */; };
+		30CFD3712A6EE46400C106BE /* TrackInfoElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3702A6EE46400C106BE /* TrackInfoElementView.swift */; };
+		30CFD3732A6EE47700C106BE /* TrackInfoFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3722A6EE47700C106BE /* TrackInfoFullView.swift */; };
+		30CFD3772A6EE4A700C106BE /* HistoryListEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3762A6EE4A700C106BE /* HistoryListEmptyView.swift */; };
+		30CFD3792A6EE4B600C106BE /* HistoryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3782A6EE4B600C106BE /* HistoryListItemView.swift */; };
+		30CFD37B2A6EE4C600C106BE /* HistoryListSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD37A2A6EE4C600C106BE /* HistoryListSectionView.swift */; };
+		30CFD37D2A6EE4D500C106BE /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD37C2A6EE4D500C106BE /* HistoryListView.swift */; };
+		30CFD3802A6EE52000C106BE /* HistoryListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD37F2A6EE52000C106BE /* HistoryListSection.swift */; };
+		30CFD3832A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3822A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift */; };
+		30CFD3852A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3842A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift */; };
+		30CFD3872A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3862A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift */; };
+		30CFD3892A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3882A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift */; };
+		30CFD38B2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD38A2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift */; };
+		30CFD38D2A6EE58600C106BE /* HistoryTrackInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD38C2A6EE58600C106BE /* HistoryTrackInfoView.swift */; };
+		30CFD3902A6EE5A200C106BE /* AppleHistoryTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD38F2A6EE5A200C106BE /* AppleHistoryTrackMapView.swift */; };
+		30CFD3922A6EE5B000C106BE /* AppleHistoryTrackMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3912A6EE5B000C106BE /* AppleHistoryTrackMapViewDelegate.swift */; };
+		30CFD3942A6EE5BE00C106BE /* HistoryTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3932A6EE5BE00C106BE /* HistoryTrackMapView.swift */; };
+		30CFD3982A6EE5EB00C106BE /* MainInformerDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3972A6EE5EB00C106BE /* MainInformerDeniedView.swift */; };
+		30CFD39A2A6EE5FF00C106BE /* MainInformerFirstTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3992A6EE5FF00C106BE /* MainInformerFirstTrackView.swift */; };
+		30CFD39C2A6EE61100C106BE /* MainInformerNeedRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD39B2A6EE61100C106BE /* MainInformerNeedRequestView.swift */; };
+		30CFD39E2A6EE62400C106BE /* MainInformerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD39D2A6EE62400C106BE /* MainInformerView.swift */; };
+		30CFD3A12A6EE64600C106BE /* HistoryStatsBlockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3A02A6EE64600C106BE /* HistoryStatsBlockItem.swift */; };
+		30CFD3A32A6EE65500C106BE /* StatsBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3A22A6EE65500C106BE /* StatsBlockView.swift */; };
+		30CFD3A62A6FF7BE00C106BE /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 30CFD3A52A6FF7BE00C106BE /* Polyline */; };
+		30CFD3AB2A702C4500C106BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD3AD2A702C4500C106BE /* Localizable.strings */; };
+		30CFD3B12A702D0E00C106BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD3B32A702D0E00C106BE /* InfoPlist.strings */; };
+		30CFD3B82A707CDC00C106BE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD3B72A707CDC00C106BE /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,16 +107,87 @@
 /* Begin PBXFileReference section */
 		30CFD2D12A6EC7F000C106BE /* DuckTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckTrackerApp.swift; sourceTree = "<group>"; };
-		30CFD2D62A6EC7F000C106BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		30CFD2D82A6EC7F100C106BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30CFD2DB2A6EC7F100C106BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		30CFD2DD2A6EC7F100C106BE /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		30CFD2E02A6EC7F100C106BE /* DuckTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DuckTracker.xcdatamodel; sourceTree = "<group>"; };
 		30CFD2E62A6EC7F200C106BE /* DuckTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuckTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CFD2EA2A6EC7F200C106BE /* DuckTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckTrackerTests.swift; sourceTree = "<group>"; };
 		30CFD2F02A6EC7F200C106BE /* DuckTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuckTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CFD2F42A6EC7F200C106BE /* DuckTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckTrackerUITests.swift; sourceTree = "<group>"; };
 		30CFD2F62A6EC7F200C106BE /* DuckTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		30CFD3032A6ECBF000C106BE /* WrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperView.swift; sourceTree = "<group>"; };
+		30CFD3062A6ECC2500C106BE /* ActiveTrackProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackProvider.swift; sourceTree = "<group>"; };
+		30CFD3082A6ECC3C00C106BE /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		30CFD30A2A6ECC5400C106BE /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		30CFD30D2A6ECC8E00C106BE /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
+		30CFD3102A6ECCD600C106BE /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		30CFD3132A6ECD0E00C106BE /* CoreDataTrack+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataTrack+Extensions.swift"; sourceTree = "<group>"; };
+		30CFD3152A6ECD2600C106BE /* CoreDataTrackAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTrackAttributes.swift; sourceTree = "<group>"; };
+		30CFD3172A6ECD3D00C106BE /* CoreDataTrackPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTrackPoint.swift; sourceTree = "<group>"; };
+		30CFD3192A6ECD5200C106BE /* CoreDataTrackRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTrackRoute.swift; sourceTree = "<group>"; };
+		30CFD31C2A6ECDA200C106BE /* CLLocationDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationDistance.swift; sourceTree = "<group>"; };
+		30CFD31E2A6ECE8500C106BE /* CLLocationSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationSpeed.swift; sourceTree = "<group>"; };
+		30CFD3202A6ECE9B00C106BE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		30CFD3222A6ECEB000C106BE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		30CFD3242A6ECEC100C106BE /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		30CFD3262A6ECED200C106BE /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		30CFD3282A6ECEE900C106BE /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		30CFD32B2A6EE1A400C106BE /* ActiveTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrack.swift; sourceTree = "<group>"; };
+		30CFD32D2A6EE1B700C106BE /* ActiveTrackType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackType.swift; sourceTree = "<group>"; };
+		30CFD32F2A6EE1C700C106BE /* InfoTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTrack.swift; sourceTree = "<group>"; };
+		30CFD3312A6EE1DD00C106BE /* InfoTrackPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTrackPoint.swift; sourceTree = "<group>"; };
+		30CFD3332A6EE1F000C106BE /* InfoTrackRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTrackRoute.swift; sourceTree = "<group>"; };
+		30CFD3352A6EE20400C106BE /* TrackPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPoint.swift; sourceTree = "<group>"; };
+		30CFD3382A6EE22700C106BE /* ActiveTrackScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackScreen.swift; sourceTree = "<group>"; };
+		30CFD33A2A6EE23600C106BE /* HistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreen.swift; sourceTree = "<group>"; };
+		30CFD33C2A6EE24800C106BE /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		30CFD33F2A6EE26C00C106BE /* TestingComponentLocNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingComponentLocNowView.swift; sourceTree = "<group>"; };
+		30CFD3432A6EE29F00C106BE /* ActiveTrackFinishButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackFinishButtonView.swift; sourceTree = "<group>"; };
+		30CFD3452A6EE2B100C106BE /* ActiveTrackFinishModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackFinishModalView.swift; sourceTree = "<group>"; };
+		30CFD3472A6EE2D500C106BE /* ActiveTrackStartPauseResumeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackStartPauseResumeButtonView.swift; sourceTree = "<group>"; };
+		30CFD34A2A6EE2F300C106BE /* ActiveTrackInfoGPSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackInfoGPSView.swift; sourceTree = "<group>"; };
+		30CFD34C2A6EE30400C106BE /* ActiveTrackInfoSpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackInfoSpeedView.swift; sourceTree = "<group>"; };
+		30CFD34E2A6EE31300C106BE /* ActiveTrackInfoTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackInfoTypeView.swift; sourceTree = "<group>"; };
+		30CFD3502A6EE32400C106BE /* ActiveTrackInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackInfoView.swift; sourceTree = "<group>"; };
+		30CFD3532A6EE34A00C106BE /* ActiveTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTrackMapView.swift; sourceTree = "<group>"; };
+		30CFD3552A6EE35800C106BE /* AppleActiveTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleActiveTrackMapView.swift; sourceTree = "<group>"; };
+		30CFD3572A6EE36700C106BE /* AppleActiveTrackMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleActiveTrackMapViewDelegate.swift; sourceTree = "<group>"; };
+		30CFD35B2A6EE39600C106BE /* FilledStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledStyle.swift; sourceTree = "<group>"; };
+		30CFD35E2A6EE3BB00C106BE /* CommonInformerButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInformerButtonStyle.swift; sourceTree = "<group>"; };
+		30CFD3602A6EE3CC00C106BE /* CommonInformerEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInformerEnums.swift; sourceTree = "<group>"; };
+		30CFD3622A6EE3DB00C106BE /* CommonInformerFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInformerFullView.swift; sourceTree = "<group>"; };
+		30CFD3642A6EE3EB00C106BE /* CommonInformerShortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInformerShortView.swift; sourceTree = "<group>"; };
+		30CFD3662A6EE3FA00C106BE /* CommonInformerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInformerView.swift; sourceTree = "<group>"; };
+		30CFD3692A6EE41500C106BE /* CommonStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonStack.swift; sourceTree = "<group>"; };
+		30CFD36C2A6EE44400C106BE /* TrackInfoCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackInfoCircleView.swift; sourceTree = "<group>"; };
+		30CFD36E2A6EE45400C106BE /* TrackInfoCommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackInfoCommonView.swift; sourceTree = "<group>"; };
+		30CFD3702A6EE46400C106BE /* TrackInfoElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackInfoElementView.swift; sourceTree = "<group>"; };
+		30CFD3722A6EE47700C106BE /* TrackInfoFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackInfoFullView.swift; sourceTree = "<group>"; };
+		30CFD3762A6EE4A700C106BE /* HistoryListEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListEmptyView.swift; sourceTree = "<group>"; };
+		30CFD3782A6EE4B600C106BE /* HistoryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListItemView.swift; sourceTree = "<group>"; };
+		30CFD37A2A6EE4C600C106BE /* HistoryListSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListSectionView.swift; sourceTree = "<group>"; };
+		30CFD37C2A6EE4D500C106BE /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
+		30CFD37F2A6EE52000C106BE /* HistoryListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListSection.swift; sourceTree = "<group>"; };
+		30CFD3822A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartAltitudeView.swift; sourceTree = "<group>"; };
+		30CFD3842A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartDistanceView.swift; sourceTree = "<group>"; };
+		30CFD3862A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartSpeedView.swift; sourceTree = "<group>"; };
+		30CFD3882A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartsView.swift; sourceTree = "<group>"; };
+		30CFD38A2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoEditModalView.swift; sourceTree = "<group>"; };
+		30CFD38C2A6EE58600C106BE /* HistoryTrackInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoView.swift; sourceTree = "<group>"; };
+		30CFD38F2A6EE5A200C106BE /* AppleHistoryTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleHistoryTrackMapView.swift; sourceTree = "<group>"; };
+		30CFD3912A6EE5B000C106BE /* AppleHistoryTrackMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleHistoryTrackMapViewDelegate.swift; sourceTree = "<group>"; };
+		30CFD3932A6EE5BE00C106BE /* HistoryTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackMapView.swift; sourceTree = "<group>"; };
+		30CFD3972A6EE5EB00C106BE /* MainInformerDeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInformerDeniedView.swift; sourceTree = "<group>"; };
+		30CFD3992A6EE5FF00C106BE /* MainInformerFirstTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInformerFirstTrackView.swift; sourceTree = "<group>"; };
+		30CFD39B2A6EE61100C106BE /* MainInformerNeedRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInformerNeedRequestView.swift; sourceTree = "<group>"; };
+		30CFD39D2A6EE62400C106BE /* MainInformerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInformerView.swift; sourceTree = "<group>"; };
+		30CFD3A02A6EE64600C106BE /* HistoryStatsBlockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStatsBlockItem.swift; sourceTree = "<group>"; };
+		30CFD3A22A6EE65500C106BE /* StatsBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBlockView.swift; sourceTree = "<group>"; };
+		30CFD3A72A6FF89800C106BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		30CFD3AC2A702C4500C106BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		30CFD3AE2A702CD400C106BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		30CFD3B42A702D1100C106BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30CFD3B52A702D1E00C106BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30CFD3B72A707CDC00C106BE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CFD3A62A6FF7BE00C106BE /* Polyline in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +219,7 @@
 		30CFD2C82A6EC7F000C106BE = {
 			isa = PBXGroup;
 			children = (
+				30CFD3B72A707CDC00C106BE /* .swiftlint.yml */,
 				30CFD2D32A6EC7F000C106BE /* DuckTracker */,
 				30CFD2E92A6EC7F200C106BE /* DuckTrackerTests */,
 				30CFD2F32A6EC7F200C106BE /* DuckTrackerUITests */,
@@ -98,11 +240,18 @@
 		30CFD2D32A6EC7F000C106BE /* DuckTracker */ = {
 			isa = PBXGroup;
 			children = (
+				30CFD3A82A702C2600C106BE /* Localizations */,
+				30CFD3A72A6FF89800C106BE /* Info.plist */,
+				30CFD3412A6EE28500C106BE /* UI */,
+				30CFD33E2A6EE25F00C106BE /* TestingComponents */,
+				30CFD3372A6EE21900C106BE /* Screens */,
+				30CFD32A2A6EE19600C106BE /* Models */,
+				30CFD31B2A6ECD9400C106BE /* Extensions */,
+				30CFD30C2A6ECC8100C106BE /* CoreData */,
+				30CFD3052A6ECC1700C106BE /* Core */,
 				30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */,
-				30CFD2D62A6EC7F000C106BE /* ContentView.swift */,
+				30CFD3032A6ECBF000C106BE /* WrapperView.swift */,
 				30CFD2D82A6EC7F100C106BE /* Assets.xcassets */,
-				30CFD2DD2A6EC7F100C106BE /* Persistence.swift */,
-				30CFD2DF2A6EC7F100C106BE /* DuckTracker.xcdatamodeld */,
 				30CFD2DA2A6EC7F100C106BE /* Preview Content */,
 			);
 			path = DuckTracker;
@@ -133,6 +282,267 @@
 			path = DuckTrackerUITests;
 			sourceTree = "<group>";
 		};
+		30CFD3052A6ECC1700C106BE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3062A6ECC2500C106BE /* ActiveTrackProvider.swift */,
+				30CFD3082A6ECC3C00C106BE /* DataProvider.swift */,
+				30CFD30A2A6ECC5400C106BE /* LocationProvider.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		30CFD30C2A6ECC8100C106BE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3122A6ECCE400C106BE /* Models */,
+				30CFD30D2A6ECC8E00C106BE /* CoreDataProvider.swift */,
+				30CFD30F2A6ECCD600C106BE /* Main.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		30CFD3122A6ECCE400C106BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3132A6ECD0E00C106BE /* CoreDataTrack+Extensions.swift */,
+				30CFD3152A6ECD2600C106BE /* CoreDataTrackAttributes.swift */,
+				30CFD3172A6ECD3D00C106BE /* CoreDataTrackPoint.swift */,
+				30CFD3192A6ECD5200C106BE /* CoreDataTrackRoute.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		30CFD31B2A6ECD9400C106BE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD31C2A6ECDA200C106BE /* CLLocationDistance.swift */,
+				30CFD31E2A6ECE8500C106BE /* CLLocationSpeed.swift */,
+				30CFD3202A6ECE9B00C106BE /* Color.swift */,
+				30CFD3222A6ECEB000C106BE /* Date.swift */,
+				30CFD3242A6ECEC100C106BE /* Double.swift */,
+				30CFD3262A6ECED200C106BE /* String.swift */,
+				30CFD3282A6ECEE900C106BE /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		30CFD32A2A6EE19600C106BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD32B2A6EE1A400C106BE /* ActiveTrack.swift */,
+				30CFD32D2A6EE1B700C106BE /* ActiveTrackType.swift */,
+				30CFD32F2A6EE1C700C106BE /* InfoTrack.swift */,
+				30CFD3312A6EE1DD00C106BE /* InfoTrackPoint.swift */,
+				30CFD3332A6EE1F000C106BE /* InfoTrackRoute.swift */,
+				30CFD3352A6EE20400C106BE /* TrackPoint.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		30CFD3372A6EE21900C106BE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3382A6EE22700C106BE /* ActiveTrackScreen.swift */,
+				30CFD33A2A6EE23600C106BE /* HistoryScreen.swift */,
+				30CFD33C2A6EE24800C106BE /* MainScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		30CFD33E2A6EE25F00C106BE /* TestingComponents */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD33F2A6EE26C00C106BE /* TestingComponentLocNowView.swift */,
+			);
+			path = TestingComponents;
+			sourceTree = "<group>";
+		};
+		30CFD3412A6EE28500C106BE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3952A6EE5D400C106BE /* MainScreen */,
+				30CFD3742A6EE48E00C106BE /* HistoryScreen */,
+				30CFD3592A6EE37B00C106BE /* Common */,
+				30CFD3422A6EE29000C106BE /* ActiveTrackScreen */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		30CFD3422A6EE29000C106BE /* ActiveTrackScreen */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3522A6EE33B00C106BE /* ActiveTrackMap */,
+				30CFD3492A6EE2E500C106BE /* ActiveTrackInfo */,
+				30CFD3432A6EE29F00C106BE /* ActiveTrackFinishButtonView.swift */,
+				30CFD3452A6EE2B100C106BE /* ActiveTrackFinishModalView.swift */,
+				30CFD3472A6EE2D500C106BE /* ActiveTrackStartPauseResumeButtonView.swift */,
+			);
+			path = ActiveTrackScreen;
+			sourceTree = "<group>";
+		};
+		30CFD3492A6EE2E500C106BE /* ActiveTrackInfo */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD34A2A6EE2F300C106BE /* ActiveTrackInfoGPSView.swift */,
+				30CFD34C2A6EE30400C106BE /* ActiveTrackInfoSpeedView.swift */,
+				30CFD34E2A6EE31300C106BE /* ActiveTrackInfoTypeView.swift */,
+				30CFD3502A6EE32400C106BE /* ActiveTrackInfoView.swift */,
+			);
+			path = ActiveTrackInfo;
+			sourceTree = "<group>";
+		};
+		30CFD3522A6EE33B00C106BE /* ActiveTrackMap */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3532A6EE34A00C106BE /* ActiveTrackMapView.swift */,
+				30CFD3552A6EE35800C106BE /* AppleActiveTrackMapView.swift */,
+				30CFD3572A6EE36700C106BE /* AppleActiveTrackMapViewDelegate.swift */,
+			);
+			path = ActiveTrackMap;
+			sourceTree = "<group>";
+		};
+		30CFD3592A6EE37B00C106BE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD36B2A6EE43500C106BE /* TrackInfo */,
+				30CFD3682A6EE40900C106BE /* CommonStack */,
+				30CFD35D2A6EE3AA00C106BE /* CommonInformer */,
+				30CFD35A2A6EE38600C106BE /* ButtonStyles */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		30CFD35A2A6EE38600C106BE /* ButtonStyles */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD35B2A6EE39600C106BE /* FilledStyle.swift */,
+			);
+			path = ButtonStyles;
+			sourceTree = "<group>";
+		};
+		30CFD35D2A6EE3AA00C106BE /* CommonInformer */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD35E2A6EE3BB00C106BE /* CommonInformerButtonStyle.swift */,
+				30CFD3602A6EE3CC00C106BE /* CommonInformerEnums.swift */,
+				30CFD3622A6EE3DB00C106BE /* CommonInformerFullView.swift */,
+				30CFD3642A6EE3EB00C106BE /* CommonInformerShortView.swift */,
+				30CFD3662A6EE3FA00C106BE /* CommonInformerView.swift */,
+			);
+			path = CommonInformer;
+			sourceTree = "<group>";
+		};
+		30CFD3682A6EE40900C106BE /* CommonStack */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3692A6EE41500C106BE /* CommonStack.swift */,
+			);
+			path = CommonStack;
+			sourceTree = "<group>";
+		};
+		30CFD36B2A6EE43500C106BE /* TrackInfo */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD36C2A6EE44400C106BE /* TrackInfoCircleView.swift */,
+				30CFD36E2A6EE45400C106BE /* TrackInfoCommonView.swift */,
+				30CFD3702A6EE46400C106BE /* TrackInfoElementView.swift */,
+				30CFD3722A6EE47700C106BE /* TrackInfoFullView.swift */,
+			);
+			path = TrackInfo;
+			sourceTree = "<group>";
+		};
+		30CFD3742A6EE48E00C106BE /* HistoryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD38E2A6EE59500C106BE /* HistoryTrackMap */,
+				30CFD3812A6EE53100C106BE /* HistoryTrackInfo */,
+				30CFD3752A6EE49A00C106BE /* HistoryList */,
+			);
+			path = HistoryScreen;
+			sourceTree = "<group>";
+		};
+		30CFD3752A6EE49A00C106BE /* HistoryList */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD37E2A6EE50E00C106BE /* Models */,
+				30CFD3762A6EE4A700C106BE /* HistoryListEmptyView.swift */,
+				30CFD3782A6EE4B600C106BE /* HistoryListItemView.swift */,
+				30CFD37A2A6EE4C600C106BE /* HistoryListSectionView.swift */,
+				30CFD37C2A6EE4D500C106BE /* HistoryListView.swift */,
+			);
+			path = HistoryList;
+			sourceTree = "<group>";
+		};
+		30CFD37E2A6EE50E00C106BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD37F2A6EE52000C106BE /* HistoryListSection.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		30CFD3812A6EE53100C106BE /* HistoryTrackInfo */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3822A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift */,
+				30CFD3842A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift */,
+				30CFD3862A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift */,
+				30CFD3882A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift */,
+				30CFD38A2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift */,
+				30CFD38C2A6EE58600C106BE /* HistoryTrackInfoView.swift */,
+			);
+			path = HistoryTrackInfo;
+			sourceTree = "<group>";
+		};
+		30CFD38E2A6EE59500C106BE /* HistoryTrackMap */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD38F2A6EE5A200C106BE /* AppleHistoryTrackMapView.swift */,
+				30CFD3912A6EE5B000C106BE /* AppleHistoryTrackMapViewDelegate.swift */,
+				30CFD3932A6EE5BE00C106BE /* HistoryTrackMapView.swift */,
+			);
+			path = HistoryTrackMap;
+			sourceTree = "<group>";
+		};
+		30CFD3952A6EE5D400C106BE /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD39F2A6EE63600C106BE /* StatsBlock */,
+				30CFD3962A6EE5DF00C106BE /* MainInformer */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		30CFD3962A6EE5DF00C106BE /* MainInformer */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3972A6EE5EB00C106BE /* MainInformerDeniedView.swift */,
+				30CFD3992A6EE5FF00C106BE /* MainInformerFirstTrackView.swift */,
+				30CFD39B2A6EE61100C106BE /* MainInformerNeedRequestView.swift */,
+				30CFD39D2A6EE62400C106BE /* MainInformerView.swift */,
+			);
+			path = MainInformer;
+			sourceTree = "<group>";
+		};
+		30CFD39F2A6EE63600C106BE /* StatsBlock */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3A02A6EE64600C106BE /* HistoryStatsBlockItem.swift */,
+				30CFD3A22A6EE65500C106BE /* StatsBlockView.swift */,
+			);
+			path = StatsBlock;
+			sourceTree = "<group>";
+		};
+		30CFD3A82A702C2600C106BE /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD3AD2A702C4500C106BE /* Localizable.strings */,
+				30CFD3B32A702D0E00C106BE /* InfoPlist.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,12 +553,16 @@
 				30CFD2CD2A6EC7F000C106BE /* Sources */,
 				30CFD2CE2A6EC7F000C106BE /* Frameworks */,
 				30CFD2CF2A6EC7F000C106BE /* Resources */,
+				30CFD3B62A707C8700C106BE /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = DuckTracker;
+			packageProductDependencies = (
+				30CFD3A52A6FF7BE00C106BE /* Polyline */,
+			);
 			productName = DuckTracker;
 			productReference = 30CFD2D12A6EC7F000C106BE /* DuckTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -219,8 +633,12 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 30CFD2C82A6EC7F000C106BE;
+			packageReferences = (
+				30CFD3A42A6FF7BE00C106BE /* XCRemoteSwiftPackageReference "Polyline" */,
+			);
 			productRefGroup = 30CFD2D22A6EC7F000C106BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -237,7 +655,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CFD3B82A707CDC00C106BE /* .swiftlint.yml in Resources */,
 				30CFD2DC2A6EC7F100C106BE /* Preview Assets.xcassets in Resources */,
+				30CFD3B12A702D0E00C106BE /* InfoPlist.strings in Resources */,
+				30CFD3AB2A702C4500C106BE /* Localizable.strings in Resources */,
 				30CFD2D92A6EC7F100C106BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,15 +679,100 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		30CFD3B62A707C8700C106BE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		30CFD2CD2A6EC7F000C106BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30CFD2DE2A6EC7F100C106BE /* Persistence.swift in Sources */,
-				30CFD2D72A6EC7F000C106BE /* ContentView.swift in Sources */,
+				30CFD3342A6EE1F000C106BE /* InfoTrackRoute.swift in Sources */,
+				30CFD3042A6ECBF000C106BE /* WrapperView.swift in Sources */,
+				30CFD38B2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift in Sources */,
+				30CFD34F2A6EE31300C106BE /* ActiveTrackInfoTypeView.swift in Sources */,
+				30CFD3562A6EE35800C106BE /* AppleActiveTrackMapView.swift in Sources */,
+				30CFD3942A6EE5BE00C106BE /* HistoryTrackMapView.swift in Sources */,
+				30CFD37D2A6EE4D500C106BE /* HistoryListView.swift in Sources */,
+				30CFD3612A6EE3CC00C106BE /* CommonInformerEnums.swift in Sources */,
+				30CFD3362A6EE20400C106BE /* TrackPoint.swift in Sources */,
+				30CFD3442A6EE29F00C106BE /* ActiveTrackFinishButtonView.swift in Sources */,
+				30CFD3652A6EE3EB00C106BE /* CommonInformerShortView.swift in Sources */,
+				30CFD3232A6ECEB000C106BE /* Date.swift in Sources */,
+				30CFD33B2A6EE23600C106BE /* HistoryScreen.swift in Sources */,
+				30CFD36F2A6EE45400C106BE /* TrackInfoCommonView.swift in Sources */,
+				30CFD3712A6EE46400C106BE /* TrackInfoElementView.swift in Sources */,
+				30CFD3852A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift in Sources */,
+				30CFD39E2A6EE62400C106BE /* MainInformerView.swift in Sources */,
+				30CFD3252A6ECEC100C106BE /* Double.swift in Sources */,
+				30CFD33D2A6EE24800C106BE /* MainScreen.swift in Sources */,
+				30CFD35F2A6EE3BB00C106BE /* CommonInformerButtonStyle.swift in Sources */,
+				30CFD32C2A6EE1A400C106BE /* ActiveTrack.swift in Sources */,
+				30CFD36A2A6EE41500C106BE /* CommonStack.swift in Sources */,
+				30CFD3922A6EE5B000C106BE /* AppleHistoryTrackMapViewDelegate.swift in Sources */,
+				30CFD37B2A6EE4C600C106BE /* HistoryListSectionView.swift in Sources */,
+				30CFD3902A6EE5A200C106BE /* AppleHistoryTrackMapView.swift in Sources */,
+				30CFD3792A6EE4B600C106BE /* HistoryListItemView.swift in Sources */,
+				30CFD34D2A6EE30400C106BE /* ActiveTrackInfoSpeedView.swift in Sources */,
+				30CFD3732A6EE47700C106BE /* TrackInfoFullView.swift in Sources */,
+				30CFD3772A6EE4A700C106BE /* HistoryListEmptyView.swift in Sources */,
+				30CFD3A12A6EE64600C106BE /* HistoryStatsBlockItem.swift in Sources */,
 				30CFD2D52A6EC7F000C106BE /* DuckTrackerApp.swift in Sources */,
-				30CFD2E12A6EC7F100C106BE /* DuckTracker.xcdatamodeld in Sources */,
+				30CFD3092A6ECC3C00C106BE /* DataProvider.swift in Sources */,
+				30CFD3322A6EE1DD00C106BE /* InfoTrackPoint.swift in Sources */,
+				30CFD3802A6EE52000C106BE /* HistoryListSection.swift in Sources */,
+				30CFD3182A6ECD3D00C106BE /* CoreDataTrackPoint.swift in Sources */,
+				30CFD31F2A6ECE8500C106BE /* CLLocationSpeed.swift in Sources */,
+				30CFD3982A6EE5EB00C106BE /* MainInformerDeniedView.swift in Sources */,
+				30CFD3072A6ECC2500C106BE /* ActiveTrackProvider.swift in Sources */,
+				30CFD3142A6ECD0E00C106BE /* CoreDataTrack+Extensions.swift in Sources */,
+				30CFD3892A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift in Sources */,
+				30CFD31D2A6ECDA200C106BE /* CLLocationDistance.swift in Sources */,
+				30CFD38D2A6EE58600C106BE /* HistoryTrackInfoView.swift in Sources */,
+				30CFD32E2A6EE1B700C106BE /* ActiveTrackType.swift in Sources */,
+				30CFD3112A6ECCD600C106BE /* Main.xcdatamodeld in Sources */,
+				30CFD3542A6EE34A00C106BE /* ActiveTrackMapView.swift in Sources */,
+				30CFD3402A6EE26C00C106BE /* TestingComponentLocNowView.swift in Sources */,
+				30CFD3212A6ECE9B00C106BE /* Color.swift in Sources */,
+				30CFD31A2A6ECD5200C106BE /* CoreDataTrackRoute.swift in Sources */,
+				30CFD3632A6EE3DB00C106BE /* CommonInformerFullView.swift in Sources */,
+				30CFD3462A6EE2B100C106BE /* ActiveTrackFinishModalView.swift in Sources */,
+				30CFD39A2A6EE5FF00C106BE /* MainInformerFirstTrackView.swift in Sources */,
+				30CFD3302A6EE1C700C106BE /* InfoTrack.swift in Sources */,
+				30CFD30B2A6ECC5400C106BE /* LocationProvider.swift in Sources */,
+				30CFD3512A6EE32400C106BE /* ActiveTrackInfoView.swift in Sources */,
+				30CFD34B2A6EE2F300C106BE /* ActiveTrackInfoGPSView.swift in Sources */,
+				30CFD3A32A6EE65500C106BE /* StatsBlockView.swift in Sources */,
+				30CFD3582A6EE36700C106BE /* AppleActiveTrackMapViewDelegate.swift in Sources */,
+				30CFD3272A6ECED200C106BE /* String.swift in Sources */,
+				30CFD3872A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift in Sources */,
+				30CFD3832A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift in Sources */,
+				30CFD3292A6ECEE900C106BE /* UIImage.swift in Sources */,
+				30CFD3392A6EE22700C106BE /* ActiveTrackScreen.swift in Sources */,
+				30CFD30E2A6ECC8E00C106BE /* CoreDataProvider.swift in Sources */,
+				30CFD3482A6EE2D500C106BE /* ActiveTrackStartPauseResumeButtonView.swift in Sources */,
+				30CFD39C2A6EE61100C106BE /* MainInformerNeedRequestView.swift in Sources */,
+				30CFD36D2A6EE44400C106BE /* TrackInfoCircleView.swift in Sources */,
+				30CFD3672A6EE3FA00C106BE /* CommonInformerView.swift in Sources */,
+				30CFD3162A6ECD2600C106BE /* CoreDataTrackAttributes.swift in Sources */,
+				30CFD35C2A6EE39600C106BE /* FilledStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,11 +808,33 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		30CFD3AD2A702C4500C106BE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30CFD3AC2A702C4500C106BE /* en */,
+				30CFD3AE2A702CD400C106BE /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		30CFD3B32A702D0E00C106BE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30CFD3B42A702D1100C106BE /* en */,
+				30CFD3B52A702D1E00C106BE /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		30CFD2F82A6EC7F200C106BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -353,7 +881,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -367,6 +895,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -407,7 +936,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -428,11 +957,18 @@
 				DEVELOPMENT_TEAM = 594KX7YQG6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DuckTracker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Duck Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "When you record a track, application needs access to your location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,11 +993,18 @@
 				DEVELOPMENT_TEAM = 594KX7YQG6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DuckTracker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Duck Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "When you record a track, application needs access to your location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,14 +1135,33 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		30CFD3A42A6FF7BE00C106BE /* XCRemoteSwiftPackageReference "Polyline" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raphaelmor/Polyline";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30CFD3A52A6FF7BE00C106BE /* Polyline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30CFD3A42A6FF7BE00C106BE /* XCRemoteSwiftPackageReference "Polyline" */;
+			productName = Polyline;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
-		30CFD2DF2A6EC7F100C106BE /* DuckTracker.xcdatamodeld */ = {
+		30CFD30F2A6ECCD600C106BE /* Main.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				30CFD2E02A6EC7F100C106BE /* DuckTracker.xcdatamodel */,
+				30CFD3102A6ECCD600C106BE /* Main.xcdatamodel */,
 			);
-			currentVersion = 30CFD2E02A6EC7F100C106BE /* DuckTracker.xcdatamodel */;
-			path = DuckTracker.xcdatamodeld;
+			currentVersion = 30CFD3102A6ECCD600C106BE /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

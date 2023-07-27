@@ -1,0 +1,18 @@
+disabled_rules:
+  - identifier_name
+  - todo
+  - orphaned_doc_comment
+
+opt_in_rules:
+
+included:
+  - DuckTracker
+  - DuckTrackerTests
+  - DuckTrackerUITests
+
+excluded:
+  - Pods
+
+line_length: 170
+
+reporter: "xcode"

@@ -1,0 +1,122 @@
+// Common
+".title"= "Title";
+".back"= "Back";
+".cancel"= "Cancel";
+".save"= "Save";
+".edit"= "Edit";
+".delete"= "Delete";
+".nodata"= "No data";
+
+".gps" = "GPS";
+".pace" = "Pace";
+".speed" = "Speed";
+".avgspeed" = "Avg. speed";
+".maxspeed" = "Max. speed";
+".avgspeed.short" = "Avg. speed";
+".maxspeed.short" = "Max. speed";
+".time" = "Time";
+".distance" = "Distance";
+".altitude" = "Altitude";
+".uphill" = "Uphill";
+
+".kmh" = "km/h";
+".km" = "km";
+".m" = "m";
+".meters" = "Meters";
+".minkm" = "min/km";
+
+".start" = "Start";
+".pause" = "Pause";
+".resume" = "Resume";
+".finish" = "Finish";
+
+".today" = "Today";
+".yesterday" = "Yesterday";
+
+// Bottom tabs
+".tab.home" = "Statistics";
+".tab.track" = "Track";
+".tab.history" = "History";
+
+// StatsBlock
+"StatsBlock.today"= "Today";
+"StatsBlock.yesterday"= "Yesterday";
+"StatsBlock.7days"= "7 days";
+"StatsBlock.30days"= "30 days";
+"StatsBlock.total"= "Total";
+
+// ActiveTrackInfoTypeView
+"ActiveTrackInfoTypeView.type.run" = "Run";
+"ActiveTrackInfoTypeView.type.walk" = "Walk";
+"ActiveTrackInfoTypeView.type.scooter" = "Scooter";
+"ActiveTrackInfoTypeView.type.bike" = "Bike";
+"ActiveTrackInfoTypeView.type.electroscooter" = "Electro scooter";
+"ActiveTrackInfoTypeView.type.electrobike" = "Electro bike";
+"ActiveTrackInfoTypeView.type.hike" = "Hike";
+"ActiveTrackInfoTypeView.type.car" = "Car";
+"ActiveTrackInfoTypeView.type.bus" = "Bus";
+"ActiveTrackInfoTypeView.type.train" = "Train";
+"ActiveTrackInfoTypeView.type.boat" = "Boat";
+"ActiveTrackInfoTypeView.type.airplane" = "Airplane";
+"ActiveTrackInfoTypeView.type.other" = "Other";
+
+"ActiveTrackInfoTypeView.type.short.run" = "Run";
+"ActiveTrackInfoTypeView.type.short.walk" = "Walk";
+"ActiveTrackInfoTypeView.type.short.scooter" = "Scooter";
+"ActiveTrackInfoTypeView.type.short.bike" = "Bike";
+"ActiveTrackInfoTypeView.type.short.electroscooter" = "El. scooter";
+"ActiveTrackInfoTypeView.type.short.electrobike" = "El. bike";
+"ActiveTrackInfoTypeView.type.short.hike" = "Hike";
+"ActiveTrackInfoTypeView.type.short.car" = "Car";
+"ActiveTrackInfoTypeView.type.short.bus" = "Bus";
+"ActiveTrackInfoTypeView.type.short.train" = "Train";
+"ActiveTrackInfoTypeView.type.short.boat" = "Boat";
+"ActiveTrackInfoTypeView.type.short.airplane" = "Airplane";
+"ActiveTrackInfoTypeView.type.short.other" = "Other";
+
+"ActiveTrackInfoTypeView.getDefaultTitle.preType" = "";
+
+"ActiveTrackInfoTypeView.getDefaultTitle.type.run" = "run";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.walk" = "walk";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.scooter" = "scooter ride";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.bike" = "bike ride";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.electroscooter" = "electro scooter ride";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.electrobike" = "electro bike ride";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.hike" = "hike";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.car" = "car ride";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.bus" = "bus trip";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.train" = "train trip";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.boat" = "boat trip";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.airplane" = "airplane flight";
+"ActiveTrackInfoTypeView.getDefaultTitle.type.other" = "some track";
+
+"ActiveTrackInfoTypeView.getDefaultTitle.afterType" = " on ";
+
+// ActiveTrackFinishModalView
+"ActiveTrackFinishModalView.activeTrackTitleField" = "Enter the track title";
+"ActiveTrackFinishModalView.saveAndFinish" = "Save and finish";
+"ActiveTrackFinishModalView.finishWithoutSaving" = "Finish WITHOUT saving";
+"ActiveTrackFinishModalView.alert.title" = "Do you want to finish the track and WITHOUT saving?";
+"ActiveTrackFinishModalView.alert.message" = "This action cannot be cancelled.";
+
+// HistoryListEmptyView
+"HistoryListEmptyView.title" = "No tracks";
+"HistoryListEmptyView.description" = "Start your first track and it will appear here";
+"HistoryListEmptyView.button" = "Start the first track";
+
+// HistoryTrackInfoView
+"HistoryTrackInfoView.deleteAlert.title" = "Do you want to delete this track?";
+"HistoryTrackInfoView.deleteAlert.message" = "This action cannot be cancelled.";
+"HistoryTrackInfoView.deleteAlert.button" = "Delete the track";
+
+// HistoryTrackInfoChartsView
+"HistoryTrackInfoChartsView.noData" = "No data to show charts.";
+"HistoryTrackInfoChartsView.ios16" = "Sorry, charts are available only on iOS 16 or newer.";
+
+// MainInformer
+"MainInformer.needRequest.text" = "Application needs access to your geolocation to work correctly.";
+"MainInformer.needRequest.button" = "Allow access";
+"MainInformer.denied.text" = "Allow access to your geolocation for the application in settings.";
+"MainInformer.denied.button" = "Go to settings";
+"MainInformer.firstTrack.text" = "Start the recording of your first track.";
+"MainInformer.firstTrack.button" = "Start track";
