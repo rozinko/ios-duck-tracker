@@ -959,7 +959,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DuckTracker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Duck Tracker";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "When you record a track, application needs access to your location.";
@@ -995,7 +995,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DuckTracker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Duck Tracker";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "When you record a track, application needs access to your location.";
