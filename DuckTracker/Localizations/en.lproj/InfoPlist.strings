@@ -1,5 +1,7 @@
 /* Localized texts for Info.plist */
 
+"CFBundleDisplayName"= "Duck Tracker";
+
 "NSLocationWhenInUseUsageDescription" = "When you record a track, application needs access to your location.";
 "NSLocationAlwaysAndWhenInUseUsageDescription" = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
 "NSLocationAlwaysUsageDescription" = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
