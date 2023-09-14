@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		165BB178CA4D2AFCD83BC731 /* Pods_DuckTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D076D23FFAEEC95B05A56A /* Pods_DuckTracker.framework */; };
+		304DD5DE2AB34912005AD827 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5DD2AB34912005AD827 /* SettingsScreen.swift */; };
 		30CFD2D52A6EC7F000C106BE /* DuckTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */; };
 		30CFD2D92A6EC7F100C106BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2D82A6EC7F100C106BE /* Assets.xcassets */; };
 		30CFD2DC2A6EC7F100C106BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2DB2A6EC7F100C106BE /* Preview Assets.xcassets */; };
@@ -110,6 +111,7 @@
 /* Begin PBXFileReference section */
 		055D2FFA6C9AD312371A1F3C /* Pods-DuckTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTracker.debug.xcconfig"; path = "Target Support Files/Pods-DuckTracker/Pods-DuckTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		2FCB300EBD6D94B9A5705D61 /* Pods-DuckTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTracker.release.xcconfig"; path = "Target Support Files/Pods-DuckTracker/Pods-DuckTracker.release.xcconfig"; sourceTree = "<group>"; };
+		304DD5DD2AB34912005AD827 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		30CFD2D12A6EC7F000C106BE /* DuckTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckTrackerApp.swift; sourceTree = "<group>"; };
 		30CFD2D82A6EC7F100C106BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				30CFD3382A6EE22700C106BE /* ActiveTrackScreen.swift */,
 				30CFD33A2A6EE23600C106BE /* HistoryScreen.swift */,
 				30CFD33C2A6EE24800C106BE /* MainScreen.swift */,
+				304DD5DD2AB34912005AD827 /* SettingsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -570,7 +573,6 @@
 				31E4483851A58CB22B16B3C6 /* Pods-DuckTrackerTests.debug.xcconfig */,
 				F8A5F84A45D39ED52EEBF074 /* Pods-DuckTrackerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -858,6 +860,7 @@
 				30CFD3942A6EE5BE00C106BE /* HistoryTrackMapView.swift in Sources */,
 				30CFD37D2A6EE4D500C106BE /* HistoryListView.swift in Sources */,
 				30CFD3612A6EE3CC00C106BE /* CommonInformerEnums.swift in Sources */,
+				304DD5DE2AB34912005AD827 /* SettingsScreen.swift in Sources */,
 				30CFD3362A6EE20400C106BE /* TrackPoint.swift in Sources */,
 				30CFD3442A6EE29F00C106BE /* ActiveTrackFinishButtonView.swift in Sources */,
 				30CFD3652A6EE3EB00C106BE /* CommonInformerShortView.swift in Sources */,

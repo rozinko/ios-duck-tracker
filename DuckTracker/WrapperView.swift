@@ -21,6 +21,11 @@ struct WrapperView: View {
                     Label(".tab.history", systemImage: "calendar")
                 }
                 .tag(3)
+            SettingsScreen(selectedTab: $selectedTab)
+                .tabItem {
+                    Label(".tab.settings", systemImage: "gear")
+                }
+                .tag(4)
         }
         .accentColor(Color.wrapperViewAccent)
     }
@@ -31,5 +36,6 @@ struct WrapperView_Previews: PreviewProvider {
         WrapperView(selectedTab: 1)
         WrapperView(selectedTab: 2)
         WrapperView(selectedTab: 3)
+        WrapperView(selectedTab: 4)
     }
 }

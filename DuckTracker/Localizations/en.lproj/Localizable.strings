@@ -37,6 +37,7 @@
 ".tab.home" = "Statistics";
 ".tab.track" = "Track";
 ".tab.history" = "History";
+".tab.settings" = "Settings";
 
 // StatsBlock
 "StatsBlock.today"= "Today";
