@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165BB178CA4D2AFCD83BC731 /* Pods_DuckTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D076D23FFAEEC95B05A56A /* Pods_DuckTracker.framework */; };
 		30CFD2D52A6EC7F000C106BE /* DuckTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */; };
 		30CFD2D92A6EC7F100C106BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2D82A6EC7F100C106BE /* Assets.xcassets */; };
 		30CFD2DC2A6EC7F100C106BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2DB2A6EC7F100C106BE /* Preview Assets.xcassets */; };
@@ -85,6 +86,8 @@
 		30CFD3AB2A702C4500C106BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD3AD2A702C4500C106BE /* Localizable.strings */; };
 		30CFD3B12A702D0E00C106BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD3B32A702D0E00C106BE /* InfoPlist.strings */; };
 		30CFD3B82A707CDC00C106BE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD3B72A707CDC00C106BE /* .swiftlint.yml */; };
+		553A8CE129ABB3ABB8BBE2F8 /* Pods_DuckTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B762E7D1EA6305AC774700 /* Pods_DuckTrackerTests.framework */; };
+		B6ACF28F081397C91D748C79 /* Pods_DuckTracker_DuckTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBED40457487400808E8A5AC /* Pods_DuckTracker_DuckTrackerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		055D2FFA6C9AD312371A1F3C /* Pods-DuckTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTracker.debug.xcconfig"; path = "Target Support Files/Pods-DuckTracker/Pods-DuckTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		2FCB300EBD6D94B9A5705D61 /* Pods-DuckTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTracker.release.xcconfig"; path = "Target Support Files/Pods-DuckTracker/Pods-DuckTracker.release.xcconfig"; sourceTree = "<group>"; };
 		30CFD2D12A6EC7F000C106BE /* DuckTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckTrackerApp.swift; sourceTree = "<group>"; };
 		30CFD2D82A6EC7F100C106BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +193,13 @@
 		30CFD3B42A702D1100C106BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30CFD3B52A702D1E00C106BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30CFD3B72A707CDC00C106BE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		31E4483851A58CB22B16B3C6 /* Pods-DuckTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-DuckTrackerTests/Pods-DuckTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		35B762E7D1EA6305AC774700 /* Pods_DuckTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DuckTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D076D23FFAEEC95B05A56A /* Pods_DuckTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DuckTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7440A72676B34470B4FB4B0 /* Pods-DuckTracker-DuckTrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTracker-DuckTrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-DuckTracker-DuckTrackerUITests/Pods-DuckTracker-DuckTrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E4BEE811E107CCC50DDEE20E /* Pods-DuckTracker-DuckTrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTracker-DuckTrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-DuckTracker-DuckTrackerUITests/Pods-DuckTracker-DuckTrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EBED40457487400808E8A5AC /* Pods_DuckTracker_DuckTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DuckTracker_DuckTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8A5F84A45D39ED52EEBF074 /* Pods-DuckTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-DuckTrackerTests/Pods-DuckTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30CFD3A62A6FF7BE00C106BE /* Polyline in Frameworks */,
+				165BB178CA4D2AFCD83BC731 /* Pods_DuckTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553A8CE129ABB3ABB8BBE2F8 /* Pods_DuckTrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6ACF28F081397C91D748C79 /* Pods_DuckTracker_DuckTrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +239,8 @@
 				30CFD2E92A6EC7F200C106BE /* DuckTrackerTests */,
 				30CFD2F32A6EC7F200C106BE /* DuckTrackerUITests */,
 				30CFD2D22A6EC7F000C106BE /* Products */,
+				5FBE3E20B563982295D264E6 /* Pods */,
+				BA6A83B8EBCE13E28B68FB14 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -543,6 +560,30 @@
 			path = Localizations;
 			sourceTree = "<group>";
 		};
+		5FBE3E20B563982295D264E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				055D2FFA6C9AD312371A1F3C /* Pods-DuckTracker.debug.xcconfig */,
+				2FCB300EBD6D94B9A5705D61 /* Pods-DuckTracker.release.xcconfig */,
+				E4BEE811E107CCC50DDEE20E /* Pods-DuckTracker-DuckTrackerUITests.debug.xcconfig */,
+				C7440A72676B34470B4FB4B0 /* Pods-DuckTracker-DuckTrackerUITests.release.xcconfig */,
+				31E4483851A58CB22B16B3C6 /* Pods-DuckTrackerTests.debug.xcconfig */,
+				F8A5F84A45D39ED52EEBF074 /* Pods-DuckTrackerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA6A83B8EBCE13E28B68FB14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55D076D23FFAEEC95B05A56A /* Pods_DuckTracker.framework */,
+				EBED40457487400808E8A5AC /* Pods_DuckTracker_DuckTrackerUITests.framework */,
+				35B762E7D1EA6305AC774700 /* Pods_DuckTrackerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -550,10 +591,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30CFD2FA2A6EC7F200C106BE /* Build configuration list for PBXNativeTarget "DuckTracker" */;
 			buildPhases = (
+				24086E07C59C8AC24C43993A /* [CP] Check Pods Manifest.lock */,
 				30CFD2CD2A6EC7F000C106BE /* Sources */,
 				30CFD2CE2A6EC7F000C106BE /* Frameworks */,
 				30CFD2CF2A6EC7F000C106BE /* Resources */,
 				30CFD3B62A707C8700C106BE /* ShellScript */,
+				9F020AB8E06A96CE639CAB3F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -571,6 +614,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30CFD2FD2A6EC7F200C106BE /* Build configuration list for PBXNativeTarget "DuckTrackerTests" */;
 			buildPhases = (
+				2ED541451B34C58A55DA8962 /* [CP] Check Pods Manifest.lock */,
 				30CFD2E22A6EC7F200C106BE /* Sources */,
 				30CFD2E32A6EC7F200C106BE /* Frameworks */,
 				30CFD2E42A6EC7F200C106BE /* Resources */,
@@ -589,9 +633,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30CFD3002A6EC7F200C106BE /* Build configuration list for PBXNativeTarget "DuckTrackerUITests" */;
 			buildPhases = (
+				3DF9A4C5D2A606068BAEC8D2 /* [CP] Check Pods Manifest.lock */,
 				30CFD2EC2A6EC7F200C106BE /* Sources */,
 				30CFD2ED2A6EC7F200C106BE /* Frameworks */,
 				30CFD2EE2A6EC7F200C106BE /* Resources */,
+				6DEFD40BBD6DB89975B1262F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -680,6 +726,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		24086E07C59C8AC24C43993A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DuckTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2ED541451B34C58A55DA8962 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DuckTrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		30CFD3B62A707C8700C106BE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -696,6 +786,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+		3DF9A4C5D2A606068BAEC8D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DuckTracker-DuckTrackerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DEFD40BBD6DB89975B1262F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DuckTracker-DuckTrackerUITests/Pods-DuckTracker-DuckTrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DuckTracker-DuckTrackerUITests/Pods-DuckTracker-DuckTrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DuckTracker-DuckTrackerUITests/Pods-DuckTracker-DuckTrackerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F020AB8E06A96CE639CAB3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DuckTracker/Pods-DuckTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DuckTracker/Pods-DuckTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DuckTracker/Pods-DuckTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -948,6 +1094,7 @@
 		};
 		30CFD2FB2A6EC7F200C106BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 055D2FFA6C9AD312371A1F3C /* Pods-DuckTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -967,6 +1114,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -986,6 +1134,7 @@
 		};
 		30CFD2FC2A6EC7F200C106BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FCB300EBD6D94B9A5705D61 /* Pods-DuckTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1005,6 +1154,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1024,6 +1174,7 @@
 		};
 		30CFD2FE2A6EC7F200C106BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31E4483851A58CB22B16B3C6 /* Pods-DuckTrackerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1044,6 +1195,7 @@
 		};
 		30CFD2FF2A6EC7F200C106BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8A5F84A45D39ED52EEBF074 /* Pods-DuckTrackerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1064,6 +1216,7 @@
 		};
 		30CFD3012A6EC7F200C106BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4BEE811E107CCC50DDEE20E /* Pods-DuckTracker-DuckTrackerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1082,6 +1235,7 @@
 		};
 		30CFD3022A6EC7F200C106BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7440A72676B34470B4FB4B0 /* Pods-DuckTracker-DuckTrackerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
