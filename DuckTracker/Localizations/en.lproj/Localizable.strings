@@ -127,3 +127,8 @@
 "AppAppearance.system" = "System";
 "AppAppearance.light" = "Light";
 "AppAppearance.dark" = "Dark";
+
+"AppSpeedDisplay.title" = "Speed display";
+"AppSpeedDisplay.auto" = "Auto";
+"AppSpeedDisplay.speed" = "Always speed";
+"AppSpeedDisplay.pace" = "Always pace";

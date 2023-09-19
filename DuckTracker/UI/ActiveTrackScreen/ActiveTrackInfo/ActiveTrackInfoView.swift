@@ -6,6 +6,11 @@ struct ActiveTrackInfoView: View {
 
     @ObservedObject var activeTrackProvider = ActiveTrackProvider.shared
 
+    @AppStorage("AppSpeedDisplay") var appSpeedDisplayValue: Int?
+
+    private var appSpeedDisplay: AppSpeedDisplay { AppSpeedDisplay(rawValue: appSpeedDisplayValue ?? 0) ?? .auto }
+    private var showPace: Bool { appSpeedDisplay != .auto ? appSpeedDisplay == .pace : activeTrackType.isPaceType }
+
     var body: some View {
         VStack(spacing: 1) {
             HStack(spacing: 1) {
@@ -21,7 +26,7 @@ struct ActiveTrackInfoView: View {
                     withSpacers: true
                 )
 
-                if activeTrackType.isPaceType {
+                if showPace {
                     // pace
                     TrackInfoCircleView(
                         title: ".pace".localized().uppercased(),

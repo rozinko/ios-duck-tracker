@@ -5,6 +5,7 @@ struct SettingsScreen: View {
     @Binding var selectedTab: Int
 
     @State private var appAppearance: AppAppearance = AppAppearance(rawValue: UserDefaults.standard.integer(forKey: "AppAppearance")) ?? .system
+    @State private var appSpeedDisplay: AppSpeedDisplay = AppSpeedDisplay(rawValue: UserDefaults.standard.integer(forKey: "AppSpeedDisplay")) ?? .auto
 
     let appVersion: String = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "no ver"
     let appBuild: String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "no build"
@@ -51,6 +52,35 @@ struct SettingsScreen: View {
                         }
                     }
                     // End of App Appearance
+
+                    // App Speed Display
+                    if #available(iOS 16.0, *) {
+                        Picker(
+                            selection: $appSpeedDisplay,
+                            label: Text("AppSpeedDisplay.title".localized())
+                        ) {
+                            ForEach(AppSpeedDisplay.allCases, id: \.self) {
+                                Text($0.name).tag($0.rawValue)
+                            }
+                        }
+                        .onChange(of: appSpeedDisplay) { newAppSpeedDisplay in
+                            UserDefaults.standard.set(newAppSpeedDisplay.rawValue, forKey: "AppSpeedDisplay")
+                        }
+                        .pickerStyle(.navigationLink)
+                    } else {
+                        Picker(
+                            selection: $appSpeedDisplay,
+                            label: Text("AppSpeedDisplay.title".localized())
+                        ) {
+                            ForEach(AppSpeedDisplay.allCases, id: \.self) {
+                                Text($0.name).tag($0.rawValue)
+                            }
+                        }
+                        .onChange(of: appSpeedDisplay) { newAppSpeedDisplay in
+                            UserDefaults.standard.set(newAppSpeedDisplay.rawValue, forKey: "AppSpeedDisplay")
+                        }
+                    }
+                    // End of App Speed Display
 
                 }
 
