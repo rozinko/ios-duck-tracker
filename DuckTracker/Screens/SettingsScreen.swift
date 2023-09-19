@@ -23,7 +23,6 @@ struct SettingsScreen: View {
                             }
                         }
                         .onChange(of: appAppearance) { newAppAppearance in
-                            print("new appearance:", newAppAppearance, "/ raw:", newAppAppearance.rawValue)
                             UserDefaults.standard.set(newAppAppearance.rawValue, forKey: "AppAppearance")
                         }
                         .pickerStyle(.navigationLink)
@@ -35,6 +34,9 @@ struct SettingsScreen: View {
                             ForEach(AppAppearance.allCases, id: \.self) {
                                 Text($0.name).tag($0.rawValue)
                             }
+                        }
+                        .onChange(of: appAppearance) { newAppAppearance in
+                            UserDefaults.standard.set(newAppAppearance.rawValue, forKey: "AppAppearance")
                         }
                     }
                     // End of App Appearance
