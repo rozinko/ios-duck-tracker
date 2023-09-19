@@ -121,3 +121,9 @@
 "MainInformer.denied.button" = "Go to settings";
 "MainInformer.firstTrack.text" = "Start the recording of your first track.";
 "MainInformer.firstTrack.button" = "Start track";
+
+// Settings
+"AppAppearance.title" = "Appearance";
+"AppAppearance.system" = "System";
+"AppAppearance.light" = "Light";
+"AppAppearance.dark" = "Dark";

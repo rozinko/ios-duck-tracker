@@ -121,3 +121,9 @@
 "MainInformer.denied.button" = "Перейти в Настройки";
 "MainInformer.firstTrack.text" = "Начните запись своего первого маршрута!";
 "MainInformer.firstTrack.button" = "Начать маршрут";
+
+// Settings
+"AppAppearance.title" = "Тема оформления";
+"AppAppearance.system" = "Системная";
+"AppAppearance.light" = "Светлая";
+"AppAppearance.dark" = "Тёмная";
