@@ -6,6 +6,10 @@ struct SettingsScreen: View {
 
     @State private var appAppearance: AppAppearance = AppAppearance(rawValue: UserDefaults.standard.integer(forKey: "AppAppearance")) ?? .system
 
+    let appVersion: String = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "no ver"
+    let appBuild: String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "no build"
+    let isTestFlight: Bool = Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
+
     var body: some View {
 
         NavigationView {
@@ -40,6 +44,21 @@ struct SettingsScreen: View {
                         }
                     }
                     // End of App Appearance
+
+                }
+
+                Section(footer: HStack {
+                    Spacer()
+                    if isTestFlight {
+                        VStack {
+                            Text("Duck Tracker v\(appVersion) (build \(appBuild))")
+                            Text("Version from TestFlight")
+                        }.foregroundColor(.red)
+                    } else {
+                        Text("Duck Tracker v\(appVersion) (build \(appBuild))")
+                    }
+                    Spacer()
+                }) {
 
                 }
             }
