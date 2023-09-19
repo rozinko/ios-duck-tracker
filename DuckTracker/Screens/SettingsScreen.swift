@@ -9,6 +9,13 @@ struct SettingsScreen: View {
     let appVersion: String = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "no ver"
     let appBuild: String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "no build"
     let isTestFlight: Bool = Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
+    var isDebug: Bool {
+        #if DEBUG
+          return true
+        #else
+          return false
+        #endif
+    }
 
     var body: some View {
 
@@ -49,13 +56,14 @@ struct SettingsScreen: View {
 
                 Section(footer: HStack {
                     Spacer()
-                    if isTestFlight {
-                        VStack {
-                            Text("Duck Tracker v\(appVersion) (build \(appBuild))")
-                            Text("Version from TestFlight")
-                        }.foregroundColor(.red)
-                    } else {
+                    VStack {
                         Text("Duck Tracker v\(appVersion) (build \(appBuild))")
+                        if isDebug {
+                            Text("DEBUG MODE").foregroundColor(.red)
+                        }
+                        if isTestFlight {
+                            Text("Version from TestFlight").foregroundColor(.red)
+                        }
                     }
                     Spacer()
                 }) {
