@@ -123,15 +123,15 @@
 "MainInformer.firstTrack.button" = "Start track";
 
 // Settings
-"AppAppearance.title" = "Appearance";
-"AppAppearance.system" = "System";
-"AppAppearance.light" = "Light";
-"AppAppearance.dark" = "Dark";
+"SettingAppearance.title" = "Appearance";
+"SettingAppearance.system" = "System";
+"SettingAppearance.light" = "Light";
+"SettingAppearance.dark" = "Dark";
 
-"AppSpeedDisplay.title" = "Speed display";
-"AppSpeedDisplay.auto" = "Auto";
-"AppSpeedDisplay.speed" = "Speed";
-"AppSpeedDisplay.pace" = "Pace";
-"AppSpeedDisplay.auto.description" = "When recording, it will display speed OR pace depending on the type of track.";
-"AppSpeedDisplay.speed.description" = "When recording, the speed will always be displayed.";
-"AppSpeedDisplay.pace.description" = "When recording, the pace will always be displayed.";
+"SettingSpeedDisplay.title" = "Speed display";
+"SettingSpeedDisplay.auto" = "Auto";
+"SettingSpeedDisplay.speed" = "Speed";
+"SettingSpeedDisplay.pace" = "Pace";
+"SettingSpeedDisplay.auto.description" = "When recording, it will display speed OR pace depending on the type of track.";
+"SettingSpeedDisplay.speed.description" = "When recording, the speed will always be displayed.";
+"SettingSpeedDisplay.pace.description" = "When recording, the pace will always be displayed.";

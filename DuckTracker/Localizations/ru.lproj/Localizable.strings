@@ -123,15 +123,15 @@
 "MainInformer.firstTrack.button" = "Начать маршрут";
 
 // Settings
-"AppAppearance.title" = "Тема оформления";
-"AppAppearance.system" = "Системная";
-"AppAppearance.light" = "Светлая";
-"AppAppearance.dark" = "Тёмная";
+"SettingAppearance.title" = "Тема оформления";
+"SettingAppearance.system" = "Системная";
+"SettingAppearance.light" = "Светлая";
+"SettingAppearance.dark" = "Тёмная";
 
-"AppSpeedDisplay.title" = "Показ скорости";
-"AppSpeedDisplay.auto" = "Авто";
-"AppSpeedDisplay.speed" = "Скорость";
-"AppSpeedDisplay.pace" = "Темп";
-"AppSpeedDisplay.auto.description" = "При записи будет отображаться скорость ИЛИ темп в зависимости от типа активности.";
-"AppSpeedDisplay.speed.description" = "При записи всегда будет отображена скорость.";
-"AppSpeedDisplay.pace.description" = "При записи всегда будет отображен темп.";
+"SettingSpeedDisplay.title" = "Показ скорости";
+"SettingSpeedDisplay.auto" = "Авто";
+"SettingSpeedDisplay.speed" = "Скорость";
+"SettingSpeedDisplay.pace" = "Темп";
+"SettingSpeedDisplay.auto.description" = "При записи будет отображаться скорость ИЛИ темп в зависимости от типа активности.";
+"SettingSpeedDisplay.speed.description" = "При записи всегда будет отображена скорость.";
+"SettingSpeedDisplay.pace.description" = "При записи всегда будет отображен темп.";

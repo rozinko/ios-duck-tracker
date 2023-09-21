@@ -4,8 +4,8 @@ struct SettingsScreen: View {
 
     @Binding var selectedTab: Int
 
-    @State private var appAppearance: AppAppearance = AppAppearance(rawValue: UserDefaults.standard.integer(forKey: "AppAppearance")) ?? .system
-    @State private var appSpeedDisplay: AppSpeedDisplay = AppSpeedDisplay(rawValue: UserDefaults.standard.integer(forKey: "AppSpeedDisplay")) ?? .auto
+    @State private var settingAppearance = SettingAppearance(fromInt: UserDefaults.standard.integer(forKey: "SettingAppearance"))
+    @State private var settingSpeedDisplay = SettingSpeedDisplay(fromInt: UserDefaults.standard.integer(forKey: "SettingSpeedDisplay"))
 
     let appVersion: String = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "no ver"
     let appBuild: String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "no build"
@@ -23,36 +23,36 @@ struct SettingsScreen: View {
         NavigationView {
             Form {
 
-                // App Appearance
-                Section(header: Text("AppAppearance.title".localized())) {
-                    Picker("AppAppearance.title".localized(), selection: $appAppearance) {
-                        ForEach(AppAppearance.allCases, id: \.self) {
+                // Setting Appearance
+                Section(header: Text("SettingAppearance.title".localized())) {
+                    Picker("SettingAppearance.title".localized(), selection: $settingAppearance) {
+                        ForEach(SettingAppearance.allCases, id: \.self) {
                             Text($0.name).tag($0.rawValue)
                         }
                     }
                     .pickerStyle(.segmented)
-                    .onChange(of: appAppearance) { newAppAppearance in
-                        UserDefaults.standard.set(newAppAppearance.rawValue, forKey: "AppAppearance")
+                    .onChange(of: settingAppearance) { newSettingAppearance in
+                        UserDefaults.standard.set(newSettingAppearance.rawValue, forKey: "SettingAppearance")
                     }
                 }
-                // End of App Appearance
+                // End of Setting Appearance
 
-                // App Speed Display
+                // Setting Speed Display
                 Section(
-                    header: Text("AppSpeedDisplay.title".localized()),
-                    footer: Text(appSpeedDisplay.description)
+                    header: Text("SettingSpeedDisplay.title".localized()),
+                    footer: Text(settingSpeedDisplay.description)
                 ) {
-                    Picker("AppSpeedDisplay.title".localized(), selection: $appSpeedDisplay) {
-                        ForEach(AppSpeedDisplay.allCases, id: \.self) {
+                    Picker("SettingSpeedDisplay.title".localized(), selection: $settingSpeedDisplay) {
+                        ForEach(SettingSpeedDisplay.allCases, id: \.self) {
                             Text($0.name).tag($0.rawValue)
                         }
                     }
                     .pickerStyle(.segmented)
-                    .onChange(of: appSpeedDisplay) { newAppSpeedDisplay in
-                        UserDefaults.standard.set(newAppSpeedDisplay.rawValue, forKey: "AppSpeedDisplay")
+                    .onChange(of: settingSpeedDisplay) { newSettingSpeedDisplay in
+                        UserDefaults.standard.set(newSettingSpeedDisplay.rawValue, forKey: "SettingSpeedDisplay")
                     }
                 }
-                // End of App Speed Display
+                // End of Setting Speed Display
 
                 // Info in footer
                 Section(footer: HStack {

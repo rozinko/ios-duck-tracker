@@ -6,10 +6,10 @@ struct ActiveTrackInfoView: View {
 
     @ObservedObject var activeTrackProvider = ActiveTrackProvider.shared
 
-    @AppStorage("AppSpeedDisplay") var appSpeedDisplayValue: Int?
+    @AppStorage("SettingSpeedDisplay") var settingSpeedDisplayValue: Int?
 
-    private var appSpeedDisplay: AppSpeedDisplay { AppSpeedDisplay(rawValue: appSpeedDisplayValue ?? 0) ?? .auto }
-    private var showPace: Bool { appSpeedDisplay != .auto ? appSpeedDisplay == .pace : activeTrackType.isPaceType }
+    private var settingSpeedDisplay: SettingSpeedDisplay { .init(fromInt: settingSpeedDisplayValue) }
+    private var showPace: Bool { settingSpeedDisplay != .auto ? settingSpeedDisplay == .pace : activeTrackType.isPaceType }
 
     var body: some View {
         VStack(spacing: 1) {

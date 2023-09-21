@@ -14,11 +14,11 @@ struct DuckTrackerApp: App, Scene {
     private let coreDataProvider = CoreDataProvider.shared
     private let locationProvider = LocationProvider.shared
 
-    @AppStorage("AppAppearance") var appAppearanceRawValue: Int?
+    @AppStorage("SettingAppearance") var settingAppearanceRawValue: Int?
 
-    private var appAppearance: AppAppearance { AppAppearance(rawValue: appAppearanceRawValue ?? 0) ?? .system }
+    private var settingAppearance: SettingAppearance { .init(fromInt: settingAppearanceRawValue) }
     private var systemInterfaceStyle: UIUserInterfaceStyle { UITraitCollection.current.userInterfaceStyle }
-    private var appColorScheme: ColorScheme { appAppearance != .system ? appAppearance.getColorScheme! : (systemInterfaceStyle == .dark ? .dark : .light) }
+    private var appColorScheme: ColorScheme { settingAppearance != .system ? settingAppearance.getColorScheme! : (systemInterfaceStyle == .dark ? .dark : .light) }
 
     var body: some Scene {
         WindowGroup {
