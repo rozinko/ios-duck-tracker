@@ -22,68 +22,39 @@ struct SettingsScreen: View {
 
         NavigationView {
             Form {
-                Section(header: Text(".tab.settings".localized())) {
 
-                    // App Appearance
-                    if #available(iOS 16.0, *) {
-                        Picker(
-                            selection: $appAppearance,
-                            label: Text("AppAppearance.title".localized())
-                        ) {
-                            ForEach(AppAppearance.allCases, id: \.self) {
-                                Text($0.name).tag($0.rawValue)
-                            }
-                        }
-                        .onChange(of: appAppearance) { newAppAppearance in
-                            UserDefaults.standard.set(newAppAppearance.rawValue, forKey: "AppAppearance")
-                        }
-                        .pickerStyle(.navigationLink)
-                    } else {
-                        Picker(
-                            selection: $appAppearance,
-                            label: Text("AppAppearance.title".localized())
-                        ) {
-                            ForEach(AppAppearance.allCases, id: \.self) {
-                                Text($0.name).tag($0.rawValue)
-                            }
-                        }
-                        .onChange(of: appAppearance) { newAppAppearance in
-                            UserDefaults.standard.set(newAppAppearance.rawValue, forKey: "AppAppearance")
+                // App Appearance
+                Section(header: Text("AppAppearance.title".localized())) {
+                    Picker("AppAppearance.title".localized(), selection: $appAppearance) {
+                        ForEach(AppAppearance.allCases, id: \.self) {
+                            Text($0.name).tag($0.rawValue)
                         }
                     }
-                    // End of App Appearance
-
-                    // App Speed Display
-                    if #available(iOS 16.0, *) {
-                        Picker(
-                            selection: $appSpeedDisplay,
-                            label: Text("AppSpeedDisplay.title".localized())
-                        ) {
-                            ForEach(AppSpeedDisplay.allCases, id: \.self) {
-                                Text($0.name).tag($0.rawValue)
-                            }
-                        }
-                        .onChange(of: appSpeedDisplay) { newAppSpeedDisplay in
-                            UserDefaults.standard.set(newAppSpeedDisplay.rawValue, forKey: "AppSpeedDisplay")
-                        }
-                        .pickerStyle(.navigationLink)
-                    } else {
-                        Picker(
-                            selection: $appSpeedDisplay,
-                            label: Text("AppSpeedDisplay.title".localized())
-                        ) {
-                            ForEach(AppSpeedDisplay.allCases, id: \.self) {
-                                Text($0.name).tag($0.rawValue)
-                            }
-                        }
-                        .onChange(of: appSpeedDisplay) { newAppSpeedDisplay in
-                            UserDefaults.standard.set(newAppSpeedDisplay.rawValue, forKey: "AppSpeedDisplay")
-                        }
+                    .pickerStyle(.segmented)
+                    .onChange(of: appAppearance) { newAppAppearance in
+                        UserDefaults.standard.set(newAppAppearance.rawValue, forKey: "AppAppearance")
                     }
-                    // End of App Speed Display
-
                 }
+                // End of App Appearance
 
+                // App Speed Display
+                Section(
+                    header: Text("AppSpeedDisplay.title".localized()),
+                    footer: Text(appSpeedDisplay.description)
+                ) {
+                    Picker("AppSpeedDisplay.title".localized(), selection: $appSpeedDisplay) {
+                        ForEach(AppSpeedDisplay.allCases, id: \.self) {
+                            Text($0.name).tag($0.rawValue)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .onChange(of: appSpeedDisplay) { newAppSpeedDisplay in
+                        UserDefaults.standard.set(newAppSpeedDisplay.rawValue, forKey: "AppSpeedDisplay")
+                    }
+                }
+                // End of App Speed Display
+
+                // Info in footer
                 Section(footer: HStack {
                     Spacer()
                     VStack {
@@ -92,13 +63,14 @@ struct SettingsScreen: View {
                             Text("DEBUG MODE").foregroundColor(.red)
                         }
                         if isTestFlight {
-                            Text("Version from TestFlight").foregroundColor(.red)
+                            Text("Version from TestFlight").foregroundColor(.blue)
                         }
                     }
                     Spacer()
                 }) {
 
                 }
+                // End of Info in footer
             }
         }
 

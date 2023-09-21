@@ -130,5 +130,8 @@
 
 "AppSpeedDisplay.title" = "Speed display";
 "AppSpeedDisplay.auto" = "Auto";
-"AppSpeedDisplay.speed" = "Always speed";
-"AppSpeedDisplay.pace" = "Always pace";
+"AppSpeedDisplay.speed" = "Speed";
+"AppSpeedDisplay.pace" = "Pace";
+"AppSpeedDisplay.auto.description" = "When recording, it will display speed OR pace depending on the type of track.";
+"AppSpeedDisplay.speed.description" = "When recording, the speed will always be displayed.";
+"AppSpeedDisplay.pace.description" = "When recording, the pace will always be displayed.";
