@@ -55,21 +55,21 @@ struct SettingsScreen: View {
                 // End of Setting Speed Display
 
                 // Info in footer
-                Section(footer: HStack {
-                    Spacer()
-                    VStack {
-                        Text("Duck Tracker v\(appVersion) (build \(appBuild))")
-                        if isDebug {
-                            Text("DEBUG MODE").foregroundColor(.red)
+                Section(
+                    footer: HStack {
+                        Spacer()
+                        VStack {
+                            Text("Duck Tracker v\(appVersion) (build \(appBuild))")
+                            if isDebug {
+                                Text("DEBUG MODE").foregroundColor(.red)
+                            }
+                            if isTestFlight {
+                                Text("Version from TestFlight").foregroundColor(.blue)
+                            }
                         }
-                        if isTestFlight {
-                            Text("Version from TestFlight").foregroundColor(.blue)
-                        }
+                        Spacer()
                     }
-                    Spacer()
-                }) {
-
-                }
+                ) { }
                 // End of Info in footer
             }
         }

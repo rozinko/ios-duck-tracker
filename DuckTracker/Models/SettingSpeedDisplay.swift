@@ -1,4 +1,3 @@
-import Foundation
 import SwiftUI
 
 public enum SettingSpeedDisplay: Int, CaseIterable {
@@ -19,9 +18,9 @@ public enum SettingSpeedDisplay: Int, CaseIterable {
         case .pace: return "SettingSpeedDisplay.pace.description".localized()
         }
     }
-    
+
     init(fromInt rawValue: Int?) {
         self = Self.init(rawValue: rawValue ?? 0) ?? .auto
     }
-    
+
 }
