@@ -128,6 +128,12 @@
 "SettingAppearance.light" = "Светлая";
 "SettingAppearance.dark" = "Тёмная";
 
+"SettingMapServer.title" = "Карты";
+"SettingMapServer.apple"= "Apple Maps";
+"SettingMapServer.osm"= "OpenStreetMap";
+"SettingMapServer.apple.description"= "Будут использоваться карты от Apple Maps.";
+"SettingMapServer.osm.description"= "Будут использоваться карты от OpenStreetMap.";
+
 "SettingSpeedDisplay.title" = "Показ скорости";
 "SettingSpeedDisplay.auto" = "Авто";
 "SettingSpeedDisplay.speed" = "Скорость";

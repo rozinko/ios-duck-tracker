@@ -5,6 +5,7 @@ struct SettingsScreen: View {
     @Binding var selectedTab: Int
 
     @State private var settingAppearance = SettingAppearance(fromInt: UserDefaults.standard.integer(forKey: "SettingAppearance"))
+    @State private var settingMapServer = SettingMapServer(fromString: UserDefaults.standard.string(forKey: "SettingMapServer"))
     @State private var settingSpeedDisplay = SettingSpeedDisplay(fromInt: UserDefaults.standard.integer(forKey: "SettingSpeedDisplay"))
 
     let appVersion: String = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "no ver"
@@ -36,6 +37,23 @@ struct SettingsScreen: View {
                     }
                 }
                 // End of Setting Appearance
+
+                // Setting Map Server
+                Section(
+                    header: Text("SettingMapServer.title".localized()),
+                    footer: Text(settingMapServer.description)
+                ) {
+                    Picker("SettingMapServer.title".localized(), selection: $settingMapServer) {
+                        ForEach(SettingMapServer.allCases, id: \.self) {
+                            Text($0.name).tag($0.rawValue)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .onChange(of: settingMapServer) { newSettingMapServer in
+                        UserDefaults.standard.set(newSettingMapServer.rawValue, forKey: "SettingMapServer")
+                    }
+                }
+                // End of Setting Map Server
 
                 // Setting Speed Display
                 Section(

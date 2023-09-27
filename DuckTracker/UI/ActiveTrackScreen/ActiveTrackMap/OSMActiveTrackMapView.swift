@@ -1,7 +1,8 @@
 import SwiftUI
 import MapKit
+import MapCache
 
-struct AppleActiveTrackMapView: UIViewRepresentable {
+struct OSMActiveTrackMapView: UIViewRepresentable {
 
     @Binding var mapRegion: MKCoordinateRegion
 
@@ -11,9 +12,9 @@ struct AppleActiveTrackMapView: UIViewRepresentable {
 
     let trackCoordinates: [CLLocationCoordinate2D]
 
-    private let mapView = AppleActiveTrackMapViewDelegate()
+    private let mapView = OSMActiveTrackMapViewDelegate()
 
-    func makeUIView(context: UIViewRepresentableContext<AppleActiveTrackMapView>) -> AppleActiveTrackMapViewDelegate {
+    func makeUIView(context: UIViewRepresentableContext<OSMActiveTrackMapView>) -> OSMActiveTrackMapViewDelegate {
         mapView.delegate = mapView
 
         mapView.isPitchEnabled = true
@@ -52,10 +53,14 @@ struct AppleActiveTrackMapView: UIViewRepresentable {
 
         mapView.setRegion(mapRegion, animated: true)
 
+        let config = MapCacheConfig(withUrlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
+        let mapCache = MapCache(withConfig: config)
+        mapView.useCache(mapCache)
+
         return mapView
     }
 
-    func updateUIView(_ uiView: AppleActiveTrackMapViewDelegate, context: UIViewRepresentableContext<AppleActiveTrackMapView>) {
+    func updateUIView(_ uiView: OSMActiveTrackMapViewDelegate, context: UIViewRepresentableContext<OSMActiveTrackMapView>) {
         // обновляем оверлей основного маршрута:
         // - если есть 2 и более точек маршрута и в прошлый раз было отрисовано другое количество точек
         // - если новое значение 0 а было более одной (когда маршрут сбрасывается)
@@ -92,26 +97,6 @@ struct AppleActiveTrackMapView: UIViewRepresentable {
             // обновляем метку что отросток отрисован
             uiView.overlayTrackToUserLocationDrawed = true
         }
-
-        // TODO: все что ниже - оптимизировать
-//        var pointsRendered = 0
-
-        // удаляем все точки
-//        uiView.removeAnnotations(uiView.annotations)
-
-//
-//        // добавляем все принятые точки маршрута
-//        // временное отображение
-//        trackPoints.forEach { point in
-//            let a = MKPointAnnotation()
-//            a.title = "track"
-//            a.subtitle = String(point.location.course)
-//            a.coordinate = point.coordinate
-//            uiView.addAnnotation(a)
-//            pointsRendered += 1
-//        }
-
-//        print("points rendered: \(pointsRendered)")
 
     }
 

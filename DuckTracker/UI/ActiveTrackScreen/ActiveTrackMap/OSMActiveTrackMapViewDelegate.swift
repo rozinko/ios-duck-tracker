@@ -1,7 +1,8 @@
 import SwiftUI
 import MapKit
+import MapCache
 
-class AppleActiveTrackMapViewDelegate: MKMapView, MKMapViewDelegate {
+class OSMActiveTrackMapViewDelegate: MKMapView, MKMapViewDelegate {
 
     // переменная для присвоения userTrackingMode один раз в начале отображения карты
     private var firstUserTrackingModeSetted = false
@@ -30,22 +31,14 @@ class AppleActiveTrackMapViewDelegate: MKMapView, MKMapViewDelegate {
             return annotationUserLocation(annotation: annotation)
         }
 
-        // TODO: требуется для рендера точек на маршруте
-//        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
-//        let course = (annotation.subtitle!! as NSString).doubleValue
-//        if annotation.title == "filtered" {
-//            annotationView.image = UIImage(named: "MarkerArrowRedUp")!.rotate(degrees: course)
-//        } else if annotation.title == "track" {
-//            annotationView.image = UIImage(named: "MarkerArrowGreenUp")!.rotate(degrees: course)
-//        } else {
-//            annotationView.image = UIImage(named: "MarkerArrowYellowUp")!.rotate(degrees: course)
-//        }
-//        return annotationView
-
         return nil
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay.isKind(of: CachedTileOverlay.self) {
+            return mapView.mapCacheRenderer(forOverlay: overlay)
+        }
+
         if overlay.isKind(of: MKPolyline.self) {
             let renderer = MKPolylineRenderer(overlay: overlay)
             renderer.strokeColor = UIColor(named: "MapViewStroke")!

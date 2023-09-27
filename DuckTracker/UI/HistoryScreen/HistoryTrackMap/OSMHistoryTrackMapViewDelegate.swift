@@ -1,12 +1,17 @@
 import SwiftUI
 import MapKit
+import MapCache
 
-class AppleHistoryTrackMapViewDelegate: MKMapView, MKMapViewDelegate {
+class OSMHistoryTrackMapViewDelegate: MKMapView, MKMapViewDelegate {
 
     // переменные для правильной отрисовки оверлеев
     var overlayTrackPointsDrawed = 0
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay.isKind(of: CachedTileOverlay.self) {
+            return mapView.mapCacheRenderer(forOverlay: overlay)
+        }
+
         if overlay.isKind(of: MKPolyline.self) {
             let renderer = MKPolylineRenderer(overlay: overlay)
             renderer.strokeColor = UIColor(Color.mapViewStroke)
@@ -16,9 +21,5 @@ class AppleHistoryTrackMapViewDelegate: MKMapView, MKMapViewDelegate {
 
         return MKOverlayRenderer()
     }
-
-//    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-//        print("regionDidChangeAnimated")
-//    }
 
 }

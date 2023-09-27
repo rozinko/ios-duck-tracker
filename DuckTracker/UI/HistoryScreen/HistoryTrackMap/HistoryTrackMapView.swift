@@ -7,8 +7,17 @@ struct HistoryTrackMapView: View {
 
     let trackCoordinates: [CLLocationCoordinate2D]
 
+    // Setting Map Server
+    @AppStorage("SettingMapServer") var settingMapServerRawValue: String?
+    private var settingMapServer: SettingMapServer { .init(fromString: settingMapServerRawValue) }
+    // End of Setting Map Server
+
     var body: some View {
-        AppleHistoryTrackMapView(region: $region, trackCoordinates: trackCoordinates)
+        if settingMapServer == .osm {
+            OSMHistoryTrackMapView(region: $region, trackCoordinates: trackCoordinates)
+        } else {
+            AppleHistoryTrackMapView(region: $region, trackCoordinates: trackCoordinates)
+        }
     }
 }
 

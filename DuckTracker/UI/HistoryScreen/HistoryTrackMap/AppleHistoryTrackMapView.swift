@@ -36,7 +36,7 @@ struct AppleHistoryTrackMapView: UIViewRepresentable {
         // добавляем обновленный
         let overlayTrack = MKPolyline(coordinates: trackCoordinates, count: trackCoordinates.count)
         overlayTrack.title = "track"
-        uiView.addOverlay(overlayTrack, level: .aboveRoads)
+        uiView.insertOverlayAboveLast(overlayTrack)
 
         /*
         // обновляем оверлей основного маршрута:

@@ -7,13 +7,27 @@ struct ActiveTrackMapView: View {
 
     @ObservedObject var activeTrackProvider = ActiveTrackProvider.shared
 
+    // Setting Map Server
+    @AppStorage("SettingMapServer") var settingMapServerRawValue: String?
+    private var settingMapServer: SettingMapServer { .init(fromString: settingMapServerRawValue) }
+    // End of Setting Map Server
+
     var body: some View {
-        AppleActiveTrackMapView(
-            mapRegion: $activeTrackMapRegion,
-            isRecordingMode: activeTrackProvider.isRecording,
-            showUserLocation: true,
-            showUserTrackingButton: true,
-            trackCoordinates: activeTrackProvider.track.trackCoordinates)
+        if settingMapServer == .osm {
+            OSMActiveTrackMapView(
+                mapRegion: $activeTrackMapRegion,
+                isRecordingMode: activeTrackProvider.isRecording,
+                showUserLocation: true,
+                showUserTrackingButton: true,
+                trackCoordinates: activeTrackProvider.track.trackCoordinates)
+        } else {
+            AppleActiveTrackMapView(
+                mapRegion: $activeTrackMapRegion,
+                isRecordingMode: activeTrackProvider.isRecording,
+                showUserLocation: true,
+                showUserTrackingButton: true,
+                trackCoordinates: activeTrackProvider.track.trackCoordinates)
+        }
     }
 }
 
