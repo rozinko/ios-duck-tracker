@@ -39,6 +39,11 @@
 ".tab.history" = "History";
 ".tab.settings" = "Settings";
 
+// Map Cache
+".mapCache.size" = "Cache size";
+".mapCache.clear" = "Clear cache";
+".mapCache.empty" = "Empty cache";
+
 // StatsBlock
 "StatsBlock.today"= "Today";
 "StatsBlock.yesterday"= "Yesterday";
@@ -131,7 +136,7 @@
 "SettingMapServer.title" = "Maps";
 "SettingMapServer.apple"= "Apple Maps";
 "SettingMapServer.osm"= "OpenStreetMap";
-"SettingMapServer.apple.description"= "Maps from Apple Maps will be used.";
+"SettingMapServer.apple.description"= "Maps from Apple Maps will be used. No caching available.";
 "SettingMapServer.osm.description"= "Maps from OpenStreetMap will be used.";
 
 "SettingSpeedDisplay.title" = "Speed display";

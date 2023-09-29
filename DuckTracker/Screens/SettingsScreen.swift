@@ -1,4 +1,5 @@
 import SwiftUI
+import MapCache
 
 struct SettingsScreen: View {
 
@@ -17,6 +18,16 @@ struct SettingsScreen: View {
         #else
           return false
         #endif
+    }
+
+    var mapCache: MapCache = MapCache(withConfig: MapCacheConfig(withUrlTemplate: ""))
+    
+    @State var mapCacheSize: Int64 = 0
+    @State var mapCacheSizeString: String = ".cache.empty".localized()
+
+    func updateMapCacheSize() {
+        mapCacheSize = Int64(mapCache.diskCache.fileSize ?? 0)
+        mapCacheSizeString = mapCacheSize > 0 ? ByteCountFormatter().string(fromByteCount: mapCacheSize) : ".cache.empty".localized()
     }
 
     var body: some View {
@@ -51,6 +62,25 @@ struct SettingsScreen: View {
                     .pickerStyle(.segmented)
                     .onChange(of: settingMapServer) { newSettingMapServer in
                         UserDefaults.standard.set(newSettingMapServer.rawValue, forKey: "SettingMapServer")
+                    }
+
+                    if mapCacheSize > 0 {
+
+                        HStack {
+                            Text(".mapCache.size".localized())
+                            Spacer()
+                            Text(mapCacheSizeString)
+                        }
+
+                        Button(".mapCache.clear".localized()) {
+                            mapCache.clear(completition: {updateMapCacheSize()})
+                        }
+                    } else if settingMapServer != .apple {
+                        HStack {
+                            Spacer()
+                            Text(".mapCache.empty".localized())
+                            Spacer()
+                        }
                     }
                 }
                 // End of Setting Map Server
@@ -90,6 +120,8 @@ struct SettingsScreen: View {
                 ) { }
                 // End of Info in footer
             }
+        }.onAppear {
+            updateMapCacheSize()
         }
 
     }

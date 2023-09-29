@@ -39,6 +39,11 @@
 ".tab.history" = "История";
 ".tab.settings" = "Настройки";
 
+// Map Cache
+".mapCache.size" = "Размер кэша";
+".mapCache.clear" = "Очистить кэш";
+".mapCache.empty" = "Кэш пуст";
+
 // StatsBlock
 "StatsBlock.today"= "Сегодня";
 "StatsBlock.yesterday"= "Вчера";
@@ -131,7 +136,7 @@
 "SettingMapServer.title" = "Карты";
 "SettingMapServer.apple"= "Apple Maps";
 "SettingMapServer.osm"= "OpenStreetMap";
-"SettingMapServer.apple.description"= "Будут использоваться карты от Apple Maps.";
+"SettingMapServer.apple.description"= "Будут использоваться карты от Apple Maps. Кэширование недоступно.";
 "SettingMapServer.osm.description"= "Будут использоваться карты от OpenStreetMap.";
 
 "SettingSpeedDisplay.title" = "Показ скорости";
