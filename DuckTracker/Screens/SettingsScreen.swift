@@ -21,9 +21,10 @@ struct SettingsScreen: View {
     }
 
     var mapCache: MapCache = MapCache(withConfig: MapCacheConfig(withUrlTemplate: ""))
-    
+
     @State var mapCacheSize: Int64 = 0
     @State var mapCacheSizeString: String = ".cache.empty".localized()
+    @State var showCacheClearAlert = false
 
     func updateMapCacheSize() {
         mapCacheSize = Int64(mapCache.diskCache.fileSize ?? 0)
@@ -67,18 +68,36 @@ struct SettingsScreen: View {
                     if mapCacheSize > 0 {
 
                         HStack {
-                            Text(".mapCache.size".localized())
+                            Text("Setting.map.cache.size".localized())
                             Spacer()
                             Text(mapCacheSizeString)
                         }
 
-                        Button(".mapCache.clear".localized()) {
-                            mapCache.clear(completition: {updateMapCacheSize()})
+                        Button("Setting.map.cache.clear".localized()) {
+                            showCacheClearAlert = true
+                        }
+                        .alert(isPresented: $showCacheClearAlert) {
+                            Alert(
+                                title: Text("Setting.map.cache.clear.title".localized()),
+                                message: Text("Setting.map.cache.clear.message".localized()),
+                                primaryButton: .destructive(
+                                    Text("Setting.map.cache.clear.button".localized()),
+                                    action: {
+                                        // hide alert
+                                        showCacheClearAlert = false
+                                        // clear cache!
+                                        mapCache.clear(completition: {updateMapCacheSize()})
+                                    }
+                                ),
+                                secondaryButton: .cancel(
+                                    Text(".back".localized())
+                                )
+                            )
                         }
                     } else if settingMapServer != .apple {
                         HStack {
                             Spacer()
-                            Text(".mapCache.empty".localized())
+                            Text("Setting.map.cache.empty".localized())
                             Spacer()
                         }
                     }
