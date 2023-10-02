@@ -91,7 +91,6 @@
 		30CFD39E2A6EE62400C106BE /* MainInformerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD39D2A6EE62400C106BE /* MainInformerView.swift */; };
 		30CFD3A12A6EE64600C106BE /* HistoryStatsBlockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3A02A6EE64600C106BE /* HistoryStatsBlockItem.swift */; };
 		30CFD3A32A6EE65500C106BE /* StatsBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3A22A6EE65500C106BE /* StatsBlockView.swift */; };
-		30CFD3A62A6FF7BE00C106BE /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 30CFD3A52A6FF7BE00C106BE /* Polyline */; };
 		30CFD3AB2A702C4500C106BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD3AD2A702C4500C106BE /* Localizable.strings */; };
 		30CFD3B12A702D0E00C106BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD3B32A702D0E00C106BE /* InfoPlist.strings */; };
 		30CFD3B82A707CDC00C106BE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD3B72A707CDC00C106BE /* .swiftlint.yml */; };
@@ -225,7 +224,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30CFD3A62A6FF7BE00C106BE /* Polyline in Frameworks */,
 				165BB178CA4D2AFCD83BC731 /* Pods_DuckTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,7 +628,6 @@
 			);
 			name = DuckTracker;
 			packageProductDependencies = (
-				30CFD3A52A6FF7BE00C106BE /* Polyline */,
 			);
 			productName = DuckTracker;
 			productReference = 30CFD2D12A6EC7F000C106BE /* DuckTracker.app */;
@@ -709,7 +706,6 @@
 			);
 			mainGroup = 30CFD2C82A6EC7F000C106BE;
 			packageReferences = (
-				30CFD3A42A6FF7BE00C106BE /* XCRemoteSwiftPackageReference "Polyline" */,
 			);
 			productRefGroup = 30CFD2D22A6EC7F000C106BE /* Products */;
 			projectDirPath = "";
@@ -1327,25 +1323,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		30CFD3A42A6FF7BE00C106BE /* XCRemoteSwiftPackageReference "Polyline" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/raphaelmor/Polyline";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		30CFD3A52A6FF7BE00C106BE /* Polyline */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 30CFD3A42A6FF7BE00C106BE /* XCRemoteSwiftPackageReference "Polyline" */;
-			productName = Polyline;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		30CFD30F2A6ECCD600C106BE /* Main.xcdatamodeld */ = {
