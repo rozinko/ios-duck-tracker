@@ -155,7 +155,7 @@
 
 // Whats New
 "WhatsNew.2.title"= "Appearance";
-"WhatsNew.2.description"= "You can choose an appearance: light, dark or system.";
+"WhatsNew.2.description"= "You can choose light, dark or system appearance";
 "WhatsNew.4.title"= "Speed or Pace";
 "WhatsNew.4.description"= "Now you can choose what to display when recording a track: your speed, pace or set to auto mode.";
 "WhatsNew.5.title"= "OpenStreetMap";
