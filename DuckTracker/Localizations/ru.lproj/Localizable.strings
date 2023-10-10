@@ -149,3 +149,14 @@
 "SettingSpeedDisplay.auto.description" = "При записи будет отображаться скорость ИЛИ темп в зависимости от типа активности.";
 "SettingSpeedDisplay.speed.description" = "При записи всегда будет отображена скорость.";
 "SettingSpeedDisplay.pace.description" = "При записи всегда будет отображен темп.";
+
+// WhatsNewScreen
+"WhatsNewScreen.title" = "Что нового?";
+
+// Whats New
+"WhatsNew.2.title"= "Тема оформления";
+"WhatsNew.2.description"= "Вы можете выбрать нужную тему оформления: светлую, тёмную или системную.";
+"WhatsNew.4.title"= "Скорость или Темп";
+"WhatsNew.4.description"= "Теперь можно выбрать, что отображать при записи маршрута: вашу скорость, темп или поставить авто режим.";
+"WhatsNew.5.title"= "OpenStreetMap";
+"WhatsNew.5.description"= "Вместо Apple Maps можно выбрать карты от OpenStreetMap. В некоторых странах они более детализированы и полезны.";

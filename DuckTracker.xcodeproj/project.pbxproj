@@ -17,6 +17,9 @@
 		30B99B062AC477CF006ABA62 /* OSMActiveTrackMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B052AC477CF006ABA62 /* OSMActiveTrackMapViewDelegate.swift */; };
 		30B99B082AC47A41006ABA62 /* OSMHistoryTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B072AC47A41006ABA62 /* OSMHistoryTrackMapView.swift */; };
 		30B99B0A2AC47AAE006ABA62 /* OSMHistoryTrackMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B092AC47AAE006ABA62 /* OSMHistoryTrackMapViewDelegate.swift */; };
+		30B99B0E2ACAD933006ABA62 /* WhatsNewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B0D2ACAD933006ABA62 /* WhatsNewScreen.swift */; };
+		30B99B102ACD7B41006ABA62 /* WhatsNewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B0F2ACD7B41006ABA62 /* WhatsNewProvider.swift */; };
+		30B99B122AD57799006ABA62 /* WhatsNewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B112AD57799006ABA62 /* WhatsNewModel.swift */; };
 		30CFD2D52A6EC7F000C106BE /* DuckTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */; };
 		30CFD2D92A6EC7F100C106BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2D82A6EC7F100C106BE /* Assets.xcassets */; };
 		30CFD2DC2A6EC7F100C106BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2DB2A6EC7F100C106BE /* Preview Assets.xcassets */; };
@@ -127,6 +130,9 @@
 		30B99B052AC477CF006ABA62 /* OSMActiveTrackMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSMActiveTrackMapViewDelegate.swift; sourceTree = "<group>"; };
 		30B99B072AC47A41006ABA62 /* OSMHistoryTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSMHistoryTrackMapView.swift; sourceTree = "<group>"; };
 		30B99B092AC47AAE006ABA62 /* OSMHistoryTrackMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSMHistoryTrackMapViewDelegate.swift; sourceTree = "<group>"; };
+		30B99B0D2ACAD933006ABA62 /* WhatsNewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewScreen.swift; sourceTree = "<group>"; };
+		30B99B0F2ACD7B41006ABA62 /* WhatsNewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewProvider.swift; sourceTree = "<group>"; };
+		30B99B112AD57799006ABA62 /* WhatsNewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewModel.swift; sourceTree = "<group>"; };
 		30CFD2D12A6EC7F000C106BE /* DuckTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckTrackerApp.swift; sourceTree = "<group>"; };
 		30CFD2D82A6EC7F100C106BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -321,6 +327,7 @@
 				30CFD3062A6ECC2500C106BE /* ActiveTrackProvider.swift */,
 				30CFD3082A6ECC3C00C106BE /* DataProvider.swift */,
 				30CFD30A2A6ECC5400C106BE /* LocationProvider.swift */,
+				30B99B0F2ACD7B41006ABA62 /* WhatsNewProvider.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -373,6 +380,7 @@
 				304DD5DF2AB98E4F005AD827 /* SettingAppearance.swift */,
 				304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */,
 				30B99AFF2ABDA0E7006ABA62 /* SettingMapServer.swift */,
+				30B99B112AD57799006ABA62 /* WhatsNewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -384,6 +392,7 @@
 				30CFD33A2A6EE23600C106BE /* HistoryScreen.swift */,
 				30CFD33C2A6EE24800C106BE /* MainScreen.swift */,
 				304DD5DD2AB34912005AD827 /* SettingsScreen.swift */,
+				30B99B0D2ACAD933006ABA62 /* WhatsNewScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -894,6 +903,7 @@
 				30CFD3712A6EE46400C106BE /* TrackInfoElementView.swift in Sources */,
 				30CFD3852A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift in Sources */,
 				30CFD39E2A6EE62400C106BE /* MainInformerView.swift in Sources */,
+				30B99B0E2ACAD933006ABA62 /* WhatsNewScreen.swift in Sources */,
 				30CFD3252A6ECEC100C106BE /* Double.swift in Sources */,
 				30B99B082AC47A41006ABA62 /* OSMHistoryTrackMapView.swift in Sources */,
 				30CFD33D2A6EE24800C106BE /* MainScreen.swift in Sources */,
@@ -907,6 +917,7 @@
 				30CFD34D2A6EE30400C106BE /* ActiveTrackInfoSpeedView.swift in Sources */,
 				30CFD3732A6EE47700C106BE /* TrackInfoFullView.swift in Sources */,
 				30CFD3772A6EE4A700C106BE /* HistoryListEmptyView.swift in Sources */,
+				30B99B122AD57799006ABA62 /* WhatsNewModel.swift in Sources */,
 				30CFD3A12A6EE64600C106BE /* HistoryStatsBlockItem.swift in Sources */,
 				30CFD2D52A6EC7F000C106BE /* DuckTrackerApp.swift in Sources */,
 				30CFD3092A6ECC3C00C106BE /* DataProvider.swift in Sources */,
@@ -948,6 +959,7 @@
 				30CFD36D2A6EE44400C106BE /* TrackInfoCircleView.swift in Sources */,
 				30CFD3672A6EE3FA00C106BE /* CommonInformerView.swift in Sources */,
 				30CFD3162A6ECD2600C106BE /* CoreDataTrackAttributes.swift in Sources */,
+				30B99B102ACD7B41006ABA62 /* WhatsNewProvider.swift in Sources */,
 				30CFD35C2A6EE39600C106BE /* FilledStyle.swift in Sources */,
 				30B99B042AC476DD006ABA62 /* OSMActiveTrackMapView.swift in Sources */,
 			);

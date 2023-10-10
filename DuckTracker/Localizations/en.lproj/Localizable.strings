@@ -149,3 +149,14 @@
 "SettingSpeedDisplay.auto.description" = "When recording, it will display speed OR pace depending on the type of track.";
 "SettingSpeedDisplay.speed.description" = "When recording, the speed will always be displayed.";
 "SettingSpeedDisplay.pace.description" = "When recording, the pace will always be displayed.";
+
+// WhatsNewScreen
+"WhatsNewScreen.title" = "What's new?";
+
+// Whats New
+"WhatsNew.2.title"= "Appearance";
+"WhatsNew.2.description"= "You can choose an appearance: light, dark or system.";
+"WhatsNew.4.title"= "Speed or Pace";
+"WhatsNew.4.description"= "Now you can choose what to display when recording a track: your speed, pace or set to auto mode.";
+"WhatsNew.5.title"= "OpenStreetMap";
+"WhatsNew.5.description"= "Instead of Apple Maps, you can choose maps from OpenStreetMap. In some countries they are more detailed and useful.";
