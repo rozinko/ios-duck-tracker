@@ -5,6 +5,8 @@ struct SettingsScreen: View {
 
     @Binding var selectedTab: Int
 
+    @ObservedObject var deviceIdProvider = DeviceIdProvider.shared
+
     @State private var settingAppearance = SettingAppearance(fromInt: UserDefaults.standard.integer(forKey: "SettingAppearance"))
     @State private var settingMapServer = SettingMapServer(fromString: UserDefaults.standard.string(forKey: "SettingMapServer"))
     @State private var settingSpeedDisplay = SettingSpeedDisplay(fromInt: UserDefaults.standard.integer(forKey: "SettingSpeedDisplay"))
@@ -127,6 +129,8 @@ struct SettingsScreen: View {
                         Spacer()
                         VStack {
                             Text("Duck Tracker v\(appVersion) (build \(appBuild))")
+                            Text("Device ID: \(deviceIdProvider.deviceId ?? "No id")")
+                                .font(.caption2)
                             if isDebug {
                                 Text("DEBUG MODE").foregroundColor(.red)
                             }

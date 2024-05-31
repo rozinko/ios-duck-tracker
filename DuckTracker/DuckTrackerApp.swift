@@ -13,6 +13,7 @@ struct DuckTrackerApp: App, Scene {
 
     private let coreDataProvider = CoreDataProvider.shared
     private let locationProvider = LocationProvider.shared
+    private let deviceIdProvider = DeviceIdProvider.shared
 
     @AppStorage("SettingAppearance") var settingAppearanceRawValue: Int?
 
