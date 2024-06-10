@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import UIKit
 
 public class DeviceIdProvider: NSObject, ObservableObject {
 
@@ -47,9 +48,24 @@ public class DeviceIdProvider: NSObject, ObservableObject {
         return uncrypt(String(cryptedString[..<cryptedString.index(before: cryptedString.endIndex)])) * 36 + uncryptedNumber
     }
 
+///    Версия OS внутри Device ID
+///    Число вида NNNN кодируется в base36(), где:
+///    - Первое число 1 (неизвестная ОС), 3 (iPhone) или 5 (iPad)
+///    - Второе число номер ОС (версия минус 14), ver. 14 - 0, ver. 15 - 1, ...
+///    - Третье и четвертое число - minor и patch соответственно
     private func cryptOsVerPart() -> String {
         let osVersion = ProcessInfo.processInfo.operatingSystemVersion
-        let osVersionNumber = osVersion.majorVersion * 10000 + osVersion.minorVersion * 100 + osVersion.patchVersion
+
+        var osVersionNumber: Int = 1000
+
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            osVersionNumber += 2000
+        } else if UIDevice.current.userInterfaceIdiom == .pad {
+            osVersionNumber += 4000
+        }
+
+        osVersionNumber += (osVersion.majorVersion - 14) * 100 + osVersion.minorVersion * 10 + osVersion.patchVersion
+
         return crypt(osVersionNumber)
     }
 
