@@ -12,6 +12,7 @@
 		304DD5DE2AB34912005AD827 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5DD2AB34912005AD827 /* SettingsScreen.swift */; };
 		304DD5E02AB98E4F005AD827 /* SettingAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5DF2AB98E4F005AD827 /* SettingAppearance.swift */; };
 		304DD5E22ABA3A5A005AD827 /* SettingSpeedDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */; };
+		305926A42C18ACA5007A38B3 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305926A32C18ACA5007A38B3 /* StringTests.swift */; };
 		30B99B002ABDA0E7006ABA62 /* SettingMapServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99AFF2ABDA0E7006ABA62 /* SettingMapServer.swift */; };
 		30B99B022AC1C779006ABA62 /* MKMapView+OverlayInserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B012AC1C779006ABA62 /* MKMapView+OverlayInserts.swift */; };
 		30B99B042AC476DD006ABA62 /* OSMActiveTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B032AC476DD006ABA62 /* OSMActiveTrackMapView.swift */; };
@@ -126,6 +127,7 @@
 		304DD5DD2AB34912005AD827 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		304DD5DF2AB98E4F005AD827 /* SettingAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAppearance.swift; sourceTree = "<group>"; };
 		304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSpeedDisplay.swift; sourceTree = "<group>"; };
+		305926A32C18ACA5007A38B3 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		30B99AFF2ABDA0E7006ABA62 /* SettingMapServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMapServer.swift; sourceTree = "<group>"; };
 		30B99B012AC1C779006ABA62 /* MKMapView+OverlayInserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+OverlayInserts.swift"; sourceTree = "<group>"; };
 		30B99B032AC476DD006ABA62 /* OSMActiveTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSMActiveTrackMapView.swift; sourceTree = "<group>"; };
@@ -255,6 +257,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		305926A22C18AC57007A38B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				305926A32C18ACA5007A38B3 /* StringTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		30CFD2C82A6EC7F000C106BE = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +319,7 @@
 		30CFD2E92A6EC7F200C106BE /* DuckTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				305926A22C18AC57007A38B3 /* Extensions */,
 				30CFD2EA2A6EC7F200C106BE /* DuckTrackerTests.swift */,
 			);
 			path = DuckTrackerTests;
@@ -973,6 +984,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305926A42C18ACA5007A38B3 /* StringTests.swift in Sources */,
 				30CFD2EB2A6EC7F200C106BE /* DuckTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

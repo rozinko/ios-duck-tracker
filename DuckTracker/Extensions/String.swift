@@ -10,7 +10,8 @@ extension String {
             return firstLetter + remainingLetters
         }
 
-    func random(length: Int) -> String {
+    /// Generate random string
+    public func random(length: Int) -> String {
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         return String((0..<length).map { _ in letters.randomElement()! })
     }
@@ -19,8 +20,10 @@ extension String {
         return NSLocalizedString(prefix + self, tableName: "Localizable", bundle: .main, value: self, comment: self)
     }
 
-    // from: https://stackoverflow.com/questions/55356220/get-string-md5-in-swift-5
-    var md5: String {
+    /// MD5 hash function
+    ///
+    /// code from https://stackoverflow.com/questions/55356220/get-string-md5-in-swift-5
+    public func md5() -> String {
         guard let d = self.data(using: .utf8) else {
             return ""
         }
@@ -32,6 +35,22 @@ extension String {
             return t
         }
         return h
+    }
+
+    /// SHA256 hash function
+    ///
+    /// code from https://www.hackingwithswift.com/example-code/cryptokit/how-to-calculate-the-sha-hash-of-a-string-or-data-instance
+    public func sha256() -> String {
+        let inputData = Data(self.utf8)
+        let hashed = SHA256.hash(data: inputData)
+        return hashed.compactMap { String(format: "%02x", $0) }.joined()
+    }
+
+    /// SHA512 hash function
+    public func sha512() -> String {
+        let inputData = Data(self.utf8)
+        let hashed = SHA512.hash(data: inputData)
+        return hashed.compactMap { String(format: "%02x", $0) }.joined()
     }
 
 }

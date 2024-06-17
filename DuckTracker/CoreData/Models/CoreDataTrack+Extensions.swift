@@ -14,7 +14,7 @@ extension CoreDataTrack {
         let part1 = String(Int(firstPoint.location.timestamp.timeIntervalSince1970))
         let part2 = self.uniqueHash ?? ""
         let startCoord = String(firstPoint.latitude) + "-" + String(firstPoint.longitude) + "-" + String(firstPoint.location.altitude)
-        let part3 = startCoord.md5
+        let part3 = startCoord.md5()
 
         self.trackId = part1 + "-" + part2 + "-" + part3
 
