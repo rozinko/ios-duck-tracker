@@ -13,6 +13,7 @@
 		304DD5E02AB98E4F005AD827 /* SettingAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5DF2AB98E4F005AD827 /* SettingAppearance.swift */; };
 		304DD5E22ABA3A5A005AD827 /* SettingSpeedDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */; };
 		305926A42C18ACA5007A38B3 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305926A32C18ACA5007A38B3 /* StringTests.swift */; };
+		305B1ACD2C25C7D2009B9C72 /* DuckFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B1ACC2C25C7D2009B9C72 /* DuckFileManager.swift */; };
 		30B99B002ABDA0E7006ABA62 /* SettingMapServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99AFF2ABDA0E7006ABA62 /* SettingMapServer.swift */; };
 		30B99B022AC1C779006ABA62 /* MKMapView+OverlayInserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B012AC1C779006ABA62 /* MKMapView+OverlayInserts.swift */; };
 		30B99B042AC476DD006ABA62 /* OSMActiveTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B032AC476DD006ABA62 /* OSMActiveTrackMapView.swift */; };
@@ -128,6 +129,7 @@
 		304DD5DF2AB98E4F005AD827 /* SettingAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAppearance.swift; sourceTree = "<group>"; };
 		304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSpeedDisplay.swift; sourceTree = "<group>"; };
 		305926A32C18ACA5007A38B3 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		305B1ACC2C25C7D2009B9C72 /* DuckFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckFileManager.swift; sourceTree = "<group>"; };
 		30B99AFF2ABDA0E7006ABA62 /* SettingMapServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMapServer.swift; sourceTree = "<group>"; };
 		30B99B012AC1C779006ABA62 /* MKMapView+OverlayInserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+OverlayInserts.swift"; sourceTree = "<group>"; };
 		30B99B032AC476DD006ABA62 /* OSMActiveTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSMActiveTrackMapView.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				30CFD30A2A6ECC5400C106BE /* LocationProvider.swift */,
 				30B99B0F2ACD7B41006ABA62 /* WhatsNewProvider.swift */,
 				3002373D2BFFDD1000B8EBB2 /* DeviceIdProvider.swift */,
+				305B1ACC2C25C7D2009B9C72 /* DuckFileManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -898,6 +901,7 @@
 				30CFD3342A6EE1F000C106BE /* InfoTrackRoute.swift in Sources */,
 				30CFD3042A6ECBF000C106BE /* WrapperView.swift in Sources */,
 				30B99B002ABDA0E7006ABA62 /* SettingMapServer.swift in Sources */,
+				305B1ACD2C25C7D2009B9C72 /* DuckFileManager.swift in Sources */,
 				30B99B0A2AC47AAE006ABA62 /* OSMHistoryTrackMapViewDelegate.swift in Sources */,
 				30CFD38B2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift in Sources */,
 				30CFD34F2A6EE31300C106BE /* ActiveTrackInfoTypeView.swift in Sources */,
