@@ -7,6 +7,7 @@ target 'DuckTracker' do
   # Pods for DuckTracker
 
   pod 'MapCache'
+  pod 'CoreGPX'
 
   target 'DuckTrackerTests' do
     inherit! :search_paths
