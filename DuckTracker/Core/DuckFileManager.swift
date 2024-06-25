@@ -6,4 +6,8 @@ class DuckFileManager: NSObject {
 
     class var gpxFolderURL: URL { FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("GPXFiles", isDirectory: true) }
 
+    class var gpxFiles: [DuckFileInfo] {
+        return []
+    }
+
 }
