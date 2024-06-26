@@ -13,6 +13,8 @@ public struct InfoTrack: Identifiable {
     let trackId: String
     let uniqueHash: String
 
+    let gpxFileName: String
+
     var title: String
     var type: ActiveTrackType
 
@@ -34,6 +36,12 @@ public struct InfoTrack: Identifiable {
 
         self.trackId = cdTrack.trackId!
         self.uniqueHash = cdTrack.uniqueHash!
+
+        // timestampStart!.timeIntervalSince1970 -
+        let RFC3339DateFormatter = DateFormatter()
+        RFC3339DateFormatter.dateFormat = "yyyyMMdd-HHmmss"
+
+        self.gpxFileName = "DuckTrack-" + RFC3339DateFormatter.string(from: timestampStart) + "-" + uniqueHash + ".gpx"
 
         self.title = cdTrack.title!
         self.type = ActiveTrackType(rawValue: cdTrack.type!) ?? .other
