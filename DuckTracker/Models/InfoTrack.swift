@@ -14,6 +14,7 @@ public struct InfoTrack: Identifiable {
     let uniqueHash: String
 
     let gpxFileName: String
+    let gpxFileURL: URL
 
     var title: String
     var type: ActiveTrackType
@@ -37,11 +38,12 @@ public struct InfoTrack: Identifiable {
         self.trackId = cdTrack.trackId!
         self.uniqueHash = cdTrack.uniqueHash!
 
-        // timestampStart!.timeIntervalSince1970 -
+        // gpxFileName and gpxFileURL
         let RFC3339DateFormatter = DateFormatter()
         RFC3339DateFormatter.dateFormat = "yyyyMMdd-HHmmss"
 
         self.gpxFileName = "DuckTrack-" + RFC3339DateFormatter.string(from: timestampStart) + "-" + uniqueHash + ".gpx"
+        self.gpxFileURL = DuckFileManager.gpxFolderURL.appendingPathComponent(self.gpxFileName)
 
         self.title = cdTrack.title!
         self.type = ActiveTrackType(rawValue: cdTrack.type!) ?? .other
