@@ -38,8 +38,6 @@ struct WrapperView: View {
         }
         .onAppear {
             showWhatsNewModal = !whatsNewProvider.updates.isEmpty
-            print(DuckFileManager.filesFolderURL)
-            print(DuckFileManager.gpxFolderURL)
         }
     }
 }

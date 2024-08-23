@@ -1,5 +1,6 @@
 import SwiftUI
 import MapKit
+import UIKit
 
 struct HistoryTrackInfoView: View {
 
@@ -75,6 +76,15 @@ struct HistoryTrackInfoView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu(content: {
+                        Button(action: {
+                            // open share window for export GPX file
+                            let gpxURL = DuckFileManager.getGPXFileURL(infoTrack: infoTrack)
+                            let activityController = UIActivityViewController(activityItems: [gpxURL!], applicationActivities: nil)
+                            UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
+                        }, label: {
+                            Text(".exportGPX")
+                        })
+
                         Button(action: {
                             // show modal with title and type fields
                             showEditModal = true

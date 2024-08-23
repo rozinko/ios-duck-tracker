@@ -38,13 +38,6 @@ public struct InfoTrack: Identifiable {
         self.trackId = cdTrack.trackId!
         self.uniqueHash = cdTrack.uniqueHash!
 
-        // gpxFileName and gpxFileURL
-        let RFC3339DateFormatter = DateFormatter()
-        RFC3339DateFormatter.dateFormat = "yyyyMMdd-HHmmss"
-
-        self.gpxFileName = "DuckTrack-" + RFC3339DateFormatter.string(from: timestampStart) + "-" + uniqueHash + ".gpx"
-        self.gpxFileURL = DuckFileManager.gpxFolderURL.appendingPathComponent(self.gpxFileName)
-
         self.title = cdTrack.title!
         self.type = ActiveTrackType(rawValue: cdTrack.type!) ?? .other
 
@@ -54,6 +47,20 @@ public struct InfoTrack: Identifiable {
 
         self.attributes = cdTrack.decodeJSONAttributes() ?? CoreDataTrackAttributes()
         self.route = InfoTrackRoute(fromCoreDataTrackRoute: cdTrack.decodeJSONRoute())
+
+        let fileHashString = 
+            String(self.route.points.first!.latitude) + ":" +
+            String(self.route.points.first!.longitude) + ":" +
+            String(self.timestampStart.timeIntervalSince1970) + ":" +
+            String(self.route.points.count)
+        let fileHashed = String(fileHashString.md5().prefix(10))
+
+        // gpxFileName and gpxFileURL
+        let RFC3339DateFormatter = DateFormatter()
+        RFC3339DateFormatter.dateFormat = "yyyyMMdd-HHmmss"
+
+        self.gpxFileName = "DuckTrack-" + RFC3339DateFormatter.string(from: timestampStart) + "-" + fileHashed + ".gpx"
+        self.gpxFileURL = DuckFileManager.gpxFolderURL.appendingPathComponent(self.gpxFileName)
     }
 
 }
