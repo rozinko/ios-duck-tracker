@@ -48,11 +48,8 @@ public struct InfoTrack: Identifiable {
         self.attributes = cdTrack.decodeJSONAttributes() ?? CoreDataTrackAttributes()
         self.route = InfoTrackRoute(fromCoreDataTrackRoute: cdTrack.decodeJSONRoute())
 
-        let fileHashString = 
-            String(self.route.points.first!.latitude) + ":" +
-            String(self.route.points.first!.longitude) + ":" +
-            String(self.timestampStart.timeIntervalSince1970) + ":" +
-            String(self.route.points.count)
+        var fileHashString = String(self.route.points.first!.latitude) + ":" + String(self.route.points.first!.longitude) + ":"
+        fileHashString += String(self.timestampStart.timeIntervalSince1970) + ":" + String(self.route.points.count)
         let fileHashed = String(fileHashString.md5().prefix(10))
 
         // gpxFileName and gpxFileURL

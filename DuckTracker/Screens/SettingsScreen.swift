@@ -33,6 +33,18 @@ struct SettingsScreen: View {
         mapCacheSizeString = mapCacheSize > 0 ? ByteCountFormatter().string(fromByteCount: mapCacheSize) : ".cache.empty".localized()
     }
 
+    @State var gpxFiles: [URL] = []
+    @State var gpxFilesSize: Int = 0
+    @State var gpxFilesSizeString: String = "SettingGPXFilesCache.cache.empty".localized()
+
+    func updateGPXFiles() {
+        gpxFiles = DuckFileManager.getGPXFiles()
+        gpxFiles.forEach { gpxFile in
+            gpxFilesSize += gpxFile.fileSize ?? 0
+        }
+        mapCacheSizeString = gpxFilesSize > 0 ? ByteCountFormatter().string(fromByteCount: Int64(gpxFilesSize)) : "SettingGPXFilesCache.cache.empty".localized()
+    }
+
     var body: some View {
 
         NavigationView {
@@ -106,6 +118,28 @@ struct SettingsScreen: View {
                 }
                 // End of Setting Map Server
 
+                // Setting GPX files cache
+                Section(header: Text("SettingGPXFilesCache.title".localized())) {
+                    if gpxFiles.count > 0 {
+                        HStack {
+                            Text("SettingGPXFilesCache.cache.size".localized())
+                            Spacer()
+                            Text(mapCacheSizeString)
+                        }
+
+                        Button("SettingGPXFilesCache.cache.clear".localized()) {
+//                            showCacheClearAlert = true
+                        }
+                    } else {
+                        HStack {
+                            Spacer()
+                            Text("SettingGPXFilesCache.cache.empty".localized())
+                            Spacer()
+                        }
+                    }
+                }
+                // End of Setting GPX files cache
+
                 // Setting Speed Display
                 Section(
                     header: Text("SettingSpeedDisplay.title".localized()),
@@ -145,6 +179,7 @@ struct SettingsScreen: View {
             }
         }.onAppear {
             updateMapCacheSize()
+            updateGPXFiles()
         }
 
     }

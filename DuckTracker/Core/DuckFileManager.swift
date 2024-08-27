@@ -71,4 +71,18 @@ class DuckFileManager: NSObject {
         return infoTrack.gpxFileURL
     }
 
+    class func getGPXFiles() -> [URL] {
+        let gpxFilesList: [URL]
+
+        do {
+            let directoryContents = try FileManager.default.contentsOfDirectory(at: gpxFolderURL, includingPropertiesForKeys: nil)
+            gpxFilesList = directoryContents.filter { $0.pathExtension == "gpx" }
+        } catch {
+            print(error)
+            gpxFilesList = []
+        }
+
+        return gpxFilesList
+    }
+
 }

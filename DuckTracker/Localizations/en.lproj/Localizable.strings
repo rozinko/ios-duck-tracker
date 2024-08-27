@@ -143,6 +143,11 @@
 "Setting.map.cache.clear.message" = "Are you sure you want to clear the map cache on your device?";
 "Setting.map.cache.clear.button" = "Clear";
 
+"SettingGPXFilesCache.title" = "GPX-files";
+"SettingGPXFilesCache.cache.size" = "Files size";
+"SettingGPXFilesCache.cache.empty" = "No files";
+"SettingGPXFilesCache.cache.clear" = "Delete files from device";
+
 "SettingSpeedDisplay.title" = "Speed display";
 "SettingSpeedDisplay.auto" = "Auto";
 "SettingSpeedDisplay.speed" = "Speed";
