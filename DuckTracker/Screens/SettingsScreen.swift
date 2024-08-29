@@ -43,7 +43,7 @@ struct SettingsScreen: View {
         gpxFiles.forEach { gpxFile in
             gpxFilesSize += gpxFile.fileSize ?? 0
         }
-        mapCacheSizeString = gpxFilesSize > 0 ? ByteCountFormatter().string(fromByteCount: Int64(gpxFilesSize)) : "Setting.GPXFiles.empty".localized()
+        gpxFilesSizeString = gpxFilesSize > 0 ? ByteCountFormatter().string(fromByteCount: Int64(gpxFilesSize)) : "Setting.GPXFiles.empty".localized()
     }
 
     func deleteGPXFiles() {
@@ -137,7 +137,7 @@ struct SettingsScreen: View {
                         HStack {
                             Text("Setting.GPXFiles.size".localized())
                             Spacer()
-                            Text(mapCacheSizeString)
+                            Text(gpxFilesSizeString)
                         }
 
                         Button("Setting.GPXFiles.button".localized()) {
