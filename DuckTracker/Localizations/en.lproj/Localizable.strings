@@ -143,10 +143,14 @@
 "Setting.map.cache.clear.message" = "Are you sure you want to clear the map cache on your device?";
 "Setting.map.cache.clear.button" = "Clear";
 
-"SettingGPXFilesCache.title" = "GPX-files";
-"SettingGPXFilesCache.cache.size" = "Files size";
-"SettingGPXFilesCache.cache.empty" = "No files";
-"SettingGPXFilesCache.cache.clear" = "Delete files from device";
+// Setting GPX files
+"Setting.GPXFiles.title" = "GPX-files";
+"Setting.GPXFiles.size" = "Files size";
+"Setting.GPXFiles.empty" = "No files";
+"Setting.GPXFiles.button" = "Delete files from device";
+"Setting.GPXFiles.alert.title" = "Delete GPX-files?";
+"Setting.GPXFiles.alert.message" = "Are you sure you want to delete GPX-files on your device?\n(if necessary, they can be generated again)";
+"Setting.GPXFiles.alert.button" = "Delete";
 
 "SettingSpeedDisplay.title" = "Speed display";
 "SettingSpeedDisplay.auto" = "Auto";

@@ -143,10 +143,14 @@
 "Setting.map.cache.clear.message" = "Вы уверены, что хотите очистить кэш карт на устройстве?";
 "Setting.map.cache.clear.button" = "Очистить";
 
-"SettingGPXFilesCache.title" = "GPX-файлы";
-"SettingGPXFilesCache.cache.size" = "Размер файлов";
-"SettingGPXFilesCache.cache.empty" = "Нет файлов";
-"SettingGPXFilesCache.cache.clear" = "Удалить файлы с устройства";
+// Setting GPX files
+"Setting.GPXFiles.title" = "GPX-файлы";
+"Setting.GPXFiles.size" = "Размер файлов";
+"Setting.GPXFiles.empty" = "Нет файлов";
+"Setting.GPXFiles.button" = "Удалить файлы с устройства";
+"Setting.GPXFiles.alert.title" = "Удалить GPX-файлы?";
+"Setting.GPXFiles.alert.message" = "Вы уверены, что хотите удалить GPX-файлы с устройства?\n(при необходимости их можно сгенерировать снова)";
+"Setting.GPXFiles.alert.button" = "Удалить";
 
 "SettingSpeedDisplay.title" = "Показ скорости";
 "SettingSpeedDisplay.auto" = "Авто";

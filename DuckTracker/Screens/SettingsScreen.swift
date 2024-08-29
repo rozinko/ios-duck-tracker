@@ -35,14 +35,27 @@ struct SettingsScreen: View {
 
     @State var gpxFiles: [URL] = []
     @State var gpxFilesSize: Int = 0
-    @State var gpxFilesSizeString: String = "SettingGPXFilesCache.cache.empty".localized()
+    @State var gpxFilesSizeString: String = "Setting.GPXFiles.empty".localized()
+    @State var showGPXFilesClearAlert = false
 
     func updateGPXFiles() {
         gpxFiles = DuckFileManager.getGPXFiles()
         gpxFiles.forEach { gpxFile in
             gpxFilesSize += gpxFile.fileSize ?? 0
         }
-        mapCacheSizeString = gpxFilesSize > 0 ? ByteCountFormatter().string(fromByteCount: Int64(gpxFilesSize)) : "SettingGPXFilesCache.cache.empty".localized()
+        mapCacheSizeString = gpxFilesSize > 0 ? ByteCountFormatter().string(fromByteCount: Int64(gpxFilesSize)) : "Setting.GPXFiles.empty".localized()
+    }
+
+    func deleteGPXFiles() {
+        gpxFiles = DuckFileManager.getGPXFiles()
+        gpxFiles.forEach { gpxFile in
+            do {
+                try FileManager.default.removeItem(at: gpxFile)
+            } catch {
+                print("Error deleting file: \(error)")
+            }
+        }
+        updateGPXFiles()
     }
 
     var body: some View {
@@ -118,27 +131,45 @@ struct SettingsScreen: View {
                 }
                 // End of Setting Map Server
 
-                // Setting GPX files cache
-                Section(header: Text("SettingGPXFilesCache.title".localized())) {
+                // Setting GPX files
+                Section(header: Text("Setting.GPXFiles.title".localized())) {
                     if gpxFiles.count > 0 {
                         HStack {
-                            Text("SettingGPXFilesCache.cache.size".localized())
+                            Text("Setting.GPXFiles.size".localized())
                             Spacer()
                             Text(mapCacheSizeString)
                         }
 
-                        Button("SettingGPXFilesCache.cache.clear".localized()) {
-//                            showCacheClearAlert = true
+                        Button("Setting.GPXFiles.button".localized()) {
+                            showGPXFilesClearAlert = true
+                        }
+                        .alert(isPresented: $showGPXFilesClearAlert) {
+                            Alert(
+                                title: Text("Setting.GPXFiles.alert.title".localized()),
+                                message: Text("Setting.GPXFiles.alert.message".localized()),
+                                primaryButton: .destructive(
+                                    Text("Setting.GPXFiles.alert.button".localized()),
+                                    action: {
+                                        // hide alert
+                                        showGPXFilesClearAlert = false
+                                        // delete gpx files
+                                        deleteGPXFiles()
+                                    }
+                                ),
+                                secondaryButton: .cancel(
+                                    Text(".back".localized())
+                                )
+                            )
                         }
                     } else {
                         HStack {
                             Spacer()
-                            Text("SettingGPXFilesCache.cache.empty".localized())
+                            Text("Setting.GPXFiles.empty".localized())
                             Spacer()
                         }
                     }
                 }
-                // End of Setting GPX files cache
+                // End of Setting GPX files
 
                 // Setting Speed Display
                 Section(
