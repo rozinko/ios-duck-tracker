@@ -29,8 +29,8 @@ struct HistoryTrackInfoChartAltitudeView: View {
 
                 Chart(points) {
                     LineMark(
-                        x: .value("Time", $0.timestamp),
-                        y: .value("Altitude", $0.altitude)
+                        x: .value(".time".localized(), $0.timestamp),
+                        y: .value(".altitude".localized(), $0.altitude)
                     )
                     .interpolationMethod(.catmullRom)
                     .mask { RectangleMark() }

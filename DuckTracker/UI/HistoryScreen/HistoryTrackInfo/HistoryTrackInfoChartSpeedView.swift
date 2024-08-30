@@ -30,14 +30,14 @@ struct HistoryTrackInfoChartSpeedView: View {
 
                 Chart {
                     ForEach(points) {
-                        RuleMark(y: .value("Avg. speed", avgSpeed.toKmh()))
+                        RuleMark(y: .value(".avgspeed".localized(), avgSpeed.toKmh()))
                             .lineStyle(StrokeStyle(lineWidth: 1, dash: [2]))
                             .foregroundStyle(Color.commonOrange)
                             .opacity(0.15)
 
                         LineMark(
-                            x: .value("Time", $0.timestamp),
-                            y: .value("Speed", $0.speed.toKmh())
+                            x: .value(".time".localized(), $0.timestamp),
+                            y: .value(".speed".localized(), $0.speed.toKmh())
                         )
                         .interpolationMethod(.catmullRom)
                         .mask { RectangleMark() }

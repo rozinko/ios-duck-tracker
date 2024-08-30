@@ -49,11 +49,11 @@ struct WhatsNewScreen: View {
                 Spacer()
 
                 if tabViewSelection < whatsNewProvider.updates.count - 1 {
-                    Button("Далее") {
+                    Button(".next".localized()) {
                         tabViewSelection += 1
                     }.buttonStyle(ButtonOrangeFilledBlockStyle())
                 } else {
-                    Button("Завершить") {
+                    Button(".ok".localized()) {
                         showModal = false
                         whatsNewProvider.closeWhatsNew()
                     }.buttonStyle(ButtonOrangeFilledBlockStyle())

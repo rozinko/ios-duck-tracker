@@ -1,7 +1,0 @@
-/* Localized texts for Info.plist */
-
-"CFBundleDisplayName"= "Duck Tracker";
-
-"NSLocationWhenInUseUsageDescription" = "Когда вы записываете маршрут, приложению требуется доступ к вашей геопозиции.";
-"NSLocationAlwaysAndWhenInUseUsageDescription" = "Когда вы записываете маршрут при свёрнутом приложении или погасшем экране, приложению требуется фоновый доступ к вашей геопозиции.";
-"NSLocationAlwaysUsageDescription" = "Когда вы записываете маршрут при свёрнутом приложении или погасшем экране, приложению требуется фоновый доступ к вашей геопозиции.";

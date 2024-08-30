@@ -35,7 +35,7 @@ struct ActiveTrackFinishModalView: View {
                     .textFieldStyle(.roundedBorder)
             }
 
-            Picker("Pick a type", selection: $activeTrackType) {
+            Picker(".pickatype", selection: $activeTrackType) {
                 ForEach(ActiveTrackType.allCases, id: \.self) { item in
                     item.getLabel(prefix: .full)
                 }

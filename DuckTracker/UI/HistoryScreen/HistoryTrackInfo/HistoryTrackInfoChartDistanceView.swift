@@ -18,8 +18,8 @@ struct HistoryTrackInfoChartDistanceView: View {
 
                 Chart(points) {
                     LineMark(
-                        x: .value("Time", $0.timestamp),
-                        y: .value("Distance", $0.distance)
+                        x: .value(".time".localized(), $0.timestamp),
+                        y: .value(".distance".localized(), $0.distance)
                     )
                     .interpolationMethod(.catmullRom)
                     .mask { RectangleMark() }

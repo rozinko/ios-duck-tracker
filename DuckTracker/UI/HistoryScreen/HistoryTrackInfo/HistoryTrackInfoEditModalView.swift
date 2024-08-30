@@ -47,7 +47,7 @@ struct HistoryTrackInfoEditModalView: View {
                     .textFieldStyle(.roundedBorder)
             }
 
-            Picker("Pick a type", selection: $trackType) {
+            Picker(".pickatype", selection: $trackType) {
                 ForEach(ActiveTrackType.allCases, id: \.self) { item in
                     item.getLabel(prefix: .full)
                 }
