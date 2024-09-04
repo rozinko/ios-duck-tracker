@@ -16,6 +16,13 @@ final class StringTests: XCTestCase {
         XCTAssertEqual("Hello World".sha512(), "2c74fd17edafd80e8447b0d46741ee243b7eb74dd2149a0ab1b9246fb30382f27e853d8585719e0e67cbda0daa8f51671064615d645ae27acb15bfb1447f459b")
     }
 
+    func testToFilenameFunction() throws {
+        XCTAssertEqual("Hello World".toFilename(".gpx"), "Hello-World.gpx")
+        XCTAssertEqual("Свободный тест файл нейминга".toFilename(".txt"), "Свободный-тест-файл-нейминга.txt")
+        XCTAssertEqual("Тест, который   сложнее 12%3ˆˆ".toFilename(".gpx"), "Тест-который-сложнее-12-3.gpx")
+        XCTAssertEqual("Смешанный  Test 12:22-apr+2024 ".toFilename(".gpx"), "Смешанный-Test-12-22-apr-2024.gpx")
+    }
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

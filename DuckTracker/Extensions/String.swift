@@ -53,4 +53,11 @@ extension String {
         return hashed.compactMap { String(format: "%02x", $0) }.joined()
     }
 
+    public func toFilename(_ type: String) -> String {
+        var result = self
+        result = result.replacingOccurrences(of: "([^a-zA-Z0-9а-яА-Я]+)", with: "-", options: .regularExpression)
+        result = result.replacingOccurrences(of: "(^[-]+|[-]+$)", with: "", options: .regularExpression)
+        return result + type
+    }
+
 }
