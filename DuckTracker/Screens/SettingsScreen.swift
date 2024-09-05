@@ -39,10 +39,15 @@ struct SettingsScreen: View {
     @State var showGPXFilesClearAlert = false
 
     func updateGPXFiles() {
+        // get files list
         gpxFiles = DuckFileManager.getGPXFiles()
+        // get size
+        var filesSize: Int = 0
         gpxFiles.forEach { gpxFile in
-            gpxFilesSize += gpxFile.fileSize ?? 0
+            filesSize += gpxFile.fileSize ?? 0
         }
+        gpxFilesSize = filesSize
+        // get size string
         gpxFilesSizeString = gpxFilesSize > 0 ? ByteCountFormatter().string(fromByteCount: Int64(gpxFilesSize)) : "Setting.GPXFiles.empty".localized()
     }
 

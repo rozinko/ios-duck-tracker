@@ -60,4 +60,8 @@ extension String {
         return result + type
     }
 
+    public func toFilename() -> String {
+        return toFilename("")
+    }
+
 }

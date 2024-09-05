@@ -53,10 +53,12 @@ public struct InfoTrack: Identifiable {
         let fileHashed = String(fileHashString.md5().prefix(10))
 
         // gpxFileName and gpxFileURL
-        let RFC3339DateFormatter = DateFormatter()
-        RFC3339DateFormatter.dateFormat = "yyyyMMdd-HHmmss"
+//        let RFC3339DateFormatter = DateFormatter()
+//        RFC3339DateFormatter.dateFormat = "yyyyMMdd-HHmmss"
+//        self.gpxFileName = "DuckTrack-" + RFC3339DateFormatter.string(from: timestampStart) + "-" + fileHashed + ".gpx"
 
-        self.gpxFileName = "DuckTrack-" + RFC3339DateFormatter.string(from: timestampStart) + "-" + fileHashed + ".gpx"
+        // DuckTrack-TITLE-HASH.gpx
+        self.gpxFileName = "DuckTrack-" + self.title.toFilename() + "-" + fileHashed + ".gpx"
         self.gpxFileURL = DuckFileManager.gpxFolderURL.appendingPathComponent(self.gpxFileName)
     }
 
