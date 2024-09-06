@@ -148,7 +148,7 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Экспорт GPX"
           }
         }
@@ -2422,6 +2422,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OpenStreetMap"
+          }
+        }
+      }
+    },
+    "WhatsNew.10.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Now you can export your tracks to .GPX files!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Теперь можно экспортировать маршруты в .GPX файлы!"
+          }
+        }
+      }
+    },
+    "WhatsNew.10.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GPX Export"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Экспорт GPX"
           }
         }
       }
