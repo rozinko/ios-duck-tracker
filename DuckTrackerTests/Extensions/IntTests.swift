@@ -1,0 +1,75 @@
+import XCTest
+
+final class IntTests: XCTestCase {
+
+    // swiftlint:disable function_body_length
+    func testToStringWithDeclension() throws {
+        XCTAssertEqual(Int(1).toStringWithDeclension(one: "one", two: "two", five: "five"), "1 one")
+        XCTAssertEqual(Int(2).toStringWithDeclension(one: "one", two: "two", five: "five"), "2 two")
+        XCTAssertEqual(Int(3).toStringWithDeclension(one: "one", two: "two", five: "five"), "3 two")
+        XCTAssertEqual(Int(4).toStringWithDeclension(one: "one", two: "two", five: "five"), "4 two")
+        XCTAssertEqual(Int(5).toStringWithDeclension(one: "one", two: "two", five: "five"), "5 five")
+        XCTAssertEqual(Int(6).toStringWithDeclension(one: "one", two: "two", five: "five"), "6 five")
+        XCTAssertEqual(Int(7).toStringWithDeclension(one: "one", two: "two", five: "five"), "7 five")
+        XCTAssertEqual(Int(8).toStringWithDeclension(one: "one", two: "two", five: "five"), "8 five")
+        XCTAssertEqual(Int(9).toStringWithDeclension(one: "one", two: "two", five: "five"), "9 five")
+
+        XCTAssertEqual(Int(10).toStringWithDeclension(one: "one", two: "two", five: "five"), "10 five")
+        XCTAssertEqual(Int(11).toStringWithDeclension(one: "one", two: "two", five: "five"), "11 five")
+        XCTAssertEqual(Int(12).toStringWithDeclension(one: "one", two: "two", five: "five"), "12 five")
+        XCTAssertEqual(Int(13).toStringWithDeclension(one: "one", two: "two", five: "five"), "13 five")
+        XCTAssertEqual(Int(14).toStringWithDeclension(one: "one", two: "two", five: "five"), "14 five")
+        XCTAssertEqual(Int(15).toStringWithDeclension(one: "one", two: "two", five: "five"), "15 five")
+        XCTAssertEqual(Int(16).toStringWithDeclension(one: "one", two: "two", five: "five"), "16 five")
+        XCTAssertEqual(Int(17).toStringWithDeclension(one: "one", two: "two", five: "five"), "17 five")
+        XCTAssertEqual(Int(18).toStringWithDeclension(one: "one", two: "two", five: "five"), "18 five")
+        XCTAssertEqual(Int(19).toStringWithDeclension(one: "one", two: "two", five: "five"), "19 five")
+        XCTAssertEqual(Int(20).toStringWithDeclension(one: "one", two: "two", five: "five"), "20 five")
+
+        XCTAssertEqual(Int(21).toStringWithDeclension(one: "one", two: "two", five: "five"), "21 one")
+        XCTAssertEqual(Int(22).toStringWithDeclension(one: "one", two: "two", five: "five"), "22 two")
+        XCTAssertEqual(Int(23).toStringWithDeclension(one: "one", two: "two", five: "five"), "23 two")
+        XCTAssertEqual(Int(24).toStringWithDeclension(one: "one", two: "two", five: "five"), "24 two")
+        XCTAssertEqual(Int(25).toStringWithDeclension(one: "one", two: "two", five: "five"), "25 five")
+        XCTAssertEqual(Int(26).toStringWithDeclension(one: "one", two: "two", five: "five"), "26 five")
+        XCTAssertEqual(Int(27).toStringWithDeclension(one: "one", two: "two", five: "five"), "27 five")
+        XCTAssertEqual(Int(28).toStringWithDeclension(one: "one", two: "two", five: "five"), "28 five")
+        XCTAssertEqual(Int(29).toStringWithDeclension(one: "one", two: "two", five: "five"), "29 five")
+        XCTAssertEqual(Int(30).toStringWithDeclension(one: "one", two: "two", five: "five"), "30 five")
+
+        XCTAssertEqual(Int(31).toStringWithDeclension(one: "one", two: "two", five: "five"), "31 one")
+        XCTAssertEqual(Int(32).toStringWithDeclension(one: "one", two: "two", five: "five"), "32 two")
+        XCTAssertEqual(Int(33).toStringWithDeclension(one: "one", two: "two", five: "five"), "33 two")
+        XCTAssertEqual(Int(34).toStringWithDeclension(one: "one", two: "two", five: "five"), "34 two")
+        XCTAssertEqual(Int(35).toStringWithDeclension(one: "one", two: "two", five: "five"), "35 five")
+        XCTAssertEqual(Int(36).toStringWithDeclension(one: "one", two: "two", five: "five"), "36 five")
+        XCTAssertEqual(Int(37).toStringWithDeclension(one: "one", two: "two", five: "five"), "37 five")
+        XCTAssertEqual(Int(38).toStringWithDeclension(one: "one", two: "two", five: "five"), "38 five")
+        XCTAssertEqual(Int(39).toStringWithDeclension(one: "one", two: "two", five: "five"), "39 five")
+        XCTAssertEqual(Int(40).toStringWithDeclension(one: "one", two: "two", five: "five"), "40 five")
+
+        XCTAssertEqual(Int(131).toStringWithDeclension(one: "one", two: "two", five: "five"), "131 one")
+        XCTAssertEqual(Int(132).toStringWithDeclension(one: "one", two: "two", five: "five"), "132 two")
+        XCTAssertEqual(Int(133).toStringWithDeclension(one: "one", two: "two", five: "five"), "133 two")
+        XCTAssertEqual(Int(134).toStringWithDeclension(one: "one", two: "two", five: "five"), "134 two")
+        XCTAssertEqual(Int(135).toStringWithDeclension(one: "one", two: "two", five: "five"), "135 five")
+        XCTAssertEqual(Int(136).toStringWithDeclension(one: "one", two: "two", five: "five"), "136 five")
+        XCTAssertEqual(Int(137).toStringWithDeclension(one: "one", two: "two", five: "five"), "137 five")
+        XCTAssertEqual(Int(138).toStringWithDeclension(one: "one", two: "two", five: "five"), "138 five")
+        XCTAssertEqual(Int(139).toStringWithDeclension(one: "one", two: "two", five: "five"), "139 five")
+        XCTAssertEqual(Int(140).toStringWithDeclension(one: "one", two: "two", five: "five"), "140 five")
+
+        XCTAssertEqual(Int(210).toStringWithDeclension(one: "one", two: "two", five: "five"), "210 five")
+        XCTAssertEqual(Int(211).toStringWithDeclension(one: "one", two: "two", five: "five"), "211 five")
+        XCTAssertEqual(Int(212).toStringWithDeclension(one: "one", two: "two", five: "five"), "212 five")
+        XCTAssertEqual(Int(213).toStringWithDeclension(one: "one", two: "two", five: "five"), "213 five")
+        XCTAssertEqual(Int(214).toStringWithDeclension(one: "one", two: "two", five: "five"), "214 five")
+        XCTAssertEqual(Int(215).toStringWithDeclension(one: "one", two: "two", five: "five"), "215 five")
+        XCTAssertEqual(Int(216).toStringWithDeclension(one: "one", two: "two", five: "five"), "216 five")
+        XCTAssertEqual(Int(217).toStringWithDeclension(one: "one", two: "two", five: "five"), "217 five")
+        XCTAssertEqual(Int(218).toStringWithDeclension(one: "one", two: "two", five: "five"), "218 five")
+        XCTAssertEqual(Int(219).toStringWithDeclension(one: "one", two: "two", five: "five"), "219 five")
+        XCTAssertEqual(Int(220).toStringWithDeclension(one: "one", two: "two", five: "five"), "220 five")
+    }
+
+}

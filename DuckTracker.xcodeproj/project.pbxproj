@@ -16,6 +16,8 @@
 		305B1ACD2C25C7D2009B9C72 /* DuckFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B1ACC2C25C7D2009B9C72 /* DuckFileManager.swift */; };
 		305B1ACF2C29CD1C009B9C72 /* DuckFileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B1ACE2C29CD1C009B9C72 /* DuckFileInfo.swift */; };
 		308111DC2C7DEAF3004C6B8C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308111DB2C7DEAF3004C6B8C /* URL.swift */; };
+		308ED6EB2C8A0F6300F346D2 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308ED6EA2C8A0F6300F346D2 /* Int.swift */; };
+		308ED6ED2C8A12C000F346D2 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308ED6EC2C8A12C000F346D2 /* IntTests.swift */; };
 		30B305742C80BA290076D58D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 30B305732C80BA290076D58D /* Localizable.xcstrings */; };
 		30B305762C80BAA90076D58D /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 30B305752C80BAA80076D58D /* InfoPlist.xcstrings */; };
 		30B99B002ABDA0E7006ABA62 /* SettingMapServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99AFF2ABDA0E7006ABA62 /* SettingMapServer.swift */; };
@@ -134,6 +136,8 @@
 		305B1ACC2C25C7D2009B9C72 /* DuckFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckFileManager.swift; sourceTree = "<group>"; };
 		305B1ACE2C29CD1C009B9C72 /* DuckFileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckFileInfo.swift; sourceTree = "<group>"; };
 		308111DB2C7DEAF3004C6B8C /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		308ED6EA2C8A0F6300F346D2 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		308ED6EC2C8A12C000F346D2 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		30B305732C80BA290076D58D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		30B305752C80BAA80076D58D /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		30B99AFF2ABDA0E7006ABA62 /* SettingMapServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMapServer.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				305926A32C18ACA5007A38B3 /* StringTests.swift */,
+				308ED6EC2C8A12C000F346D2 /* IntTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				30CFD3282A6ECEE900C106BE /* UIImage.swift */,
 				30B99B012AC1C779006ABA62 /* MKMapView+OverlayInserts.swift */,
 				308111DB2C7DEAF3004C6B8C /* URL.swift */,
+				308ED6EA2C8A0F6300F346D2 /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -710,7 +716,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					30CFD2D02A6EC7F000C106BE = {
 						CreatedOnToolsVersion = 14.3;
@@ -961,6 +967,7 @@
 				30CFD3402A6EE26C00C106BE /* TestingComponentLocNowView.swift in Sources */,
 				30CFD3212A6ECE9B00C106BE /* Color.swift in Sources */,
 				30B99B022AC1C779006ABA62 /* MKMapView+OverlayInserts.swift in Sources */,
+				308ED6EB2C8A0F6300F346D2 /* Int.swift in Sources */,
 				3002373E2BFFDD1000B8EBB2 /* DeviceIdProvider.swift in Sources */,
 				30CFD31A2A6ECD5200C106BE /* CoreDataTrackRoute.swift in Sources */,
 				30CFD3632A6EE3DB00C106BE /* CommonInformerFullView.swift in Sources */,
@@ -994,6 +1001,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308ED6ED2C8A12C000F346D2 /* IntTests.swift in Sources */,
 				305926A42C18ACA5007A38B3 /* StringTests.swift in Sources */,
 				30CFD2EB2A6EC7F200C106BE /* DuckTrackerTests.swift in Sources */,
 			);
@@ -1061,6 +1069,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1123,6 +1132,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

@@ -137,10 +137,20 @@ struct SettingsScreen: View {
                 // End of Setting Map Server
 
                 // Setting GPX files
-                Section(header: Text("Setting.GPXFiles.title".localized())) {
+                Section(header: Text("Setting.GPXFiles.Title".localized())) {
                     if gpxFiles.count > 0 {
                         HStack {
-                            Text("Setting.GPXFiles.size".localized())
+                            Text(
+                                "Setting.GPXFiles.SizeOf".localized() + " " +
+                                (gpxFiles.count <= 100 ?
+                                    gpxFiles.count.toStringWithDeclension(
+                                        one: "Setting.GPXFiles.filesOne",
+                                        two: "Setting.GPXFiles.filesTwo",
+                                        five: "Setting.GPXFiles.filesFive"
+                                     ):
+                                    "100+ " + "Setting.GPXFiles.filesFive".localized()
+                                )
+                            )
                             Spacer()
                             Text(gpxFilesSizeString)
                         }

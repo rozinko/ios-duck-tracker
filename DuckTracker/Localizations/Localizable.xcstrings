@@ -1752,7 +1752,58 @@
         }
       }
     },
-    "Setting.GPXFiles.size" : {
+    "Setting.GPXFiles.filesFive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "files"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "файлов"
+          }
+        }
+      }
+    },
+    "Setting.GPXFiles.filesOne" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "file"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "файл"
+          }
+        }
+      }
+    },
+    "Setting.GPXFiles.filesTwo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "files"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "файлов"
+          }
+        }
+      }
+    },
+    "Setting.GPXFiles.Size" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -1769,7 +1820,24 @@
         }
       }
     },
-    "Setting.GPXFiles.title" : {
+    "Setting.GPXFiles.SizeOf" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size of"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Размер"
+          }
+        }
+      }
+    },
+    "Setting.GPXFiles.Title" : {
       "comment" : "Setting GPX files",
       "extractionState" : "manual",
       "localizations" : {
