@@ -148,7 +148,7 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Экспорт GPX"
           }
         }
@@ -1781,7 +1781,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "файл"
+            "value" : "файла"
           }
         }
       }
