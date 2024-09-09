@@ -45,11 +45,38 @@ struct HistoryListSectionView: View {
                 Text(".yesterday".localized())
             }
 
-            Spacer()
-
             if showYear {
                 Text(year)
+                    .bold()
+                    .foregroundColor(.accentColor)
             }
+
+            Spacer()
         }
     }
+}
+
+#Preview {
+    // Start List {} from HistoryListView
+    List {
+        ForEach([
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -10)),
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -3600)),
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400)),
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*2)),
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*7)),
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*20)),
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*30)),
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*180)),
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*360)),
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*720)),
+            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*1080))
+        ], id: \.id) { section in
+            Section(header: HistoryListSectionView(fromSection: section)) { }
+        }
+    }
+    .navigationBarTitle(".tab.history".localized())
+    .navigationViewStyle(.stack)
+    .listStyle(GroupedListStyle())
+    // End of List {}
 }
