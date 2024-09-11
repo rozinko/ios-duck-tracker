@@ -8,7 +8,11 @@ public class ActiveTrackProvider: NSObject, ObservableObject {
     @Published var lastLocation: CLLocation?
     @Published var track: ActiveTrack = ActiveTrack()
 
+    @Published var timeString: String = "00:00:00"
+
     private let dataProvider = DataProvider.shared
+
+    private var timer: Timer?
 
     func start() {
         // начинаем запись
@@ -16,6 +20,13 @@ public class ActiveTrackProvider: NSObject, ObservableObject {
 
         // добавляем последнюю точку как начало маршрута
         addPoint(force: true)
+
+        // старт таймера
+        if timer == nil {
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                self.updateTimeString()
+            }
+        }
     }
 
     func pause() {
@@ -29,6 +40,12 @@ public class ActiveTrackProvider: NSObject, ObservableObject {
 
         // прекращаем запись
         isRecording = false
+
+        // останавливаем таймер
+        timer?.invalidate()
+        timer = nil
+
+        updateTimeString()
     }
 
     func finish(title: String, type: ActiveTrackType) {
@@ -43,6 +60,11 @@ public class ActiveTrackProvider: NSObject, ObservableObject {
 
     func clear() {
         track = ActiveTrack()
+        updateTimeString()
+    }
+
+    func updateTimeString() {
+        self.timeString = self.track.getTimeString(isRecording: self.isRecording)
     }
 
     func addPoint(force: Bool = false) {

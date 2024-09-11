@@ -22,7 +22,7 @@ struct ActiveTrackInfoView: View {
                     distance: activeTrackProvider.track.distance,
                     avgSpeed: activeTrackProvider.track.avgSpeed,
                     maxSpeed: activeTrackProvider.track.maxSpeed,
-                    timeString: activeTrackProvider.track.getTimeString(isRecording: activeTrackProvider.isRecording),
+                    timeString: activeTrackProvider.timeString,
                     withSpacers: true
                 )
 
