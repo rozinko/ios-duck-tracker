@@ -2460,6 +2460,40 @@
         }
       }
     },
+    "WhatsNew.13.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More powerful charts!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Графики стали более информативными!"
+          }
+        }
+      }
+    },
+    "WhatsNew.13.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Charts"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Графики"
+          }
+        }
+      }
+    },
     "WhatsNewScreen.title" : {
       "comment" : "WhatsNewScreen",
       "extractionState" : "manual",

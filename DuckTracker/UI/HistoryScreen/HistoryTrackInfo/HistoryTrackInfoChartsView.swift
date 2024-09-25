@@ -7,21 +7,23 @@ struct HistoryTrackInfoChartsView: View {
     let points: [InfoTrackPoint]
     let avgSpeed: CLLocationSpeed
 
+    @State var selectedPoint: Int?
+
     var body: some View {
         if #available(iOS 16.0, *) {
             if !points.isEmpty {
                 VStack(spacing: 1) {
-                    HistoryTrackInfoChartSpeedView(points: points, avgSpeed: avgSpeed)
+                    HistoryTrackInfoChartSpeedView(points: points, avgSpeed: avgSpeed, selectedPoint: $selectedPoint)
                         .padding([.top, .bottom], 5)
                         .padding([.leading, .trailing], 8)
                         .background(Color.commonElementBackground)
 
-                    HistoryTrackInfoChartAltitudeView(points: points)
+                    HistoryTrackInfoChartAltitudeView(points: points, selectedPoint: $selectedPoint)
                         .padding([.top, .bottom], 5)
                         .padding([.leading, .trailing], 8)
                         .background(Color.commonElementBackground)
 
-                    HistoryTrackInfoChartDistanceView(points: points)
+                    HistoryTrackInfoChartDistanceView(points: points, selectedPoint: $selectedPoint)
                         .padding([.top, .bottom], 5)
                         .padding([.leading, .trailing], 8)
                         .background(Color.commonElementBackground)

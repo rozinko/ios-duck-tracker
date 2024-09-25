@@ -29,7 +29,12 @@ public class WhatsNewProvider: NSObject, ObservableObject {
             build: 10,
             title: "WhatsNew.10.title",
             imageName: "Update-10-GPXExport",
-            description: "WhatsNew.10.description")
+            description: "WhatsNew.10.description"),
+        WhatsNewModel(
+            build: 13,
+            title: "WhatsNew.13.title",
+            imageName: "Update-13-Charts",
+            description: "WhatsNew.13.description")
     ]
 
     public override init() {
