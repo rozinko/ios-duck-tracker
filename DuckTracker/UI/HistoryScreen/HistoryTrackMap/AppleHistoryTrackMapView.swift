@@ -33,41 +33,37 @@ struct AppleHistoryTrackMapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: AppleHistoryTrackMapViewDelegate, context: UIViewRepresentableContext<AppleHistoryTrackMapView>) {
-        // удаляем старый оверлей
-        uiView.removeOverlays(uiView.overlays.filter { $0.title == "track" })
-        // добавляем обновленный оверлей
-        let overlayTrack = MKPolyline(coordinates: trackCoordinates, count: trackCoordinates.count)
-        overlayTrack.title = "track"
-        uiView.insertOverlayAboveLast(overlayTrack)
-
-        // удаляем все точки
-        uiView.removeAnnotations(uiView.annotations)
-        // добавляем выбранную точку с графика, если она есть
-        if selectedPoint != nil && selectedPoint! < trackCoordinates.count {
-            let selectedAnnotation = MKPointAnnotation()
-            selectedAnnotation.coordinate = trackCoordinates[selectedPoint!]
-            selectedAnnotation.title = "SelectedPoint"
-            uiView.addAnnotation(selectedAnnotation)
-        }
-
-        /*
-        // обновляем оверлей основного маршрута:
-        // - если есть 2 и более точек маршрута и в прошлый раз было отрисовано другое количество точек
-        // - если новое значение 0 а было более одной (когда маршрут сбрасывается)
         if trackCoordinates.count != uiView.overlayTrackPointsDrawed && trackCoordinates.count != 1 {
-            // удаляем старый
+            // удаляем старый оверлей
+            print(Date().description, "AppleHistMap // overlays del")
             uiView.removeOverlays(uiView.overlays.filter { $0.title == "track" })
-            // добавляем обновленный
+            // добавляем обновленный оверлей
+            print(Date().description, "AppleHistMap // overlay rerender")
             let overlayTrack = MKPolyline(coordinates: trackCoordinates, count: trackCoordinates.count)
             overlayTrack.title = "track"
-            uiView.addOverlay(overlayTrack, level: .aboveRoads)
+            uiView.insertOverlayAboveLast(overlayTrack)
             // обновляем информацию о количестве отрисованных точек маршрута
             uiView.overlayTrackPointsDrawed = trackCoordinates.count
         }
-        */
+
+        if selectedPoint != uiView.overlaySelectedPointDrawed {
+            // удаляем все точки
+            print(Date().description, "AppleHistMap // points del")
+            uiView.removeAnnotations(uiView.annotations)
+            // добавляем выбранную точку с графика, если она есть
+            if selectedPoint != nil && selectedPoint! < trackCoordinates.count {
+                // рисуем выбранную точку
+                print(Date().description, "AppleHistMap // selected point rerender")
+                let selectedAnnotation = MKPointAnnotation()
+                selectedAnnotation.coordinate = trackCoordinates[selectedPoint!]
+                selectedAnnotation.title = "SelectedPoint"
+                uiView.addAnnotation(selectedAnnotation)
+            }
+            // обновляем информацию об отрисованной выбранной точке
+            uiView.overlaySelectedPointDrawed = selectedPoint
+        }
 
         mapView.setRegion(region, animated: true)
-
     }
 
 }

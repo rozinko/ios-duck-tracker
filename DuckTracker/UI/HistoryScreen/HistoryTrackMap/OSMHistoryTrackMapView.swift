@@ -36,21 +36,34 @@ struct OSMHistoryTrackMapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: OSMHistoryTrackMapViewDelegate, context: UIViewRepresentableContext<OSMHistoryTrackMapView>) {
-        // удаляем старый оверлей
-        uiView.removeOverlays(uiView.overlays.filter { $0.title == "track" })
-        // добавляем обновленный оверлей
-        let overlayTrack = MKPolyline(coordinates: trackCoordinates, count: trackCoordinates.count)
-        overlayTrack.title = "track"
-        uiView.insertOverlayAboveLast(overlayTrack)
+        if trackCoordinates.count != uiView.overlayTrackPointsDrawed && trackCoordinates.count != 1 {
+            // удаляем старый оверлей
+            print(Date().description, "OSMHistMap // overlays del")
+            uiView.removeOverlays(uiView.overlays.filter { $0.title == "track" })
+            // добавляем обновленный оверлей
+            print(Date().description, "OSMHistMap // overlay rerender")
+            let overlayTrack = MKPolyline(coordinates: trackCoordinates, count: trackCoordinates.count)
+            overlayTrack.title = "track"
+            uiView.insertOverlayAboveLast(overlayTrack)
+            // обновляем информацию о количестве отрисованных точек маршрута
+            uiView.overlayTrackPointsDrawed = trackCoordinates.count
+        }
 
-        // удаляем все точки
-        uiView.removeAnnotations(uiView.annotations)
-        // добавляем выбранную точку с графика, если она есть
-        if selectedPoint != nil && selectedPoint! < trackCoordinates.count {
-            let selectedAnnotation = MKPointAnnotation()
-            selectedAnnotation.coordinate = trackCoordinates[selectedPoint!]
-            selectedAnnotation.title = "SelectedPoint"
-            uiView.addAnnotation(selectedAnnotation)
+        if selectedPoint != uiView.overlaySelectedPointDrawed {
+            // удаляем все точки
+            print(Date().description, "OSMHistMap // points del")
+            uiView.removeAnnotations(uiView.annotations)
+            // добавляем выбранную точку с графика, если она есть
+            if selectedPoint != nil && selectedPoint! < trackCoordinates.count {
+                // рисуем выбранную точку
+                print(Date().description, "OSMHistMap // selected point rerender")
+                let selectedAnnotation = MKPointAnnotation()
+                selectedAnnotation.coordinate = trackCoordinates[selectedPoint!]
+                selectedAnnotation.title = "SelectedPoint"
+                uiView.addAnnotation(selectedAnnotation)
+            }
+            // обновляем информацию об отрисованной выбранной точке
+            uiView.overlaySelectedPointDrawed = selectedPoint
         }
 
         mapView.setRegion(region, animated: true)

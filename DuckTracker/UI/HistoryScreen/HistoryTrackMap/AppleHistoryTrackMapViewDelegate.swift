@@ -5,6 +5,7 @@ class AppleHistoryTrackMapViewDelegate: MKMapView, MKMapViewDelegate {
 
     // переменные для правильной отрисовки оверлеев
     var overlayTrackPointsDrawed = 0
+    var overlaySelectedPointDrawed: Int?
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay.isKind(of: MKPolyline.self) {
