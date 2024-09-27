@@ -21,6 +21,8 @@ struct HistoryTrackInfoView: View {
 
     @State var infoTrackTitleForRename: String = ""
 
+    @State var selectedPoint: Int?
+
     var routeCoordinates: [CLLocationCoordinate2D] { infoTrack.route.coordinates }
 
     init(infoTrack: InfoTrack) {
@@ -42,7 +44,7 @@ struct HistoryTrackInfoView: View {
                 .background(Color.commonElementBackground)
 
                 if self.showMap {
-                    HistoryTrackMapView(region: $region, trackCoordinates: routeCoordinates)
+                    HistoryTrackMapView(region: $region, trackCoordinates: routeCoordinates, selectedPoint: $selectedPoint)
                         .frame(height: UIScreen.main.nativeBounds.width / UIScreen.main.nativeScale)
                 } else {
                     VStack {
@@ -68,7 +70,7 @@ struct HistoryTrackInfoView: View {
                     withSpacers: false
                 )
 
-                HistoryTrackInfoChartsView(points: infoTrack.route.points, avgSpeed: infoTrack.avgSpeed)
+                HistoryTrackInfoChartsView(points: infoTrack.route.points, avgSpeed: infoTrack.avgSpeed, selectedPoint: $selectedPoint)
             }
             .background(Color.commonBorder)
             .navigationTitle(infoTrack.title)

@@ -8,6 +8,8 @@ struct OSMHistoryTrackMapView: UIViewRepresentable {
 
     let trackCoordinates: [CLLocationCoordinate2D]
 
+    @Binding var selectedPoint: Int?
+
     private let mapView = OSMHistoryTrackMapViewDelegate()
 
     func makeUIView(context: UIViewRepresentableContext<OSMHistoryTrackMapView>) -> OSMHistoryTrackMapViewDelegate {
@@ -34,12 +36,22 @@ struct OSMHistoryTrackMapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: OSMHistoryTrackMapViewDelegate, context: UIViewRepresentableContext<OSMHistoryTrackMapView>) {
-        // удаляем старый
+        // удаляем старый оверлей
         uiView.removeOverlays(uiView.overlays.filter { $0.title == "track" })
-        // добавляем обновленный
+        // добавляем обновленный оверлей
         let overlayTrack = MKPolyline(coordinates: trackCoordinates, count: trackCoordinates.count)
         overlayTrack.title = "track"
         uiView.insertOverlayAboveLast(overlayTrack)
+
+        // удаляем все точки
+        uiView.removeAnnotations(uiView.annotations)
+        // добавляем выбранную точку с графика, если она есть
+        if selectedPoint != nil && selectedPoint! < trackCoordinates.count {
+            let selectedAnnotation = MKPointAnnotation()
+            selectedAnnotation.coordinate = trackCoordinates[selectedPoint!]
+            selectedAnnotation.title = "SelectedPoint"
+            uiView.addAnnotation(selectedAnnotation)
+        }
 
         mapView.setRegion(region, animated: true)
     }
