@@ -24,11 +24,36 @@ class OSMHistoryTrackMapViewDelegate: MKMapView, MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "Selected")
+        let reUseId: String
+        let uiImageSystemName: String
+
+        switch annotation.title {
+        case "trackStartPoint":
+            reUseId = "trackStartPoint"
+            uiImageSystemName = "play.circle"
+        case "trackFinishPoint":
+            reUseId = "trackFinishPoint"
+            if #available(iOS 16.1, *) {
+                uiImageSystemName = "flag.checkered.circle"
+            } else {
+                uiImageSystemName = "stop.circle"
+            }
+        case "trackSelectedPoint":
+            reUseId = "trackSelectedPoint"
+            if #available(iOS 17.0, *) {
+                uiImageSystemName = "mappin.and.ellipse.circle"
+            } else {
+                uiImageSystemName = "mappin.circle"
+            }
+        default:
+            reUseId = "point"
+            uiImageSystemName = "mappin.circle"
+        }
+
+        let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reUseId)
+        annotationView.image = UIImage(systemName: uiImageSystemName)
+        annotationView.backgroundColor = UIColor(named: "MKAnnotationBackground")
         annotationView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        annotationView.layer.backgroundColor = UIColor(named: "MarkerSelectedPointBackground")?.resolvedColor(with: self.traitCollection).cgColor
-        annotationView.layer.borderColor = UIColor(Color.commonOrange).cgColor
-        annotationView.layer.borderWidth = 7.0
         annotationView.layer.cornerRadius = 15.0
         return annotationView
     }
