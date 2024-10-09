@@ -5,22 +5,11 @@ struct SettingsScreen: View {
 
     @Binding var selectedTab: Int
 
-    @ObservedObject var deviceIdProvider = DeviceIdProvider.shared
+    @ObservedObject var appProvider = AppProvider.shared
 
     @State private var settingAppearance = SettingAppearance(fromInt: UserDefaults.standard.integer(forKey: "SettingAppearance"))
     @State private var settingMapServer = SettingMapServer(fromString: UserDefaults.standard.string(forKey: "SettingMapServer"))
     @State private var settingSpeedDisplay = SettingSpeedDisplay(fromInt: UserDefaults.standard.integer(forKey: "SettingSpeedDisplay"))
-
-    let appVersion: String = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "no ver"
-    let appBuild: String = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "no build"
-    let isTestFlight: Bool = Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
-    var isDebug: Bool {
-        #if DEBUG
-          return true
-        #else
-          return false
-        #endif
-    }
 
     var mapCache: MapCache = MapCache(withConfig: MapCacheConfig(withUrlTemplate: ""))
 
@@ -208,13 +197,13 @@ struct SettingsScreen: View {
                     footer: HStack {
                         Spacer()
                         VStack {
-                            Text("Duck Tracker v\(appVersion) (build \(appBuild))")
-                            Text("Device ID: \(deviceIdProvider.deviceId ?? "No id")")
+                            Text("Duck Tracker v\(appProvider.appVersion ?? "...") (build \(appProvider.appBuild ?? "..."))")
+                            Text("Device ID: \(appProvider.deviceId ?? "...")")
                                 .font(.caption2)
-                            if isDebug {
+                            if appProvider.isDebug() {
                                 Text("DEBUG MODE").foregroundColor(.red)
                             }
-                            if isTestFlight {
+                            if appProvider.isTestFlight() {
                                 Text("Version from TestFlight").foregroundColor(.blue)
                             }
                         }

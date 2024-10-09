@@ -6,7 +6,7 @@ struct WhatsNewScreen: View {
 
     @State var tabViewSelection: Int = 0
 
-    private let whatsNewProvider = WhatsNewProvider.shared
+    private let appProvider = AppProvider.shared
 
     var body: some View {
         VStack {
@@ -14,7 +14,7 @@ struct WhatsNewScreen: View {
                 Spacer()
                 Button(action: {
                     showModal = false
-                    whatsNewProvider.closeWhatsNew()
+                    appProvider.closeWhatsNew()
                 }, label: {
                     Image(systemName: "xmark.circle")
                         .font(.title3)
@@ -27,7 +27,7 @@ struct WhatsNewScreen: View {
 
                 TabView(selection: $tabViewSelection) {
 
-                    ForEach(whatsNewProvider.updates, id: \.self) { element in
+                    ForEach(appProvider.whatsNewUpdates, id: \.self) { element in
                         VStack {
                             Text(element.title.localized())
                                 .font(Font.title)
@@ -48,22 +48,17 @@ struct WhatsNewScreen: View {
 
                 Spacer()
 
-                if tabViewSelection < whatsNewProvider.updates.count - 1 {
+                if tabViewSelection < appProvider.whatsNewUpdates.count - 1 {
                     Button(".next".localized()) {
                         tabViewSelection += 1
                     }.buttonStyle(ButtonOrangeFilledBlockStyle())
                 } else {
                     Button(".ok".localized()) {
                         showModal = false
-                        whatsNewProvider.closeWhatsNew()
+                        appProvider.closeWhatsNew()
                     }.buttonStyle(ButtonOrangeFilledBlockStyle())
                 }
 
-//                HStack {
-//                    Spacer()
-//                    Button("Назад") { }
-//                    Spacer()
-//                }
             }
         }.padding(10)
     }

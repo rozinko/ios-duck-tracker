@@ -6,7 +6,7 @@ struct WrapperView: View {
 
     // WhatsNewScreen
     @State var showWhatsNewModal = false
-    private let whatsNewProvider = WhatsNewProvider.shared
+    private let appProvider = AppProvider.shared
     // End of WhatsNewScreen
 
     var body: some View {
@@ -37,7 +37,7 @@ struct WrapperView: View {
             WhatsNewScreen(showModal: $showWhatsNewModal)
         }
         .onAppear {
-            showWhatsNewModal = !whatsNewProvider.updates.isEmpty
+            showWhatsNewModal = !appProvider.whatsNewUpdates.isEmpty
         }
     }
 }
