@@ -8,10 +8,7 @@ struct HistoryScreen: View {
 
     var body: some View {
 
-        HistoryListView(
-            selectedTab: $selectedTab,
-            sections: dataProvider.historyListSections,
-            infoTracks: dataProvider.tracks)
+        HistoryListView(selectedTab: $selectedTab, historyTracks: dataProvider.historyTracks)
 
     }
 

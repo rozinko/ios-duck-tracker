@@ -1439,7 +1439,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Начать первуй маршрут"
+            "value" : "Начать первый маршрут"
           }
         }
       }
@@ -2316,9 +2316,6 @@
           }
         }
       }
-    },
-    "Test text." : {
-
     },
     "Version from TestFlight" : {
 

@@ -1,8 +1,6 @@
 import SwiftUI
 
-public struct HistoryListSection: Identifiable {
-    public var id = UUID()
-
+public struct HistoryListSection: Hashable {
     let date: String
 
     let day: String

@@ -7,6 +7,13 @@ struct HistoryTrackMapView: View {
 
     let trackCoordinates: [CLLocationCoordinate2D]
 
+    init(region: Binding<MKCoordinateRegion>, trackCoordinates: [CLLocationCoordinate2D], settingMapServerRawValue: String? = nil) {
+//        if #available(iOS 15, *) { print(Date.now, "HistoryTrackMapView // init(): start") }
+        self._region = region
+        self.trackCoordinates = trackCoordinates
+//        if #available(iOS 15, *) { print(Date.now, "HistoryTrackMapView // init(): end") }
+    }
+
     // Setting Map Server
     @AppStorage("SettingMapServer") var settingMapServerRawValue: String?
     private var settingMapServer: SettingMapServer { .init(fromString: settingMapServerRawValue) }

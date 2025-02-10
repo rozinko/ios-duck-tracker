@@ -2,26 +2,19 @@ import SwiftUI
 
 struct HistoryListSectionView: View {
 
-    let day: String
-    let month: String
-    let year: String
+    let section: HistoryListSection
 
-    let isToday: Bool
-    let isYesterday: Bool
+    var day: String { self.section.day }
+    var month: String { self.section.month }
+    var year: String { self.section.year }
 
-    let showYear: Bool
+    var isToday: Bool { self.section.isToday }
+    var isYesterday: Bool { self.section.isYesterday }
+
+    var showYear: Bool { year != Date().toStringYear() }
 
     init(fromSection section: HistoryListSection) {
-        let dateNow = Date()
-
-        day = section.day
-        month = section.month
-        year = section.year
-
-        isToday = section.isToday
-        isYesterday = section.isYesterday
-
-        showYear = year != dateNow.toStringYear()
+        self.section = section
     }
 
     var body: some View {
@@ -56,27 +49,19 @@ struct HistoryListSectionView: View {
     }
 }
 
-#Preview {
-    // Start List {} from HistoryListView
-    List {
-        ForEach([
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -10)),
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -3600)),
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400)),
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*2)),
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*7)),
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*20)),
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*30)),
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*180)),
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*360)),
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*720)),
-            HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: -86400*1080))
-        ], id: \.id) { section in
-            Section(header: HistoryListSectionView(fromSection: section)) { }
-        }
-    }
-    .navigationBarTitle(".tab.history".localized())
-    .navigationViewStyle(.stack)
-    .listStyle(GroupedListStyle())
-    // End of List {}
-}
+//#Preview {
+//    // Start List {} from HistoryListView
+//    let data: [HistoryListSection] = [-10, -3600, -86400, -86400*2, -86400*7, -86400*20,
+//                 -86400*180, -86400*360, -86400*720, -86400*1080].map {
+//        HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: $0))
+//    }
+//    List {
+//        ForEach(data, id: \.self) { section in
+//            Section(header: HistoryListSectionView(fromSection: section)) { }
+//        }
+//    }
+//    .navigationBarTitle(".tab.history".localized())
+//    .navigationViewStyle(.stack)
+//    .listStyle(GroupedListStyle())
+//    // End of List {}
+//}

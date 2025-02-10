@@ -4,39 +4,39 @@ struct HistoryListView: View {
 
     @Binding var selectedTab: Int
 
-    let sections: [HistoryListSection]
-    let infoTracks: [InfoTrack]
+    let historyTracks: [String: [InfoTrack]]
+
+    var historyDates: [String] {
+        historyTracks.keys.sorted { $0 > $1 }
+    }
 
     var body: some View {
-        if !sections.isEmpty && !infoTracks.isEmpty {
+        if !historyDates.isEmpty {
 
-            // Start NavigationView
             NavigationView {
-
-                // Start List {}
                 List {
-                    ForEach(sections, id: \.id) { section in
+                    ForEach(historyDates, id: \.self) { key in
+                        let section = HistoryListSection(fromTimestamp: historyTracks[key]!.first!.timestampStart)
 
-                        // Start Section {}
                         Section(header: HistoryListSectionView(fromSection: section)) {
-                            ForEach(infoTracks.filter {$0.timestampStart.toStringDate() == section.date}, id: \.id) { infoTrack in
+
+                            ForEach(historyTracks[key]!, id: \.id) { infoTrack in
                                 NavigationLink(
                                     destination: HistoryTrackInfoView(infoTrack: infoTrack),
-                                    label: { HistoryListItemView(infoTrack: infoTrack) }
+                                    label: {
+                                        HistoryListItemView(infoTrack: infoTrack)
+                                    }
                                 )
                             }
+
                         }
-                        // End of Section {}
 
                     }
                 }
                 .navigationBarTitle(".tab.history".localized())
                 .navigationViewStyle(.stack)
                 .listStyle(GroupedListStyle())
-                // End of List {}
-
             }
-            // End of NavigationView
 
         } else {
             HistoryListEmptyView(selectedTab: $selectedTab)

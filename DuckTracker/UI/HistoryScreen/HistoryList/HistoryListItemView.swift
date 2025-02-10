@@ -4,6 +4,11 @@ struct HistoryListItemView: View {
 
     let infoTrack: InfoTrack
 
+    init(infoTrack: InfoTrack) {
+//        if #available(iOS 15, *) { print(Date.now, "HistoryListItemView // init(): for \(infoTrack.title)") }
+        self.infoTrack = infoTrack
+    }
+
     var body: some View {
 
         VStack {

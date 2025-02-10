@@ -5,21 +5,14 @@ public class DataProvider: NSObject, ObservableObject {
 
     static let shared = DataProvider()
 
+    // все треки из CoreData хранятся тут
     @Published var tracks: [InfoTrack] = []
 
-    public var historyListSections: [HistoryListSection] {
-        var hls: [HistoryListSection] = []
+    // флаг обозначающий, что сейчас идёт обновление данных из CoreData
+    @Published var loading: Bool = true
 
-        for track in tracks {
-            let dateNext = track.timestampStart.toStringDate()
-
-            if hls.isEmpty || hls.last!.date != dateNext {
-                hls.append(HistoryListSection(fromTimestamp: track.timestampStart))
-            }
-        }
-
-        return hls
-    }
+    // Формат данных для списка истории с группировкой по дате в формате YYYY-MM-DD в строке
+    @Published var historyTracks: [String: [InfoTrack]] = [:]
 
     public var historyStats: HistoryStats {
         var hs = HistoryStats()
@@ -59,20 +52,36 @@ public class DataProvider: NSObject, ObservableObject {
     private let coreDataProvider = CoreDataProvider.shared
 
     override public init() {
+//        if #available(iOS 15, *) { print(Date.now, "DataProvider // init(): start") }
         super.init()
         update()
+//        if #available(iOS 15, *) { print(Date.now, "DataProvider // init(): end update()") }
     }
 
     public func update() {
-        let cdTracks = coreDataProvider.selectTracks()
-        var newInfoTracks: [InfoTrack] = []
+//        if #available(iOS 15, *) { print(Date.now, "DataProvider // update(): start") }
+        self.loading = true
 
-        for cdTrack in cdTracks {
-            let infoTrack = InfoTrack(fromCoreDataTrack: cdTrack)
-            newInfoTracks.append(infoTrack)
+        coreDataProvider.selectTracks({ [weak self] cdTracks in
+//            if #available(iOS 15, *) { print(Date.now, "DataProvider // closure: start") }
+            self?.tracks = cdTracks.map { InfoTrack(fromCoreDataTrack: $0) }
+            self?.loading = false
+            
+            self?.setHistoryTracks()
+//            if #available(iOS 15, *) { print(Date.now, "DataProvider // closure: end") }
+        })
+
+//        if #available(iOS 15, *) { print(Date.now, "DataProvider // update(): end") }
+    }
+
+    private func setHistoryTracks() {
+        var temp: [String: [InfoTrack]] = [:]
+
+        for track in tracks {
+            temp[track.timestampStart.toStringDate(), default: []].append(track)
         }
 
-        self.tracks = newInfoTracks
+        self.historyTracks = temp
     }
 
     public func addTrack(activeTrack: ActiveTrack, title: String, type: ActiveTrackType) -> Bool {

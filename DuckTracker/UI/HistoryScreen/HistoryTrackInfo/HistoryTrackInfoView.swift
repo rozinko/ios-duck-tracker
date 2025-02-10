@@ -8,7 +8,7 @@ struct HistoryTrackInfoView: View {
 
     @Environment(\.presentationMode) var presentationMode
 
-    @ObservedObject var dataProvider = DataProvider.shared
+    var dataProvider = DataProvider.shared
 
     @State var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 59.939, longitude: 30.315),
@@ -24,6 +24,7 @@ struct HistoryTrackInfoView: View {
     var routeCoordinates: [CLLocationCoordinate2D] { infoTrack.route.coordinates }
 
     init(infoTrack: InfoTrack) {
+//        if #available(iOS 15, *) { print(Date.now, "HistoryTrackInfoView // init(): for \(infoTrack.title)") }
         self.infoTrack = infoTrack
         self.infoTrackTitleForRename = infoTrack.title
     }
@@ -128,6 +129,8 @@ struct HistoryTrackInfoView: View {
             }
         }
         .onAppear {
+//            if #available(iOS 15, *) { print(Date.now, "HistoryTrackInfoView // onAppear(): for \(infoTrack.title)") }
+
             self.region = MKCoordinateRegion(
                 center: CLLocationCoordinate2D(latitude: infoTrack.centerLatitude, longitude: infoTrack.centerLongitude),
                 span: MKCoordinateSpan(latitudeDelta: infoTrack.latitudeDelta, longitudeDelta: infoTrack.longitudeDelta)
