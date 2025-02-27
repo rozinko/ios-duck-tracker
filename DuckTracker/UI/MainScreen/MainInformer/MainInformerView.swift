@@ -12,7 +12,7 @@ struct MainInformerView: View {
             MainInformerNeedRequestView()
         } else if locationProvider.locationStatus <= 2 {
             MainInformerDeniedView()
-        } else if dataProvider.tracks.isEmpty {
+        } else if dataProvider.shortTracks.isEmpty {
             MainInformerFirstTrackView(selectedTab: $selectedTab)
         } else {
             VStack {}

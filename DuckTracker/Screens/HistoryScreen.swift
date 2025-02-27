@@ -4,12 +4,8 @@ struct HistoryScreen: View {
 
     @Binding var selectedTab: Int
 
-    @ObservedObject var dataProvider = DataProvider.shared
-
     var body: some View {
-
-        HistoryListView(selectedTab: $selectedTab, historyTracks: dataProvider.historyTracks)
-
+        HistoryListView(selectedTab: $selectedTab)
     }
 
 }

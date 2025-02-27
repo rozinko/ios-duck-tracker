@@ -8,23 +8,16 @@ struct CoreDataProvider {
     let persistentContainer: NSPersistentContainer
 
     init() {
-        if #available(iOS 15, *) { print(Date.now, "CoreDataProvider // init(): start") }
-
         persistentContainer = NSPersistentContainer(name: "Main")
         persistentContainer.loadPersistentStores { description, error in
             if let error = error {
                 fatalError("CoreDataProvider / Init failed. Store failed. Error: \(error.localizedDescription). Description: \(description)")
             }
         }
-
-        if #available(iOS 15, *) { print(Date.now, "CoreDataProvider // init(): end") }
     }
 
     func save() -> Bool {
-        if #available(iOS 15, *) { print(Date.now, "CoreDataProvider // save(): start") }
-
         if !persistentContainer.viewContext.hasChanges {
-            if #available(iOS 15, *) { print(Date.now, "CoreDataProvider // save(): end without changes") }
             return true
         }
 
@@ -32,13 +25,40 @@ struct CoreDataProvider {
             try persistentContainer.viewContext.save()
         } catch {
             persistentContainer.viewContext.rollback()
-            print("CoreDataProvider / persistentContainer.viewContext.save() / Error. Rollback.")
             return false
         }
 
-        if #available(iOS 15, *) { print(Date.now, "CoreDataProvider // save(): end WITH changes") }
-
         return true
+    }
+
+    func selectAll(_ closure: @escaping (_ cdTracks: [CoreDataTrack]) -> Void) {
+        let fetchRequest = CoreDataTrack.fetchRequest()
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "timestampStart", ascending: false)
+        ]
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let result = try persistentContainer.viewContext.fetch(fetchRequest)
+                DispatchQueue.main.async {
+                    closure(result)
+                }
+            } catch {}
+        }
+    }
+
+    func selectById(trackId id: UUID, _ closure: @escaping (_ cdTrack: [CoreDataTrack]) -> Void) {
+        let fetchRequest = CoreDataTrack.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id ==  %@", id as CVarArg)
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let result = try persistentContainer.viewContext.fetch(fetchRequest)
+                DispatchQueue.main.async {
+                    closure(result)
+                }
+            } catch {}
+        }
     }
 
     func addTrack(activeTrack: ActiveTrack, title: String, type: ActiveTrackType) -> Bool {
@@ -77,28 +97,6 @@ struct CoreDataProvider {
         persistentContainer.viewContext.delete(cdTrack)
 
         return save()
-    }
-
-    func selectTracks(_ closure: @escaping (_ cdTracks: [CoreDataTrack]) -> Void) {
-//        if #available(iOS 15, *) { print(Date.now, "CoreDataProvider // selectTracks(): start") }
-
-        let fetchRequest = CoreDataTrack.fetchRequest()
-        fetchRequest.sortDescriptors = [
-            NSSortDescriptor(key: "timestampStart", ascending: false)
-        ]
-
-//        if #available(iOS 15, *) { print(Date.now, "CoreDataProvider // selectTracks(): before async") }
-
-        DispatchQueue.global(qos: .userInitiated).async {
-            do {
-//                if #available(iOS 15, *) { print(Date.now, "CoreDataProvider // selectTracks(): start async fetch") }
-                let result = try persistentContainer.viewContext.fetch(fetchRequest)
-                DispatchQueue.main.async {
-                    closure(result)
-                }
-//                if #available(iOS 15, *) { print(Date.now, "CoreDataProvider // selectTracks(): end async fetch") }
-            } catch {}
-        }
     }
 
 }

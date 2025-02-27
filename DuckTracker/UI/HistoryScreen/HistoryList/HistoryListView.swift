@@ -4,27 +4,46 @@ struct HistoryListView: View {
 
     @Binding var selectedTab: Int
 
-    let historyTracks: [String: [InfoTrack]]
-
-    var historyDates: [String] {
-        historyTracks.keys.sorted { $0 > $1 }
-    }
+    @ObservedObject var dataProvider = DataProvider.shared
 
     var body: some View {
-        if !historyDates.isEmpty {
 
+        if dataProvider.historyTracks.isEmpty && dataProvider.loading {
+
+            // Loading...
+            VStack {
+                Spacer(minLength: 30)
+                VStack(spacing: 10) {
+                    ProgressView()
+                    HStack {
+                        Spacer()
+                        Text(".loading".localized()).font(Font.title2.bold())
+                        Spacer()
+                    }
+                }
+                Spacer(minLength: 30)
+            }
+
+        } else if dataProvider.historyTracks.isEmpty {
+
+            // Empty list
+            HistoryListEmptyView(selectedTab: $selectedTab)
+
+        } else {
+
+            // List of tracks
             NavigationView {
                 List {
-                    ForEach(historyDates, id: \.self) { key in
-                        let section = HistoryListSection(fromTimestamp: historyTracks[key]!.first!.timestampStart)
+                    ForEach(dataProvider.historyTracks.keys.sorted(by: >), id: \.self) { key in
+                        let section = HistoryListSection(fromTimestamp: dataProvider.historyTracks[key]!.first!.timestampStart)
 
                         Section(header: HistoryListSectionView(fromSection: section)) {
 
-                            ForEach(historyTracks[key]!, id: \.id) { infoTrack in
+                            ForEach(dataProvider.historyTracks[key]!, id: \.id) { shortTrack in
                                 NavigationLink(
-                                    destination: HistoryTrackInfoView(infoTrack: infoTrack),
+                                    destination: HistoryTrackInfoWithPreloaderView(shortTrack: shortTrack),
                                     label: {
-                                        HistoryListItemView(infoTrack: infoTrack)
+                                        HistoryListItemView(shortTrack: shortTrack)
                                     }
                                 )
                             }
@@ -38,8 +57,7 @@ struct HistoryListView: View {
                 .listStyle(GroupedListStyle())
             }
 
-        } else {
-            HistoryListEmptyView(selectedTab: $selectedTab)
         }
+
     }
 }

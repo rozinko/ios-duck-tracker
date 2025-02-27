@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		165BB178CA4D2AFCD83BC731 /* Pods_DuckTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D076D23FFAEEC95B05A56A /* Pods_DuckTracker.framework */; };
 		3002373E2BFFDD1000B8EBB2 /* DeviceIdProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002373D2BFFDD1000B8EBB2 /* DeviceIdProvider.swift */; };
+		303295172D5B32CD00337B4A /* ShortTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303295162D5B32CD00337B4A /* ShortTrack.swift */; };
+		303295192D64EB7500337B4A /* HistoryTrackInfoWithPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303295182D64EB7400337B4A /* HistoryTrackInfoWithPreloaderView.swift */; };
 		304DD5DE2AB34912005AD827 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5DD2AB34912005AD827 /* SettingsScreen.swift */; };
 		304DD5E02AB98E4F005AD827 /* SettingAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5DF2AB98E4F005AD827 /* SettingAppearance.swift */; };
 		304DD5E22ABA3A5A005AD827 /* SettingSpeedDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */; };
@@ -93,7 +95,6 @@
 		30CFD3872A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3862A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift */; };
 		30CFD3892A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3882A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift */; };
 		30CFD38B2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD38A2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift */; };
-		30CFD38D2A6EE58600C106BE /* HistoryTrackInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD38C2A6EE58600C106BE /* HistoryTrackInfoView.swift */; };
 		30CFD3902A6EE5A200C106BE /* AppleHistoryTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD38F2A6EE5A200C106BE /* AppleHistoryTrackMapView.swift */; };
 		30CFD3922A6EE5B000C106BE /* AppleHistoryTrackMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3912A6EE5B000C106BE /* AppleHistoryTrackMapViewDelegate.swift */; };
 		30CFD3942A6EE5BE00C106BE /* HistoryTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3932A6EE5BE00C106BE /* HistoryTrackMapView.swift */; };
@@ -129,6 +130,8 @@
 		055D2FFA6C9AD312371A1F3C /* Pods-DuckTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTracker.debug.xcconfig"; path = "Target Support Files/Pods-DuckTracker/Pods-DuckTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		2FCB300EBD6D94B9A5705D61 /* Pods-DuckTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTracker.release.xcconfig"; path = "Target Support Files/Pods-DuckTracker/Pods-DuckTracker.release.xcconfig"; sourceTree = "<group>"; };
 		3002373D2BFFDD1000B8EBB2 /* DeviceIdProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdProvider.swift; sourceTree = "<group>"; };
+		303295162D5B32CD00337B4A /* ShortTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTrack.swift; sourceTree = "<group>"; };
+		303295182D64EB7400337B4A /* HistoryTrackInfoWithPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoWithPreloaderView.swift; sourceTree = "<group>"; };
 		304DD5DD2AB34912005AD827 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		304DD5DF2AB98E4F005AD827 /* SettingAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAppearance.swift; sourceTree = "<group>"; };
 		304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSpeedDisplay.swift; sourceTree = "<group>"; };
@@ -216,7 +219,6 @@
 		30CFD3862A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartSpeedView.swift; sourceTree = "<group>"; };
 		30CFD3882A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartsView.swift; sourceTree = "<group>"; };
 		30CFD38A2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoEditModalView.swift; sourceTree = "<group>"; };
-		30CFD38C2A6EE58600C106BE /* HistoryTrackInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoView.swift; sourceTree = "<group>"; };
 		30CFD38F2A6EE5A200C106BE /* AppleHistoryTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleHistoryTrackMapView.swift; sourceTree = "<group>"; };
 		30CFD3912A6EE5B000C106BE /* AppleHistoryTrackMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleHistoryTrackMapViewDelegate.swift; sourceTree = "<group>"; };
 		30CFD3932A6EE5BE00C106BE /* HistoryTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackMapView.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 		30CFD32A2A6EE19600C106BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				303295162D5B32CD00337B4A /* ShortTrack.swift */,
 				30CFD32B2A6EE1A400C106BE /* ActiveTrack.swift */,
 				30CFD32D2A6EE1B700C106BE /* ActiveTrackType.swift */,
 				30CFD32F2A6EE1C700C106BE /* InfoTrack.swift */,
@@ -566,7 +569,7 @@
 				30CFD3862A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift */,
 				30CFD3882A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift */,
 				30CFD38A2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift */,
-				30CFD38C2A6EE58600C106BE /* HistoryTrackInfoView.swift */,
+				303295182D64EB7400337B4A /* HistoryTrackInfoWithPreloaderView.swift */,
 			);
 			path = HistoryTrackInfo;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				30B99B0E2ACAD933006ABA62 /* WhatsNewScreen.swift in Sources */,
 				30CFD3252A6ECEC100C106BE /* Double.swift in Sources */,
 				30B99B082AC47A41006ABA62 /* OSMHistoryTrackMapView.swift in Sources */,
+				303295172D5B32CD00337B4A /* ShortTrack.swift in Sources */,
 				30CFD33D2A6EE24800C106BE /* MainScreen.swift in Sources */,
 				30CFD35F2A6EE3BB00C106BE /* CommonInformerButtonStyle.swift in Sources */,
 				30CFD32C2A6EE1A400C106BE /* ActiveTrack.swift in Sources */,
@@ -960,7 +964,6 @@
 				30CFD3142A6ECD0E00C106BE /* CoreDataTrack+Extensions.swift in Sources */,
 				30CFD3892A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift in Sources */,
 				30CFD31D2A6ECDA200C106BE /* CLLocationDistance.swift in Sources */,
-				30CFD38D2A6EE58600C106BE /* HistoryTrackInfoView.swift in Sources */,
 				30CFD32E2A6EE1B700C106BE /* ActiveTrackType.swift in Sources */,
 				30CFD3112A6ECCD600C106BE /* Main.xcdatamodeld in Sources */,
 				30CFD3542A6EE34A00C106BE /* ActiveTrackMapView.swift in Sources */,
@@ -981,6 +984,7 @@
 				30CFD3582A6EE36700C106BE /* AppleActiveTrackMapViewDelegate.swift in Sources */,
 				30CFD3272A6ECED200C106BE /* String.swift in Sources */,
 				30CFD3872A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift in Sources */,
+				303295192D64EB7500337B4A /* HistoryTrackInfoWithPreloaderView.swift in Sources */,
 				30CFD3832A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift in Sources */,
 				30CFD3292A6ECEE900C106BE /* UIImage.swift in Sources */,
 				30CFD3392A6EE22700C106BE /* ActiveTrackScreen.swift in Sources */,

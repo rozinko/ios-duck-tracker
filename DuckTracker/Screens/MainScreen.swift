@@ -11,18 +11,33 @@ struct MainScreen: View {
             VStack(spacing: 15) {
                 MainInformerView(selectedTab: $selectedTab)
 
-                StatsBlockView(title: "StatsBlock.today".localized(), historyStatsBlock: dataProvider.historyStats.data[.today]!)
-
-                if dataProvider.historyStats.data[.yesterday]!.isWithData {
-                    StatsBlockView(title: "StatsBlock.yesterday".localized(), historyStatsBlock: dataProvider.historyStats.data[.yesterday]!)
+                if dataProvider.shortTracks.isEmpty && dataProvider.loading {
+                    VStack {
+                        Spacer(minLength: 30)
+                        VStack(spacing: 10) {
+                            ProgressView()
+                            HStack {
+                                Spacer()
+                                Text(".loading".localized()).font(Font.title2.bold())
+                                Spacer()
+                            }
+                        }
+                        Spacer(minLength: 30)
+                    }
+                } else {
+                    StatsBlockView(title: "StatsBlock.today".localized(), historyStatsBlock: dataProvider.historyStats.data[.today]!)
+                    
+                    if dataProvider.historyStats.data[.yesterday]!.isWithData {
+                        StatsBlockView(title: "StatsBlock.yesterday".localized(), historyStatsBlock: dataProvider.historyStats.data[.yesterday]!)
+                    }
+                    if dataProvider.historyStats.data[.days7]!.isWithData {
+                        StatsBlockView(title: "StatsBlock.7days".localized(), historyStatsBlock: dataProvider.historyStats.data[.days7]!)
+                    }
+                    if dataProvider.historyStats.data[.days30]!.isWithData {
+                        StatsBlockView(title: "StatsBlock.30days".localized(), historyStatsBlock: dataProvider.historyStats.data[.days30]!)
+                    }
+                    StatsBlockView(title: "StatsBlock.total".localized(), historyStatsBlock: dataProvider.historyStats.data[.total]!)
                 }
-                if dataProvider.historyStats.data[.days7]!.isWithData {
-                    StatsBlockView(title: "StatsBlock.7days".localized(), historyStatsBlock: dataProvider.historyStats.data[.days7]!)
-                }
-                if dataProvider.historyStats.data[.days30]!.isWithData {
-                    StatsBlockView(title: "StatsBlock.30days".localized(), historyStatsBlock: dataProvider.historyStats.data[.days30]!)
-                }
-                StatsBlockView(title: "StatsBlock.total".localized(), historyStatsBlock: dataProvider.historyStats.data[.total]!)
             }
             .padding()
         }

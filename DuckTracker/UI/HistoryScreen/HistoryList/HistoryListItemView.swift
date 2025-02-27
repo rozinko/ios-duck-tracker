@@ -2,11 +2,10 @@ import SwiftUI
 
 struct HistoryListItemView: View {
 
-    let infoTrack: InfoTrack
+    let shortTrack: ShortTrack
 
-    init(infoTrack: InfoTrack) {
-//        if #available(iOS 15, *) { print(Date.now, "HistoryListItemView // init(): for \(infoTrack.title)") }
-        self.infoTrack = infoTrack
+    init(shortTrack: ShortTrack) {
+        self.shortTrack = shortTrack
     }
 
     var body: some View {
@@ -14,9 +13,9 @@ struct HistoryListItemView: View {
         VStack {
             HStack {
                 HStack(spacing: 5) {
-                    infoTrack.type.getIcon()
+                    shortTrack.type.getIcon()
 
-                    Text(infoTrack.title).bold()
+                    Text(shortTrack.title).bold()
                 }
                 .foregroundColor(.accentColor)
 
@@ -26,16 +25,16 @@ struct HistoryListItemView: View {
 
             HStack(spacing: 5) {
                 VStack {
-                    if infoTrack.type == .run || infoTrack.type == .walk || infoTrack.type == .hike {
+                    if shortTrack.type == .run || shortTrack.type == .walk || shortTrack.type == .hike {
                         Text(".pace".localized())
                             .font(.caption)
                             .bold()
-                        Text(infoTrack.getPaceAsString())
+                        Text(shortTrack.getPaceAsString())
                     } else {
                         Text(".avgspeed.short".localized())
                             .font(.caption)
                             .bold()
-                        Text(infoTrack.avgSpeed.prepareStringKmh(withUnit: true))
+                        Text(shortTrack.avgSpeed.prepareStringKmh(withUnit: true))
                     }
                 }
 
@@ -45,7 +44,7 @@ struct HistoryListItemView: View {
                     Text(".time".localized())
                         .font(.caption)
                         .bold()
-                    Text(infoTrack.getTimeAsString())
+                    Text(shortTrack.getTimeAsString())
                 }
 
                 Spacer()
@@ -54,7 +53,7 @@ struct HistoryListItemView: View {
                     Text(".distance".localized())
                         .font(.caption)
                         .bold()
-                    Text(infoTrack.distance.prepareString())
+                    Text(shortTrack.distance.prepareString())
                 }
             }
         }
