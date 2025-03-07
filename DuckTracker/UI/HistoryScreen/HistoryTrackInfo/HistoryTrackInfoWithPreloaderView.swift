@@ -77,23 +77,7 @@ struct HistoryTrackInfoWithPreloaderView: View {
                 )
 
                 // Графики
-                if fullTrack != nil {
-                    HistoryTrackInfoChartsView(points: fullTrack?.route.points ?? [], avgSpeed: shortTrack.avgSpeed)
-                } else {
-                    VStack {
-                        Spacer(minLength: 30)
-                        VStack(spacing: 10) {
-                            ProgressView()
-                            HStack {
-                                Spacer()
-                                Text(".loading".localized()).font(Font.title2.bold())
-                                Spacer()
-                            }
-                        }
-                        Spacer(minLength: 30)
-                    }
-                    .background(Color.commonBackground)
-                }
+                HistoryTrackInfoChartsView(points: fullTrack?.route.points, avgSpeed: shortTrack.avgSpeed.toKmh())
 
             }
         }
@@ -180,7 +164,6 @@ struct HistoryTrackInfoWithPreloaderView: View {
             })
         }
         .onDisappear {
-            fullTrack = nil
             print("HistoryTrackInfoWithPreloaderView // onDisappear()")
         }
     }

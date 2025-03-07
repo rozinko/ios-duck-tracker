@@ -1,43 +1,22 @@
 import SwiftUI
-import MapKit
 import Charts
 
 struct HistoryTrackInfoChartsView: View {
 
-    let points: [InfoTrackPoint]
-    let avgSpeed: CLLocationSpeed
+    let points: [InfoTrackPoint]?
+    let avgSpeed: Double
+
+    var chartDataSpeed: [ChartPoint]? { points?.map { ChartPoint(date: $0.timestamp, value: $0.speed.toKmh())} }
+    var chartDataAltitude: [ChartPoint]? { points?.map { ChartPoint(date: $0.timestamp, value: $0.altitude)} }
+    var chartDataDistance: [ChartPoint]? { points?.map { ChartPoint(date: $0.timestamp, value: $0.distance)} }
+
+    let titleSpeed: String = (".speed".localized() + " (" + ".kmh".localized() + ")").uppercased()
+    let titleAltitude: String = (".altitude".localized() + " (" + ".meters".localized() + ")").uppercased()
+    let titleDistance: String = (".distance".localized() + " (" + ".meters".localized() + ")").uppercased()
 
     var body: some View {
-        if #available(iOS 16.0, *) {
-            if !points.isEmpty {
-                VStack(spacing: 1) {
-                    HistoryTrackInfoChartSpeedView(points: points, avgSpeed: avgSpeed)
-                        .padding([.top, .bottom], 5)
-                        .padding([.leading, .trailing], 8)
-                        .background(Color.commonElementBackground)
-
-                    HistoryTrackInfoChartAltitudeView(points: points)
-                        .padding([.top, .bottom], 5)
-                        .padding([.leading, .trailing], 8)
-                        .background(Color.commonElementBackground)
-
-                    HistoryTrackInfoChartDistanceView(points: points)
-                        .padding([.top, .bottom], 5)
-                        .padding([.leading, .trailing], 8)
-                        .background(Color.commonElementBackground)
-                }
-            } else {
-                HStack {
-                    Spacer()
-                    Text("HistoryTrackInfoChartsView.noData")
-                        .font(Font.caption.bold())
-                        .multilineTextAlignment(.center)
-                        .padding(30)
-                    Spacer()
-                }
-                .background(Color.commonElementBackground)
-            }
-        } else {
+        if #unavailable(iOS 16.0) {
+            // ios < 16.0
             HStack {
                 Spacer()
                 Text("HistoryTrackInfoChartsView.ios16")
@@ -47,6 +26,62 @@ struct HistoryTrackInfoChartsView: View {
                 Spacer()
             }
             .background(Color.commonElementBackground)
+        } else if points == nil {
+            // loading data
+            HStack {
+                Spacer()
+                Text(".loading")
+                    .font(Font.caption.bold())
+                    .multilineTextAlignment(.center)
+                    .padding(30)
+                Spacer()
+            }
+            .background(Color.commonElementBackground)
+        } else if points!.isEmpty {
+            // empty data
+            HStack {
+                Spacer()
+                Text("HistoryTrackInfoChartsView.noData")
+                    .font(Font.caption.bold())
+                    .multilineTextAlignment(.center)
+                    .padding(30)
+                Spacer()
+            }
+            .background(Color.commonElementBackground)
+        } else {
+            LazyVStack(spacing: 1) {
+                HistoryTrackInfoChartView(
+                    title: titleSpeed,
+                    data: chartDataSpeed,
+                    color: Color.commonOrange,
+                    onlyPositive: true,
+                    avg: avgSpeed,
+                    avgTitle: ".avgspeed".localized()
+                )
+                .padding([.top, .bottom], 5)
+                .padding([.leading, .trailing], 8)
+                .background(Color.commonElementBackground)
+
+                HistoryTrackInfoChartView(
+                    title: titleAltitude,
+                    data: chartDataAltitude,
+                    color: Color.commonGreen,
+                    onlyPositive: false
+                )
+                .padding([.top, .bottom], 5)
+                .padding([.leading, .trailing], 8)
+                .background(Color.commonElementBackground)
+
+                HistoryTrackInfoChartView(
+                    title: titleDistance,
+                    data: chartDataDistance,
+                    color: Color.commonBlue,
+                    onlyPositive: true
+                )
+                .padding([.top, .bottom], 5)
+                .padding([.leading, .trailing], 8)
+                .background(Color.commonElementBackground)
+            }
         }
     }
 }

@@ -17,6 +17,7 @@
 		305926A42C18ACA5007A38B3 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305926A32C18ACA5007A38B3 /* StringTests.swift */; };
 		305B1ACD2C25C7D2009B9C72 /* DuckFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B1ACC2C25C7D2009B9C72 /* DuckFileManager.swift */; };
 		305B1ACF2C29CD1C009B9C72 /* DuckFileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B1ACE2C29CD1C009B9C72 /* DuckFileInfo.swift */; };
+		305B787A2D74AAEE00EC3384 /* HistoryTrackInfoChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305B78792D74AAEE00EC3384 /* HistoryTrackInfoChartView.swift */; };
 		308111DC2C7DEAF3004C6B8C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308111DB2C7DEAF3004C6B8C /* URL.swift */; };
 		308ED6EB2C8A0F6300F346D2 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308ED6EA2C8A0F6300F346D2 /* Int.swift */; };
 		308ED6ED2C8A12C000F346D2 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308ED6EC2C8A12C000F346D2 /* IntTests.swift */; };
@@ -90,9 +91,6 @@
 		30CFD37B2A6EE4C600C106BE /* HistoryListSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD37A2A6EE4C600C106BE /* HistoryListSectionView.swift */; };
 		30CFD37D2A6EE4D500C106BE /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD37C2A6EE4D500C106BE /* HistoryListView.swift */; };
 		30CFD3802A6EE52000C106BE /* HistoryListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD37F2A6EE52000C106BE /* HistoryListSection.swift */; };
-		30CFD3832A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3822A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift */; };
-		30CFD3852A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3842A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift */; };
-		30CFD3872A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3862A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift */; };
 		30CFD3892A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3882A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift */; };
 		30CFD38B2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD38A2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift */; };
 		30CFD3902A6EE5A200C106BE /* AppleHistoryTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD38F2A6EE5A200C106BE /* AppleHistoryTrackMapView.swift */; };
@@ -138,6 +136,7 @@
 		305926A32C18ACA5007A38B3 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		305B1ACC2C25C7D2009B9C72 /* DuckFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckFileManager.swift; sourceTree = "<group>"; };
 		305B1ACE2C29CD1C009B9C72 /* DuckFileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckFileInfo.swift; sourceTree = "<group>"; };
+		305B78792D74AAEE00EC3384 /* HistoryTrackInfoChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartView.swift; sourceTree = "<group>"; };
 		308111DB2C7DEAF3004C6B8C /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		308ED6EA2C8A0F6300F346D2 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		308ED6EC2C8A12C000F346D2 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
@@ -214,9 +213,6 @@
 		30CFD37A2A6EE4C600C106BE /* HistoryListSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListSectionView.swift; sourceTree = "<group>"; };
 		30CFD37C2A6EE4D500C106BE /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
 		30CFD37F2A6EE52000C106BE /* HistoryListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListSection.swift; sourceTree = "<group>"; };
-		30CFD3822A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartAltitudeView.swift; sourceTree = "<group>"; };
-		30CFD3842A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartDistanceView.swift; sourceTree = "<group>"; };
-		30CFD3862A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartSpeedView.swift; sourceTree = "<group>"; };
 		30CFD3882A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoChartsView.swift; sourceTree = "<group>"; };
 		30CFD38A2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoEditModalView.swift; sourceTree = "<group>"; };
 		30CFD38F2A6EE5A200C106BE /* AppleHistoryTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleHistoryTrackMapView.swift; sourceTree = "<group>"; };
@@ -564,9 +560,7 @@
 		30CFD3812A6EE53100C106BE /* HistoryTrackInfo */ = {
 			isa = PBXGroup;
 			children = (
-				30CFD3822A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift */,
-				30CFD3842A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift */,
-				30CFD3862A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift */,
+				305B78792D74AAEE00EC3384 /* HistoryTrackInfoChartView.swift */,
 				30CFD3882A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift */,
 				30CFD38A2A6EE57900C106BE /* HistoryTrackInfoEditModalView.swift */,
 				303295182D64EB7400337B4A /* HistoryTrackInfoWithPreloaderView.swift */,
@@ -932,7 +926,6 @@
 				30CFD33B2A6EE23600C106BE /* HistoryScreen.swift in Sources */,
 				30CFD36F2A6EE45400C106BE /* TrackInfoCommonView.swift in Sources */,
 				30CFD3712A6EE46400C106BE /* TrackInfoElementView.swift in Sources */,
-				30CFD3852A6EE54E00C106BE /* HistoryTrackInfoChartDistanceView.swift in Sources */,
 				30CFD39E2A6EE62400C106BE /* MainInformerView.swift in Sources */,
 				30B99B0E2ACAD933006ABA62 /* WhatsNewScreen.swift in Sources */,
 				30CFD3252A6ECEC100C106BE /* Double.swift in Sources */,
@@ -963,6 +956,7 @@
 				304DD5E22ABA3A5A005AD827 /* SettingSpeedDisplay.swift in Sources */,
 				30CFD3142A6ECD0E00C106BE /* CoreDataTrack+Extensions.swift in Sources */,
 				30CFD3892A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift in Sources */,
+				305B787A2D74AAEE00EC3384 /* HistoryTrackInfoChartView.swift in Sources */,
 				30CFD31D2A6ECDA200C106BE /* CLLocationDistance.swift in Sources */,
 				30CFD32E2A6EE1B700C106BE /* ActiveTrackType.swift in Sources */,
 				30CFD3112A6ECCD600C106BE /* Main.xcdatamodeld in Sources */,
@@ -983,9 +977,7 @@
 				30CFD3A32A6EE65500C106BE /* StatsBlockView.swift in Sources */,
 				30CFD3582A6EE36700C106BE /* AppleActiveTrackMapViewDelegate.swift in Sources */,
 				30CFD3272A6ECED200C106BE /* String.swift in Sources */,
-				30CFD3872A6EE55C00C106BE /* HistoryTrackInfoChartSpeedView.swift in Sources */,
 				303295192D64EB7500337B4A /* HistoryTrackInfoWithPreloaderView.swift in Sources */,
-				30CFD3832A6EE54000C106BE /* HistoryTrackInfoChartAltitudeView.swift in Sources */,
 				30CFD3292A6ECEE900C106BE /* UIImage.swift in Sources */,
 				30CFD3392A6EE22700C106BE /* ActiveTrackScreen.swift in Sources */,
 				308111DC2C7DEAF3004C6B8C /* URL.swift in Sources */,

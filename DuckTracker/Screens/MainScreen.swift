@@ -9,8 +9,6 @@ struct MainScreen: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 15) {
-                MainInformerView(selectedTab: $selectedTab)
-
                 if dataProvider.shortTracks.isEmpty && dataProvider.loading {
                     VStack {
                         Spacer(minLength: 30)
@@ -25,8 +23,10 @@ struct MainScreen: View {
                         Spacer(minLength: 30)
                     }
                 } else {
+                    MainInformerView(selectedTab: $selectedTab)
+
                     StatsBlockView(title: "StatsBlock.today".localized(), historyStatsBlock: dataProvider.historyStats.data[.today]!)
-                    
+
                     if dataProvider.historyStats.data[.yesterday]!.isWithData {
                         StatsBlockView(title: "StatsBlock.yesterday".localized(), historyStatsBlock: dataProvider.historyStats.data[.yesterday]!)
                     }
