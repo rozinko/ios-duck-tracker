@@ -19,6 +19,8 @@ struct HistoryTrackInfoWithPreloaderView: View {
     @State var showEditModal = false
     @State var showDeleteAlert = false
 
+    @State var selectedPoint: Int?
+
     init(shortTrack: ShortTrack) {
         print("HistoryTrackInfoWithPreloaderView // init(): \(shortTrack.title)")
         self.shortTrack = shortTrack
@@ -77,7 +79,7 @@ struct HistoryTrackInfoWithPreloaderView: View {
                 )
 
                 // Графики
-                HistoryTrackInfoChartsView(points: fullTrack?.route.points, avgSpeed: shortTrack.avgSpeed.toKmh())
+                HistoryTrackInfoChartsView(selectedPoint: $selectedPoint, points: fullTrack?.route.points, avgSpeed: shortTrack.avgSpeed.toKmh())
 
             }
         }

@@ -20,10 +20,10 @@ struct InfoTrackRoute {
                     longitude: point.longitude,
                     altitude: point.altitude,
                     speed: point.speed,
-                    course: point.course,
-                    hAcc: point.hAcc,
-                    vAcc: point.vAcc,
-                    sAcc: point.sAcc,
+//                    course: point.course,
+//                    hAcc: point.hAcc,
+//                    vAcc: point.vAcc,
+//                    sAcc: point.sAcc,
                     distance: distance,
                     timestamp: point.timestamp))
             }
