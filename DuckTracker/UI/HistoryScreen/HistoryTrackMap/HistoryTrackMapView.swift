@@ -3,15 +3,17 @@ import MapKit
 
 struct HistoryTrackMapView: View {
 
+    @Binding var selectedPoint: Int?
     @Binding var region: MKCoordinateRegion
 
     let trackCoordinates: [CLLocationCoordinate2D]
 
-    init(region: Binding<MKCoordinateRegion>, trackCoordinates: [CLLocationCoordinate2D], settingMapServerRawValue: String? = nil) {
-//        if #available(iOS 15, *) { print(Date.now, "HistoryTrackMapView // init(): start") }
+    init(selectedPoint: Binding<Int?>, region: Binding<MKCoordinateRegion>, trackCoordinates: [CLLocationCoordinate2D], settingMapServerRawValue: String? = nil) {
+//        print(Date().description, "HistoryTrackMapView // init(): start")
+        self._selectedPoint = selectedPoint
         self._region = region
         self.trackCoordinates = trackCoordinates
-//        if #available(iOS 15, *) { print(Date.now, "HistoryTrackMapView // init(): end") }
+//        print(Date().description, "HistoryTrackMapView // init(): end")
     }
 
     // Setting Map Server
@@ -21,16 +23,16 @@ struct HistoryTrackMapView: View {
 
     var body: some View {
         if settingMapServer == .osm {
-            OSMHistoryTrackMapView(region: $region, trackCoordinates: trackCoordinates)
+            OSMHistoryTrackMapView(selectedPoint: $selectedPoint, region: $region, trackCoordinates: trackCoordinates)
         } else {
-            AppleHistoryTrackMapView(region: $region, trackCoordinates: trackCoordinates)
+            AppleHistoryTrackMapView(selectedPoint: $selectedPoint, region: $region, trackCoordinates: trackCoordinates)
         }
     }
 }
 
 struct HistoryTrackMapView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryTrackMapView(region: .constant(MKCoordinateRegion(
+        HistoryTrackMapView(selectedPoint: .constant(nil), region: .constant(MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 59.939, longitude: 30.315),
             span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3)
         )), trackCoordinates: [

@@ -42,7 +42,7 @@ struct HistoryTrackInfoWithPreloaderView: View {
 
                 // Карта поездки
                 if fullTrack != nil {
-                    HistoryTrackMapView(region: $region, trackCoordinates: fullTrack?.route.coordinates ?? [])
+                    HistoryTrackMapView(selectedPoint: $selectedPoint, region: $region, trackCoordinates: fullTrack?.route.coordinates ?? [])
                         .frame(height: UIScreen.main.nativeBounds.width / UIScreen.main.nativeScale)
                         .onAppear {
                             print("HistoryTrackMapView // onAppear{} dots: \(fullTrack?.route.coordinates.count ?? 0)")
