@@ -7,22 +7,11 @@ struct MainScreen: View {
     @ObservedObject var dataProvider = DataProvider.shared
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 15) {
-                if dataProvider.shortTracks.isEmpty && dataProvider.loading {
-                    VStack {
-                        Spacer(minLength: 30)
-                        VStack(spacing: 10) {
-                            ProgressView()
-                            HStack {
-                                Spacer()
-                                Text(".loading".localized()).font(Font.title2.bold())
-                                Spacer()
-                            }
-                        }
-                        Spacer(minLength: 30)
-                    }
-                } else {
+        if dataProvider.shortTracks.isEmpty && dataProvider.loading {
+            LoadingView()
+        } else {
+            ScrollView {
+                VStack(spacing: 15) {
                     MainInformerView(selectedTab: $selectedTab)
 
                     StatsBlockView(title: "StatsBlock.today".localized(), historyStatsBlock: dataProvider.historyStats.data[.today]!)
@@ -38,10 +27,10 @@ struct MainScreen: View {
                     }
                     StatsBlockView(title: "StatsBlock.total".localized(), historyStatsBlock: dataProvider.historyStats.data[.total]!)
                 }
+                .padding()
             }
-            .padding()
+            .background(Color.commonBackground)
         }
-        .background(Color.commonBackground)
     }
 }
 

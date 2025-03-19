@@ -30,13 +30,10 @@ struct HistoryTrackInfoChartsView: View {
             .background(Color.commonElementBackground)
         } else if points == nil {
             // loading data
-            HStack {
-                Spacer()
-                Text(".loading")
-                    .font(Font.caption.bold())
-                    .multilineTextAlignment(.center)
-                    .padding(30)
-                Spacer()
+            VStack {
+                Spacer(minLength: 30)
+                LoadingView(withSize: .small)
+                Spacer(minLength: 30)
             }
             .background(Color.commonElementBackground)
         } else if points!.isEmpty {
@@ -91,26 +88,34 @@ struct HistoryTrackInfoChartsView: View {
     }
 }
 
-struct HistoryTrackInfoChartsView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            Spacer()
-            HistoryTrackInfoChartsView(selectedPoint: .constant(nil), points: [
-                InfoTrackPoint(latitude: 0, longitude: 0, altitude: 22, speed: 10, distance: 2, timestamp: Date(timeIntervalSince1970: 1685551781)),
-                InfoTrackPoint(latitude: 0, longitude: 0, altitude: 25, speed: 12, distance: 3, timestamp: Date(timeIntervalSince1970: 1685552781)),
-                InfoTrackPoint(latitude: 0, longitude: 0, altitude: 27, speed: 14, distance: 4, timestamp: Date(timeIntervalSince1970: 1685553781)),
-                InfoTrackPoint(latitude: 0, longitude: 0, altitude: 26, speed: 10, distance: 6, timestamp: Date(timeIntervalSince1970: 1685554781)),
-                InfoTrackPoint(latitude: 0, longitude: 0, altitude: 23, speed: 11, distance: 9, timestamp: Date(timeIntervalSince1970: 1685555781)),
-                InfoTrackPoint(latitude: 0, longitude: 0, altitude: 22, speed: 13, distance: 11, timestamp: Date(timeIntervalSince1970: 1685555981)),
-                InfoTrackPoint(latitude: 0, longitude: 0, altitude: 24, speed: 10, distance: 12, timestamp: Date(timeIntervalSince1970: 1685558781))
-            ], avgSpeed: 42)
-            Spacer()
-        }.background(Color.commonBackground)
+#Preview("Data") {
+    VStack {
+        Spacer()
+        HistoryTrackInfoChartsView(selectedPoint: .constant(nil), points: [
+            InfoTrackPoint(latitude: 0, longitude: 0, altitude: 22, speed: 10, distance: 2, timestamp: Date(timeIntervalSince1970: 1685551781)),
+            InfoTrackPoint(latitude: 0, longitude: 0, altitude: 25, speed: 12, distance: 3, timestamp: Date(timeIntervalSince1970: 1685552781)),
+            InfoTrackPoint(latitude: 0, longitude: 0, altitude: 27, speed: 14, distance: 4, timestamp: Date(timeIntervalSince1970: 1685553781)),
+            InfoTrackPoint(latitude: 0, longitude: 0, altitude: 26, speed: 10, distance: 6, timestamp: Date(timeIntervalSince1970: 1685554781)),
+            InfoTrackPoint(latitude: 0, longitude: 0, altitude: 23, speed: 11, distance: 9, timestamp: Date(timeIntervalSince1970: 1685555781)),
+            InfoTrackPoint(latitude: 0, longitude: 0, altitude: 22, speed: 13, distance: 11, timestamp: Date(timeIntervalSince1970: 1685555981)),
+            InfoTrackPoint(latitude: 0, longitude: 0, altitude: 24, speed: 10, distance: 12, timestamp: Date(timeIntervalSince1970: 1685558781))
+        ], avgSpeed: 42)
+        Spacer()
+    }.background(Color.commonBackground)
+}
 
-        VStack {
-            Spacer()
-            HistoryTrackInfoChartsView(selectedPoint: .constant(nil), points: [], avgSpeed: 0)
-            Spacer()
-        }.background(Color.commonBackground)
-    }
+#Preview("No data") {
+    VStack {
+        Spacer()
+        HistoryTrackInfoChartsView(selectedPoint: .constant(nil), points: [], avgSpeed: 0)
+        Spacer()
+    }.background(Color.commonBackground)
+}
+
+#Preview("Loading") {
+    VStack {
+        Spacer()
+        HistoryTrackInfoChartsView(selectedPoint: .constant(nil), points: nil, avgSpeed: 0)
+        Spacer()
+    }.background(Color.commonBackground)
 }

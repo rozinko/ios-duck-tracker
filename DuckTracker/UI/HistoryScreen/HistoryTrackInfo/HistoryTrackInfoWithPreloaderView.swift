@@ -51,18 +51,7 @@ struct HistoryTrackInfoWithPreloaderView: View {
                             print("HistoryTrackMapView // onDisappear{}")
                         }
                 } else {
-                    VStack {
-                        Spacer()
-                        VStack(spacing: 10) {
-                            ProgressView()
-                            HStack {
-                                Spacer()
-                                Text(".loading".localized()).font(Font.title2.bold())
-                                Spacer()
-                            }
-                        }
-                        Spacer()
-                    }
+                    LoadingView()
                     .background(Color.commonBackground)
                     .frame(height: UIScreen.main.nativeBounds.width / UIScreen.main.nativeScale)
                 }

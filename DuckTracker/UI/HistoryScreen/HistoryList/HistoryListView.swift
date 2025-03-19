@@ -11,18 +11,7 @@ struct HistoryListView: View {
         if dataProvider.historyTracks.isEmpty && dataProvider.loading {
 
             // Loading...
-            VStack {
-                Spacer(minLength: 30)
-                VStack(spacing: 10) {
-                    ProgressView()
-                    HStack {
-                        Spacer()
-                        Text(".loading".localized()).font(Font.title2.bold())
-                        Spacer()
-                    }
-                }
-                Spacer(minLength: 30)
-            }
+            LoadingView()
 
         } else if dataProvider.historyTracks.isEmpty {
 

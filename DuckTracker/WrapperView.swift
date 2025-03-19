@@ -6,7 +6,7 @@ struct WrapperView: View {
 
     // WhatsNewScreen
     @State var showWhatsNewModal = false
-    private let whatsNewProvider = WhatsNewProvider.shared
+//    private let whatsNewProvider = WhatsNewProvider.shared
     // End of WhatsNewScreen
 
     var body: some View {
@@ -33,12 +33,12 @@ struct WrapperView: View {
                 .tag(4)
         }
         .accentColor(Color.wrapperViewAccent)
-        .sheet(isPresented: $showWhatsNewModal) {
-            WhatsNewScreen(showModal: $showWhatsNewModal)
-        }
-        .onAppear {
-            showWhatsNewModal = !whatsNewProvider.updates.isEmpty
-        }
+//        .sheet(isPresented: $showWhatsNewModal) {
+//            WhatsNewScreen(showModal: $showWhatsNewModal)
+//        }
+//        .onAppear {
+//            showWhatsNewModal = !whatsNewProvider.updates.isEmpty
+//        }
     }
 }
 
