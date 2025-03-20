@@ -39,7 +39,6 @@ struct CoreDataProvider {
 
         DispatchQueue.global(qos: .userInitiated).async {
             do {
-                sleep(2)
                 let result = try persistentContainer.viewContext.fetch(fetchRequest)
                 DispatchQueue.main.async {
                     closure(result)
@@ -54,7 +53,6 @@ struct CoreDataProvider {
 
         DispatchQueue.global(qos: .userInitiated).async {
             do {
-                sleep(25)
                 let result = try persistentContainer.viewContext.fetch(fetchRequest)
                 DispatchQueue.main.async {
                     closure(result)
