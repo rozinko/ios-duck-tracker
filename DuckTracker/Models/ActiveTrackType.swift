@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-public enum ActiveTrackType: String, CaseIterable {
+public enum ActiveTrackType: String, CaseIterable, Codable {
     case run, walk, scooter, bike, electroscooter, electrobike, hike, car, bus, train, boat, airplane, other
 }
 
@@ -51,11 +51,15 @@ extension ActiveTrackType {
     func getIcon() -> some View {
         Image(systemName: self.getSystemImageName())
     }
+    
+    func getLocalized(prefix: ActiveTrackTypePrefix = .full) -> String {
+        return self.rawValue.localized(withPrefix: prefix.rawValue)
+    }
 
     func getLabel(prefix: ActiveTrackTypePrefix = .full) -> some View {
         HStack(spacing: 5) {
             self.getIcon()
-            Text(self.rawValue.localized(withPrefix: prefix.rawValue))
+            Text(self.getLocalized(prefix: prefix))
         }
     }
 

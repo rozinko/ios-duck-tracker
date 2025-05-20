@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -104,6 +104,19 @@
 		30CFD3A12A6EE64600C106BE /* HistoryStatsBlockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3A02A6EE64600C106BE /* HistoryStatsBlockItem.swift */; };
 		30CFD3A32A6EE65500C106BE /* StatsBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3A22A6EE65500C106BE /* StatsBlockView.swift */; };
 		30CFD3B82A707CDC00C106BE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD3B72A707CDC00C106BE /* .swiftlint.yml */; };
+		30DBDF0D2DD77C4100E3DBA0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DBDF0C2DD77C4100E3DBA0 /* WidgetKit.framework */; };
+		30DBDF0F2DD77C4200E3DBA0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DBDF0E2DD77C4100E3DBA0 /* SwiftUI.framework */; };
+		30DBDF1C2DD77C4400E3DBA0 /* LiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 30DBDF0B2DD77C4100E3DBA0 /* LiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		30DBDF232DD77E4000E3DBA0 /* LiveActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDF222DD77E4000E3DBA0 /* LiveActivityService.swift */; };
+		30DBDF242DD77E4C00E3DBA0 /* LiveActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDF222DD77E4000E3DBA0 /* LiveActivityService.swift */; };
+		30DBDF282DD77E8B00E3DBA0 /* LiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDF272DD77E8B00E3DBA0 /* LiveActivityAttributes.swift */; };
+		30DBDF292DD77EA500E3DBA0 /* LiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DBDF272DD77E8B00E3DBA0 /* LiveActivityAttributes.swift */; };
+		30FD2E832DD927AF009A19A0 /* ActiveTrackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD32D2A6EE1B700C106BE /* ActiveTrackType.swift */; };
+		30FD2E842DD92ACA009A19A0 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3262A6ECED200C106BE /* String.swift */; };
+		30FD2E852DD92DE1009A19A0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 30B305732C80BA290076D58D /* Localizable.xcstrings */; };
+		30FD2E862DDC5008009A19A0 /* CLLocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD31C2A6ECDA200C106BE /* CLLocationDistance.swift */; };
+		30FD2E872DDC5048009A19A0 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3242A6ECEC100C106BE /* Double.swift */; };
+		30FD2E882DDC538B009A19A0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD3222A6ECEB000C106BE /* Date.swift */; };
 		553A8CE129ABB3ABB8BBE2F8 /* Pods_DuckTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B762E7D1EA6305AC774700 /* Pods_DuckTrackerTests.framework */; };
 		B6ACF28F081397C91D748C79 /* Pods_DuckTracker_DuckTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBED40457487400808E8A5AC /* Pods_DuckTracker_DuckTrackerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -123,7 +136,28 @@
 			remoteGlobalIDString = 30CFD2D02A6EC7F000C106BE;
 			remoteInfo = DuckTracker;
 		};
+		30DBDF1A2DD77C4400E3DBA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFD2C92A6EC7F000C106BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30DBDF0A2DD77C4100E3DBA0;
+			remoteInfo = LiveActivityExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		30DBDF1D2DD77C4400E3DBA0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				30DBDF1C2DD77C4400E3DBA0 /* LiveActivityExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		055D2FFA6C9AD312371A1F3C /* Pods-DuckTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTracker.debug.xcconfig"; path = "Target Support Files/Pods-DuckTracker/Pods-DuckTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +262,11 @@
 		30CFD3A22A6EE65500C106BE /* StatsBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsBlockView.swift; sourceTree = "<group>"; };
 		30CFD3A72A6FF89800C106BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		30CFD3B72A707CDC00C106BE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		30DBDF0B2DD77C4100E3DBA0 /* LiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		30DBDF0C2DD77C4100E3DBA0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		30DBDF0E2DD77C4100E3DBA0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		30DBDF222DD77E4000E3DBA0 /* LiveActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityService.swift; sourceTree = "<group>"; };
+		30DBDF272DD77E8B00E3DBA0 /* LiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityAttributes.swift; sourceTree = "<group>"; };
 		31E4483851A58CB22B16B3C6 /* Pods-DuckTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-DuckTrackerTests/Pods-DuckTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35B762E7D1EA6305AC774700 /* Pods_DuckTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DuckTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D076D23FFAEEC95B05A56A /* Pods_DuckTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DuckTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +275,20 @@
 		EBED40457487400808E8A5AC /* Pods_DuckTracker_DuckTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DuckTracker_DuckTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A5F84A45D39ED52EEBF074 /* Pods-DuckTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuckTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-DuckTrackerTests/Pods-DuckTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		30DBDF202DD77C4400E3DBA0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 30DBDF0A2DD77C4100E3DBA0 /* LiveActivityExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		30DBDF102DD77C4200E3DBA0 /* LiveActivity */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (30DBDF202DD77C4400E3DBA0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = LiveActivity; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		30CFD2CE2A6EC7F000C106BE /* Frameworks */ = {
@@ -262,6 +315,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30DBDF082DD77C4100E3DBA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30DBDF0F2DD77C4200E3DBA0 /* SwiftUI.framework in Frameworks */,
+				30DBDF0D2DD77C4100E3DBA0 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -281,6 +343,7 @@
 				30CFD2D32A6EC7F000C106BE /* DuckTracker */,
 				30CFD2E92A6EC7F200C106BE /* DuckTrackerTests */,
 				30CFD2F32A6EC7F200C106BE /* DuckTrackerUITests */,
+				30DBDF102DD77C4200E3DBA0 /* LiveActivity */,
 				30CFD2D22A6EC7F000C106BE /* Products */,
 				5FBE3E20B563982295D264E6 /* Pods */,
 				BA6A83B8EBCE13E28B68FB14 /* Frameworks */,
@@ -293,6 +356,7 @@
 				30CFD2D12A6EC7F000C106BE /* DuckTracker.app */,
 				30CFD2E62A6EC7F200C106BE /* DuckTrackerTests.xctest */,
 				30CFD2F02A6EC7F200C106BE /* DuckTrackerUITests.xctest */,
+				30DBDF0B2DD77C4100E3DBA0 /* LiveActivityExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,10 +412,11 @@
 			children = (
 				30CFD3062A6ECC2500C106BE /* ActiveTrackProvider.swift */,
 				30CFD3082A6ECC3C00C106BE /* DataProvider.swift */,
-				30CFD30A2A6ECC5400C106BE /* LocationProvider.swift */,
-				30B99B0F2ACD7B41006ABA62 /* WhatsNewProvider.swift */,
 				3002373D2BFFDD1000B8EBB2 /* DeviceIdProvider.swift */,
 				305B1ACC2C25C7D2009B9C72 /* DuckFileManager.swift */,
+				30DBDF222DD77E4000E3DBA0 /* LiveActivityService.swift */,
+				30CFD30A2A6ECC5400C106BE /* LocationProvider.swift */,
+				30B99B0F2ACD7B41006ABA62 /* WhatsNewProvider.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -397,18 +462,19 @@
 		30CFD32A2A6EE19600C106BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				303295162D5B32CD00337B4A /* ShortTrack.swift */,
 				30CFD32B2A6EE1A400C106BE /* ActiveTrack.swift */,
 				30CFD32D2A6EE1B700C106BE /* ActiveTrackType.swift */,
+				305B1ACE2C29CD1C009B9C72 /* DuckFileInfo.swift */,
 				30CFD32F2A6EE1C700C106BE /* InfoTrack.swift */,
 				30CFD3312A6EE1DD00C106BE /* InfoTrackPoint.swift */,
 				30CFD3332A6EE1F000C106BE /* InfoTrackRoute.swift */,
-				30CFD3352A6EE20400C106BE /* TrackPoint.swift */,
+				30DBDF272DD77E8B00E3DBA0 /* LiveActivityAttributes.swift */,
 				304DD5DF2AB98E4F005AD827 /* SettingAppearance.swift */,
-				304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */,
 				30B99AFF2ABDA0E7006ABA62 /* SettingMapServer.swift */,
+				304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */,
+				303295162D5B32CD00337B4A /* ShortTrack.swift */,
+				30CFD3352A6EE20400C106BE /* TrackPoint.swift */,
 				30B99B112AD57799006ABA62 /* WhatsNewModel.swift */,
-				305B1ACE2C29CD1C009B9C72 /* DuckFileInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -640,6 +706,8 @@
 				55D076D23FFAEEC95B05A56A /* Pods_DuckTracker.framework */,
 				EBED40457487400808E8A5AC /* Pods_DuckTracker_DuckTrackerUITests.framework */,
 				35B762E7D1EA6305AC774700 /* Pods_DuckTrackerTests.framework */,
+				30DBDF0C2DD77C4100E3DBA0 /* WidgetKit.framework */,
+				30DBDF0E2DD77C4100E3DBA0 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -657,10 +725,12 @@
 				30CFD2CF2A6EC7F000C106BE /* Resources */,
 				30CFD3B62A707C8700C106BE /* ShellScript */,
 				9F020AB8E06A96CE639CAB3F /* [CP] Embed Pods Frameworks */,
+				30DBDF1D2DD77C4400E3DBA0 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				30DBDF1B2DD77C4400E3DBA0 /* PBXTargetDependency */,
 			);
 			name = DuckTracker;
 			packageProductDependencies = (
@@ -708,6 +778,28 @@
 			productReference = 30CFD2F02A6EC7F200C106BE /* DuckTrackerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		30DBDF0A2DD77C4100E3DBA0 /* LiveActivityExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30DBDF212DD77C4400E3DBA0 /* Build configuration list for PBXNativeTarget "LiveActivityExtension" */;
+			buildPhases = (
+				30DBDF072DD77C4100E3DBA0 /* Sources */,
+				30DBDF082DD77C4100E3DBA0 /* Frameworks */,
+				30DBDF092DD77C4100E3DBA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				30DBDF102DD77C4200E3DBA0 /* LiveActivity */,
+			);
+			name = LiveActivityExtension;
+			packageProductDependencies = (
+			);
+			productName = LiveActivityExtension;
+			productReference = 30DBDF0B2DD77C4100E3DBA0 /* LiveActivityExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -715,7 +807,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					30CFD2D02A6EC7F000C106BE = {
@@ -728,6 +820,9 @@
 					30CFD2EF2A6EC7F200C106BE = {
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = 30CFD2D02A6EC7F000C106BE;
+					};
+					30DBDF0A2DD77C4100E3DBA0 = {
+						CreatedOnToolsVersion = 16.3;
 					};
 				};
 			};
@@ -750,6 +845,7 @@
 				30CFD2D02A6EC7F000C106BE /* DuckTracker */,
 				30CFD2E52A6EC7F200C106BE /* DuckTrackerTests */,
 				30CFD2EF2A6EC7F200C106BE /* DuckTrackerUITests */,
+				30DBDF0A2DD77C4100E3DBA0 /* LiveActivityExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -778,6 +874,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30DBDF092DD77C4100E3DBA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30FD2E852DD92DE1009A19A0 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,12 +1031,14 @@
 				30CFD3942A6EE5BE00C106BE /* HistoryTrackMapView.swift in Sources */,
 				30CFD37D2A6EE4D500C106BE /* HistoryListView.swift in Sources */,
 				30CFD3612A6EE3CC00C106BE /* CommonInformerEnums.swift in Sources */,
+				30DBDF282DD77E8B00E3DBA0 /* LiveActivityAttributes.swift in Sources */,
 				304DD5DE2AB34912005AD827 /* SettingsScreen.swift in Sources */,
 				30CFD3362A6EE20400C106BE /* TrackPoint.swift in Sources */,
 				304DD5E02AB98E4F005AD827 /* SettingAppearance.swift in Sources */,
 				30CFD3442A6EE29F00C106BE /* ActiveTrackFinishButtonView.swift in Sources */,
 				30CFD3652A6EE3EB00C106BE /* CommonInformerShortView.swift in Sources */,
 				30B99B062AC477CF006ABA62 /* OSMActiveTrackMapViewDelegate.swift in Sources */,
+				30DBDF232DD77E4000E3DBA0 /* LiveActivityService.swift in Sources */,
 				30CFD3232A6ECEB000C106BE /* Date.swift in Sources */,
 				30CFD33B2A6EE23600C106BE /* HistoryScreen.swift in Sources */,
 				30BC013F2D896C0E00E75C44 /* LoadingView.swift in Sources */,
@@ -1024,6 +1130,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30DBDF072DD77C4100E3DBA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30FD2E842DD92ACA009A19A0 /* String.swift in Sources */,
+				30FD2E862DDC5008009A19A0 /* CLLocationDistance.swift in Sources */,
+				30FD2E872DDC5048009A19A0 /* Double.swift in Sources */,
+				30DBDF292DD77EA500E3DBA0 /* LiveActivityAttributes.swift in Sources */,
+				30FD2E832DD927AF009A19A0 /* ActiveTrackType.swift in Sources */,
+				30FD2E882DDC538B009A19A0 /* Date.swift in Sources */,
+				30DBDF242DD77E4C00E3DBA0 /* LiveActivityService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1036,6 +1156,11 @@
 			isa = PBXTargetDependency;
 			target = 30CFD2D02A6EC7F000C106BE /* DuckTracker */;
 			targetProxy = 30CFD2F12A6EC7F200C106BE /* PBXContainerItemProxy */;
+		};
+		30DBDF1B2DD77C4400E3DBA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30DBDF0A2DD77C4100E3DBA0 /* LiveActivityExtension */;
+			targetProxy = 30DBDF1A2DD77C4400E3DBA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1175,10 +1300,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DuckTracker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Duck Tracker";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "When you record a track, application needs access to your location.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1215,10 +1342,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DuckTracker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Duck Tracker";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "When you record a track and set tracker app inactive or background, application needs background access to your location.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "When you record a track, application needs access to your location.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1320,6 +1449,71 @@
 			};
 			name = Release;
 		};
+		30DBDF1E2DD77C4400E3DBA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 594KX7YQG6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rozinko.DuckTracker.LiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		30DBDF1F2DD77C4400E3DBA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 594KX7YQG6;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rozinko.DuckTracker.LiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1355,6 +1549,15 @@
 			buildConfigurations = (
 				30CFD3012A6EC7F200C106BE /* Debug */,
 				30CFD3022A6EC7F200C106BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30DBDF212DD77C4400E3DBA0 /* Build configuration list for PBXNativeTarget "LiveActivityExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30DBDF1E2DD77C4400E3DBA0 /* Debug */,
+				30DBDF1F2DD77C4400E3DBA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

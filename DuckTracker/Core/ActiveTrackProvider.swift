@@ -11,6 +11,7 @@ public class ActiveTrackProvider: NSObject, ObservableObject {
     @Published var timeString: String = "00:00:00"
 
     private let dataProvider = DataProvider.shared
+    private let liveActivityService = LiveActivityService.shared
 
     private var timer: Timer?
 
@@ -27,6 +28,13 @@ public class ActiveTrackProvider: NSObject, ObservableObject {
                 self.updateTimeString()
             }
         }
+
+        // добавляем live activity или продолжаем старый
+        if liveActivityService.hasActivity() {
+            liveActivityService.updateActivity(isRecording: true)
+        } else {
+            liveActivityService.startActivity(startDate: Date())
+        }
     }
 
     func pause() {
@@ -34,6 +42,7 @@ public class ActiveTrackProvider: NSObject, ObservableObject {
         // если же нет - очищаем трек
         if track.trackPoints.count >= 2 {
             addPoint(force: true)
+            liveActivityService.updateActivity(isRecording: false)
         } else {
             clear()
         }
@@ -61,6 +70,7 @@ public class ActiveTrackProvider: NSObject, ObservableObject {
     func clear() {
         track = ActiveTrack()
         updateTimeString()
+        liveActivityService.stopActivites()
     }
 
     func updateTimeString() {
@@ -119,6 +129,13 @@ public class ActiveTrackProvider: NSObject, ObservableObject {
         if add {
             // добавляем точку в маршрут
             self.track.trackPoints.append(point)
+
+            // обновляем live activity
+            liveActivityService.updateActivity(
+                isRecording: isRecording,
+                distance: track.distance,
+                lastDate: track.trackPoints.last?.location.timestamp
+            )
         }
     }
 

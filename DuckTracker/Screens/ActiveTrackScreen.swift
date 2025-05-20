@@ -14,9 +14,13 @@ struct ActiveTrackScreen: View {
     @State var activeTrackTitle: String = ""
     @State var activeTrackType: ActiveTrackType
 
+    private let liveActivityService = LiveActivityService.shared
+
     init(selectedTab: Binding<Int>) {
         self._selectedTab = selectedTab
         self.activeTrackType = DataProvider.shared.selectLastTrackType() ?? .run
+
+        liveActivityService.setTrackType(self.activeTrackType)
     }
 
     var body: some View {
@@ -38,6 +42,9 @@ struct ActiveTrackScreen: View {
                 activeTrackTitle: $activeTrackTitle,
                 activeTrackType: $activeTrackType)
         }
+        .onChange(of: $activeTrackType.wrappedValue, perform: { value in
+            liveActivityService.updateActivity(trackType: value)
+        })
     }
 }
 

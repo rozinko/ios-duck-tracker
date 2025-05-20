@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 extension Date {
 
@@ -28,4 +29,17 @@ extension Date {
         return toString(dateFormat: "yyyy")
     }
 
+    func toStringHHmm() -> String {
+        return toString(dateFormat: "HH:mm")
+    }
+
+}
+
+#Preview {
+    Text(Date().toStringDate())
+    Text(Date().toStringDayMonthYear())
+    Text(Date().toStringDay())
+    Text(Date().toStringMonth())
+    Text(Date().toStringYear())
+    Text(Date().toStringHHmm())
 }

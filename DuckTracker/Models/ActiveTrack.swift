@@ -1,5 +1,5 @@
 import Foundation
-import MapKit
+import CoreLocation
 
 public struct ActiveTrack: Identifiable {
     public let id = UUID()
