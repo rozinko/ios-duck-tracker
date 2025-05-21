@@ -29,7 +29,6 @@ struct ActiveTrackScreen: View {
                 ActiveTrackMapView(activeTrackMapRegion: $activeTrackMapRegion)
                 ActiveTrackFinishButtonView(showFinishModalView: $showFinishModalView)
             }
-//            TestingComponentLocNowView()
             ActiveTrackInfoView(activeTrackType: $activeTrackType)
             ActiveTrackStartPauseResumeButtonView()
         }
@@ -42,14 +41,15 @@ struct ActiveTrackScreen: View {
                 activeTrackTitle: $activeTrackTitle,
                 activeTrackType: $activeTrackType)
         }
+        .onAppear {
+            liveActivityService.setTrackType(self.activeTrackType)
+        }
         .onChange(of: $activeTrackType.wrappedValue, perform: { value in
             liveActivityService.updateActivity(trackType: value)
         })
     }
 }
 
-struct RecordView_Previews: PreviewProvider {
-    static var previews: some View {
-        ActiveTrackScreen(selectedTab: .constant(2))
-    }
+#Preview {
+    ActiveTrackScreen(selectedTab: .constant(2))
 }

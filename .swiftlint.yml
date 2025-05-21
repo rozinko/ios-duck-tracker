@@ -9,6 +9,7 @@ included:
   - DuckTracker
   - DuckTrackerTests
   - DuckTrackerUITests
+  - LiveActivity
 
 excluded:
   - Pods
