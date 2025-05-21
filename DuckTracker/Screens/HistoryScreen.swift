@@ -10,8 +10,6 @@ struct HistoryScreen: View {
 
 }
 
-struct HistoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        HistoryScreen(selectedTab: .constant(3))
-    }
+#Preview {
+    HistoryScreen(selectedTab: .constant(3))
 }

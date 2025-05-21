@@ -48,20 +48,3 @@ struct HistoryListSectionView: View {
         }
     }
 }
-
-//#Preview {
-//    // Start List {} from HistoryListView
-//    let data: [HistoryListSection] = [-10, -3600, -86400, -86400*2, -86400*7, -86400*20,
-//                 -86400*180, -86400*360, -86400*720, -86400*1080].map {
-//        HistoryListSection(fromTimestamp: Date(timeIntervalSinceNow: $0))
-//    }
-//    List {
-//        ForEach(data, id: \.self) { section in
-//            Section(header: HistoryListSectionView(fromSection: section)) { }
-//        }
-//    }
-//    .navigationBarTitle(".tab.history".localized())
-//    .navigationViewStyle(.stack)
-//    .listStyle(GroupedListStyle())
-//    // End of List {}
-//}

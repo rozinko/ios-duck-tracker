@@ -34,8 +34,6 @@ struct MainScreen: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainScreen(selectedTab: .constant(1))
-    }
+#Preview {
+    MainScreen(selectedTab: .constant(1))
 }

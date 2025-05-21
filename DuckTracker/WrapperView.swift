@@ -4,11 +4,6 @@ struct WrapperView: View {
 
     @State var selectedTab = 1
 
-    // WhatsNewScreen
-    @State var showWhatsNewModal = false
-//    private let whatsNewProvider = WhatsNewProvider.shared
-    // End of WhatsNewScreen
-
     var body: some View {
         TabView(selection: $selectedTab) {
             MainScreen(selectedTab: $selectedTab)
@@ -33,20 +28,9 @@ struct WrapperView: View {
                 .tag(4)
         }
         .accentColor(Color.wrapperViewAccent)
-//        .sheet(isPresented: $showWhatsNewModal) {
-//            WhatsNewScreen(showModal: $showWhatsNewModal)
-//        }
-//        .onAppear {
-//            showWhatsNewModal = !whatsNewProvider.updates.isEmpty
-//        }
     }
 }
 
-struct WrapperView_Previews: PreviewProvider {
-    static var previews: some View {
-        WrapperView(selectedTab: 1)
-        WrapperView(selectedTab: 2)
-        WrapperView(selectedTab: 3)
-        WrapperView(selectedTab: 4)
-    }
+#Preview {
+    WrapperView()
 }

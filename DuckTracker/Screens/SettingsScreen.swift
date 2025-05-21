@@ -232,8 +232,6 @@ struct SettingsScreen: View {
 
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsScreen(selectedTab: .constant(4))
-    }
+#Preview {
+    SettingsScreen(selectedTab: .constant(4))
 }

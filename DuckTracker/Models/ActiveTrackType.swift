@@ -51,7 +51,7 @@ extension ActiveTrackType {
     func getIcon() -> some View {
         Image(systemName: self.getSystemImageName())
     }
-    
+
     func getLocalized(prefix: ActiveTrackTypePrefix = .full) -> String {
         return self.rawValue.localized(withPrefix: prefix.rawValue)
     }
