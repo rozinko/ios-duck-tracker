@@ -14,11 +14,11 @@ struct LiveActivityWidget: Widget {
                     HStack {
                         Text(context.state.isRecording ? context.state.trackType.getLocalized() : ".pause".localized())
                             .font(.title3.bold())
-                            .foregroundStyle(.widgetTextPrimary)
+                            .foregroundStyle(.widgetPrimary)
                         Spacer()
                         Text(context.state.isRecording ? "Duck Tracker" : context.state.trackType.getLocalized())
                             .font(.title3)
-                            .foregroundStyle(.widgetTextSecondary)
+                            .foregroundStyle(.widgetSecondary)
                     }
 
                     Spacer()
@@ -46,13 +46,13 @@ struct LiveActivityWidget: Widget {
                         }
                         .font(.caption2)
                     }
-                    .foregroundStyle(.widgetTextPrimary)
+                    .foregroundStyle(.widgetTimeline)
                 }
                 .padding(15)
 
             }
             .activityBackgroundTint(Color.widgetBackground)
-            .activitySystemActionForegroundColor(Color.widgetTextPrimary)
+            .activitySystemActionForegroundColor(Color.widgetPrimary)
 
         } dynamicIsland: { context in
             DynamicIsland {
@@ -68,11 +68,11 @@ struct LiveActivityWidget: Widget {
                         HStack {
                             Text(context.state.isRecording ? context.state.trackType.getLocalized() : ".pause".localized())
                                 .font(.title3.bold())
-                                .foregroundStyle(.diPrimary)
+                                .foregroundStyle(.dynamicIslandPrimary)
                             Spacer()
                             Text(context.state.isRecording ? "" : context.state.trackType.getLocalized())
                                 .font(.title3)
-                                .foregroundStyle(.diSecondary)
+                                .foregroundStyle(.dynamicIslandSecondary)
                         }
 
                         Spacer()
@@ -83,7 +83,6 @@ struct LiveActivityWidget: Widget {
                                 Spacer()
                                 context.state.trackType.getIcon()
                             }
-                            .foregroundStyle(.diTimeline)
 
                             HStack(spacing: 4) {
                                 Circle()
@@ -91,7 +90,6 @@ struct LiveActivityWidget: Widget {
                                 Circle()
                             }
                             .frame(height: 7)
-                            .foregroundStyle(.diTimeline)
 
                             HStack {
                                 Text(context.attributes.startDate.toStringHHmm())
@@ -101,14 +99,15 @@ struct LiveActivityWidget: Widget {
                                 Text(context.state.lastDate.toStringHHmm())
                             }
                             .font(.caption2)
-                            .foregroundStyle(.diTimeline)
-                        }.padding([.top, .bottom], 3)
+                        }
+                        .foregroundStyle(.dynamicIslandTimeline)
+                        .padding([.top, .bottom], 3)
 
                         HStack {
                             Spacer()
                             Text("Duck Tracker")
                                 .font(.caption2)
-                                .foregroundStyle(.diSecondary)
+                                .foregroundStyle(.dynamicIslandSecondary)
                             Spacer()
                         }
                     }
@@ -117,20 +116,20 @@ struct LiveActivityWidget: Widget {
             } compactLeading: {
 
                 Image(systemName: context.state.isRecording ? context.state.trackType.getSystemImageName() : "pause.circle")
-                    .foregroundStyle(Color.diCompact)
+                    .foregroundStyle(Color.dynamicIslandCompact)
 
             } compactTrailing: {
 
                 Text(context.state.distance.prepareString(compact: true))
-                    .foregroundStyle(Color.diCompact)
+                    .foregroundStyle(Color.dynamicIslandCompact)
 
             } minimal: {
 
                 Image(systemName: context.state.isRecording ? context.state.trackType.getSystemImageName() : "pause.circle")
-                    .foregroundStyle(Color.diCompact)
+                    .foregroundStyle(Color.dynamicIslandCompact)
 
             }
-            .keylineTint(Color.diCompact)
+            .keylineTint(Color.dynamicIslandCompact)
         }
     }
 
@@ -160,6 +159,7 @@ extension LiveActivityAttributes.ContentState {
      }
 }
 
+@available(iOS 17.0, *)
 #Preview("Notification", as: .content, using: LiveActivityAttributes.preview) {
    LiveActivityWidget()
 } contentStates: {

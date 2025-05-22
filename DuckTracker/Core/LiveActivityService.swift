@@ -58,7 +58,12 @@ class LiveActivityService {
         self.trackType = trackType
     }
 
-    public func updateActivity(isRecording isRec: Bool? = nil, trackType type: ActiveTrackType? = nil, distance dist: CLLocationDistance? = nil, lastDate date: Date? = nil) {
+    public func updateActivity(
+        isRecording isRec: Bool? = nil,
+        trackType type: ActiveTrackType? = nil,
+        distance dist: CLLocationDistance? = nil,
+        lastDate date: Date? = nil
+    ) {
         guard #available(iOS 16.1, *), isEnabled else { return }
         guard let activity = self.activity else { return }
         guard var state = self.contentState else { return }
