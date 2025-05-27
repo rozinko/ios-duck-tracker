@@ -11,6 +11,11 @@
 		3002373E2BFFDD1000B8EBB2 /* DeviceIdProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002373D2BFFDD1000B8EBB2 /* DeviceIdProvider.swift */; };
 		303295172D5B32CD00337B4A /* ShortTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303295162D5B32CD00337B4A /* ShortTrack.swift */; };
 		303295192D64EB7500337B4A /* HistoryTrackInfoWithPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303295182D64EB7400337B4A /* HistoryTrackInfoWithPreloaderView.swift */; };
+		3035D2FA2DE4D70E008C3081 /* DotLottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3035D2F92DE4D70E008C3081 /* DotLottie */; };
+		3035D2FD2DE500EE008C3081 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3035D2FC2DE500EE008C3081 /* LaunchScreen.swift */; };
+		3035D3002DE508EE008C3081 /* LaunchScreenAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3035D2FF2DE508EE008C3081 /* LaunchScreenAnimation.json */; };
+		3035D3482DE5B5CF008C3081 /* LaunchScreenDotLottieObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3035D3472DE5B5CE008C3081 /* LaunchScreenDotLottieObserver.swift */; };
+		3035D35C2DE662E7008C3081 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3035D35B2DE662E7008C3081 /* .gitignore */; };
 		304DD5DE2AB34912005AD827 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5DD2AB34912005AD827 /* SettingsScreen.swift */; };
 		304DD5E02AB98E4F005AD827 /* SettingAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5DF2AB98E4F005AD827 /* SettingAppearance.swift */; };
 		304DD5E22ABA3A5A005AD827 /* SettingSpeedDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */; };
@@ -161,6 +166,10 @@
 		3002373D2BFFDD1000B8EBB2 /* DeviceIdProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdProvider.swift; sourceTree = "<group>"; };
 		303295162D5B32CD00337B4A /* ShortTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTrack.swift; sourceTree = "<group>"; };
 		303295182D64EB7400337B4A /* HistoryTrackInfoWithPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTrackInfoWithPreloaderView.swift; sourceTree = "<group>"; };
+		3035D2FC2DE500EE008C3081 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		3035D2FF2DE508EE008C3081 /* LaunchScreenAnimation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LaunchScreenAnimation.json; sourceTree = "<group>"; };
+		3035D3472DE5B5CE008C3081 /* LaunchScreenDotLottieObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenDotLottieObserver.swift; sourceTree = "<group>"; };
+		3035D35B2DE662E7008C3081 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		304DD5DD2AB34912005AD827 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		304DD5DF2AB98E4F005AD827 /* SettingAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAppearance.swift; sourceTree = "<group>"; };
 		304DD5E12ABA3A5A005AD827 /* SettingSpeedDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSpeedDisplay.swift; sourceTree = "<group>"; };
@@ -288,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165BB178CA4D2AFCD83BC731 /* Pods_DuckTracker.framework in Frameworks */,
+				3035D2FA2DE4D70E008C3081 /* DotLottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +329,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3035D2FE2DE50746008C3081 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3035D3472DE5B5CE008C3081 /* LaunchScreenDotLottieObserver.swift */,
+				3035D2FF2DE508EE008C3081 /* LaunchScreenAnimation.json */,
+				3035D2FC2DE500EE008C3081 /* LaunchScreen.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		305926A22C18AC57007A38B3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +351,7 @@
 		30CFD2C82A6EC7F000C106BE = {
 			isa = PBXGroup;
 			children = (
+				3035D35B2DE662E7008C3081 /* .gitignore */,
 				30CFD3B72A707CDC00C106BE /* .swiftlint.yml */,
 				30CFD2D32A6EC7F000C106BE /* DuckTracker */,
 				30CFD2E92A6EC7F200C106BE /* DuckTrackerTests */,
@@ -471,6 +492,7 @@
 		30CFD3372A6EE21900C106BE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				3035D2FE2DE50746008C3081 /* LaunchScreen */,
 				30CFD3382A6EE22700C106BE /* ActiveTrackScreen.swift */,
 				30CFD33A2A6EE23600C106BE /* HistoryScreen.swift */,
 				30CFD33C2A6EE24800C106BE /* MainScreen.swift */,
@@ -714,6 +736,7 @@
 			);
 			name = DuckTracker;
 			packageProductDependencies = (
+				3035D2F92DE4D70E008C3081 /* DotLottie */,
 			);
 			productName = DuckTracker;
 			productReference = 30CFD2D12A6EC7F000C106BE /* DuckTracker.app */;
@@ -817,6 +840,7 @@
 			);
 			mainGroup = 30CFD2C82A6EC7F000C106BE;
 			packageReferences = (
+				3035D2F82DE4D70E008C3081 /* XCRemoteSwiftPackageReference "dotlottie-ios" */,
 			);
 			productRefGroup = 30CFD2D22A6EC7F000C106BE /* Products */;
 			projectDirPath = "";
@@ -836,10 +860,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				30B305762C80BAA90076D58D /* InfoPlist.xcstrings in Resources */,
+				3035D35C2DE662E7008C3081 /* .gitignore in Resources */,
 				30CFD3B82A707CDC00C106BE /* .swiftlint.yml in Resources */,
 				30CFD2DC2A6EC7F100C106BE /* Preview Assets.xcassets in Resources */,
 				30B305742C80BA290076D58D /* Localizable.xcstrings in Resources */,
 				30CFD2D92A6EC7F100C106BE /* Assets.xcassets in Resources */,
+				3035D3002DE508EE008C3081 /* LaunchScreenAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1011,6 +1037,7 @@
 				30CFD3942A6EE5BE00C106BE /* HistoryTrackMapView.swift in Sources */,
 				30CFD37D2A6EE4D500C106BE /* HistoryListView.swift in Sources */,
 				30CFD3612A6EE3CC00C106BE /* CommonInformerEnums.swift in Sources */,
+				3035D3482DE5B5CF008C3081 /* LaunchScreenDotLottieObserver.swift in Sources */,
 				30DBDF282DD77E8B00E3DBA0 /* LiveActivityAttributes.swift in Sources */,
 				304DD5DE2AB34912005AD827 /* SettingsScreen.swift in Sources */,
 				30CFD3362A6EE20400C106BE /* TrackPoint.swift in Sources */,
@@ -1038,6 +1065,7 @@
 				30CFD3902A6EE5A200C106BE /* AppleHistoryTrackMapView.swift in Sources */,
 				30CFD3792A6EE4B600C106BE /* HistoryListItemView.swift in Sources */,
 				30CFD34D2A6EE30400C106BE /* ActiveTrackInfoSpeedView.swift in Sources */,
+				3035D2FD2DE500EE008C3081 /* LaunchScreen.swift in Sources */,
 				30CFD3732A6EE47700C106BE /* TrackInfoFullView.swift in Sources */,
 				30CFD3772A6EE4A700C106BE /* HistoryListEmptyView.swift in Sources */,
 				30CFD3A12A6EE64600C106BE /* HistoryStatsBlockItem.swift in Sources */,
@@ -1286,7 +1314,6 @@
 				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1328,7 +1355,6 @@
 				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -1531,6 +1557,26 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3035D2F82DE4D70E008C3081 /* XCRemoteSwiftPackageReference "dotlottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LottieFiles/dotlottie-ios";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 1.0.0;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3035D2F92DE4D70E008C3081 /* DotLottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3035D2F82DE4D70E008C3081 /* XCRemoteSwiftPackageReference "dotlottie-ios" */;
+			productName = DotLottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		30CFD30F2A6ECCD600C106BE /* Main.xcdatamodeld */ = {

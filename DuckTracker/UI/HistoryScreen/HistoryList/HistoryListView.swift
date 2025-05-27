@@ -8,7 +8,7 @@ struct HistoryListView: View {
 
     var body: some View {
 
-        if dataProvider.historyTracks.isEmpty && dataProvider.loading {
+        if dataProvider.isLoading {
 
             // Loading...
             LoadingView()

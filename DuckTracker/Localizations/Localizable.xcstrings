@@ -2354,6 +2354,16 @@
         }
       }
     },
+    "version %@ build %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "version %1$@ build %2$@"
+          }
+        }
+      }
+    },
     "Version from TestFlight" : {
 
     },

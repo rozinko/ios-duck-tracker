@@ -5,8 +5,11 @@ public class DataProvider: NSObject, ObservableObject {
 
     static let shared = DataProvider()
 
-    // флаг обозначающий, что сейчас идёт обновление данных из CoreData
-    @Published var loading: Bool = true
+    // флаг инициализации и первой загрузки данных
+    @Published var isInitializing = true
+
+    // флаг обновления данных из CoreData
+    @Published var isLoading = true
 
     // все короткие треки из CoreData хранятся тут
     var shortTracks: [ShortTrack] = []
@@ -51,14 +54,14 @@ public class DataProvider: NSObject, ObservableObject {
 
     private let coreDataProvider = CoreDataProvider.shared
 
-    override public init() {
+    override private init() {
         super.init()
         selectAll()
     }
 
     public func selectAll() {
         let methodStart = Date()
-        self.loading = true
+        self.isLoading = true
 
         coreDataProvider.selectAll({ [weak self, methodStart] cdTracks in
             let shortTracks: [ShortTrack] = cdTracks.map { ShortTrack(fromCoreDataTrack: $0) }
@@ -71,7 +74,8 @@ public class DataProvider: NSObject, ObservableObject {
             self?.shortTracks = shortTracks
             self?.historyTracks = historyTracks
 
-            self?.loading = false
+            self?.isInitializing = false
+            self?.isLoading = false
 
             let executionTime = Int(Date().timeIntervalSince(methodStart) * 1000)
             print("DataProvider // selectAll(): Execution time: \(executionTime) ms")

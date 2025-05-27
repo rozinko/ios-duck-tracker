@@ -7,7 +7,7 @@ struct MainScreen: View {
     @ObservedObject var dataProvider = DataProvider.shared
 
     var body: some View {
-        if dataProvider.shortTracks.isEmpty && dataProvider.loading {
+        if dataProvider.isLoading {
             LoadingView()
         } else {
             ScrollView {

@@ -2,10 +2,15 @@ import SwiftUI
 
 struct WrapperView: View {
 
+    @State var isLaunchScreen = true
     @State var selectedTab = 1
 
+    @ObservedObject private var dataProvider = DataProvider.shared
+
     var body: some View {
-        if #available(iOS 18.0, *) {
+        if isLaunchScreen || dataProvider.isInitializing {
+            LaunchScreen(isLaunchScreenShowed: $isLaunchScreen)
+        } else if #available(iOS 18.0, *) {
             TabView(selection: $selectedTab) {
                 Tab(".tab.home", systemImage: "flag.fill", value: 1) {
                     MainScreen(selectedTab: $selectedTab)
