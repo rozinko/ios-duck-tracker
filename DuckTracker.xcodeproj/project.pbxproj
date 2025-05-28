@@ -11,7 +11,6 @@
 		3002373E2BFFDD1000B8EBB2 /* DeviceIdProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002373D2BFFDD1000B8EBB2 /* DeviceIdProvider.swift */; };
 		303295172D5B32CD00337B4A /* ShortTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303295162D5B32CD00337B4A /* ShortTrack.swift */; };
 		303295192D64EB7500337B4A /* HistoryTrackInfoWithPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303295182D64EB7400337B4A /* HistoryTrackInfoWithPreloaderView.swift */; };
-		3035D2FA2DE4D70E008C3081 /* DotLottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3035D2F92DE4D70E008C3081 /* DotLottie */; };
 		3035D2FD2DE500EE008C3081 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3035D2FC2DE500EE008C3081 /* LaunchScreen.swift */; };
 		3035D3002DE508EE008C3081 /* LaunchScreenAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3035D2FF2DE508EE008C3081 /* LaunchScreenAnimation.json */; };
 		3035D3482DE5B5CF008C3081 /* LaunchScreenDotLottieObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3035D3472DE5B5CE008C3081 /* LaunchScreenDotLottieObserver.swift */; };
@@ -35,6 +34,7 @@
 		30B99B082AC47A41006ABA62 /* OSMHistoryTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B072AC47A41006ABA62 /* OSMHistoryTrackMapView.swift */; };
 		30B99B0A2AC47AAE006ABA62 /* OSMHistoryTrackMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B092AC47AAE006ABA62 /* OSMHistoryTrackMapViewDelegate.swift */; };
 		30BC013F2D896C0E00E75C44 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BC013E2D896C0E00E75C44 /* LoadingView.swift */; };
+		30C29E722DE708D0003BAEE2 /* DotLottie in Frameworks */ = {isa = PBXBuildFile; productRef = 30C29E712DE708D0003BAEE2 /* DotLottie */; };
 		30CFD2D52A6EC7F000C106BE /* DuckTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */; };
 		30CFD2D92A6EC7F100C106BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2D82A6EC7F100C106BE /* Assets.xcassets */; };
 		30CFD2DC2A6EC7F100C106BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2DB2A6EC7F100C106BE /* Preview Assets.xcassets */; };
@@ -297,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165BB178CA4D2AFCD83BC731 /* Pods_DuckTracker.framework in Frameworks */,
-				3035D2FA2DE4D70E008C3081 /* DotLottie in Frameworks */,
+				30C29E722DE708D0003BAEE2 /* DotLottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,7 +736,7 @@
 			);
 			name = DuckTracker;
 			packageProductDependencies = (
-				3035D2F92DE4D70E008C3081 /* DotLottie */,
+				30C29E712DE708D0003BAEE2 /* DotLottie */,
 			);
 			productName = DuckTracker;
 			productReference = 30CFD2D12A6EC7F000C106BE /* DuckTracker.app */;
@@ -840,7 +840,7 @@
 			);
 			mainGroup = 30CFD2C82A6EC7F000C106BE;
 			packageReferences = (
-				3035D2F82DE4D70E008C3081 /* XCRemoteSwiftPackageReference "dotlottie-ios" */,
+				30C29E702DE708D0003BAEE2 /* XCRemoteSwiftPackageReference "dotlottie-ios" */,
 			);
 			productRefGroup = 30CFD2D22A6EC7F000C106BE /* Products */;
 			projectDirPath = "";
@@ -1559,21 +1559,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3035D2F82DE4D70E008C3081 /* XCRemoteSwiftPackageReference "dotlottie-ios" */ = {
+		30C29E702DE708D0003BAEE2 /* XCRemoteSwiftPackageReference "dotlottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/LottieFiles/dotlottie-ios";
 			requirement = {
 				kind = versionRange;
-				maximumVersion = 1.0.0;
-				minimumVersion = 0.0.1;
+				maximumVersion = 0.8.1;
+				minimumVersion = 0.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3035D2F92DE4D70E008C3081 /* DotLottie */ = {
+		30C29E712DE708D0003BAEE2 /* DotLottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3035D2F82DE4D70E008C3081 /* XCRemoteSwiftPackageReference "dotlottie-ios" */;
+			package = 30C29E702DE708D0003BAEE2 /* XCRemoteSwiftPackageReference "dotlottie-ios" */;
 			productName = DotLottie;
 		};
 /* End XCSwiftPackageProductDependency section */
