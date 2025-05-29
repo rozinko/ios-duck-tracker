@@ -14,8 +14,14 @@ struct ActiveTrackInfoTypeView: View {
                     }
                 }
             }, label: {
-                activeTrackType.getLabel(prefix: .short)
-                    .foregroundColor(Color.commonText)
+                HStack {
+                    Spacer()
+                    activeTrackType.getLabel(prefix: .short)
+                    Spacer()
+                    Image(systemName: "chevron.up.chevron.down")
+                }
+                .foregroundColor(Color.commonText)
+                .padding([.leading, .trailing], 10)
             })
             .frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity)
         }
@@ -25,8 +31,8 @@ struct ActiveTrackInfoTypeView: View {
     }
 }
 
-struct ActiveTrackInfoTypeView_Previews: PreviewProvider {
-    static var previews: some View {
-        ActiveTrackInfoTypeView(activeTrackType: .constant(.hike))
-    }
+@available(iOS 17.0, *)
+#Preview {
+    @Previewable @State var value: ActiveTrackType = .bike
+    ActiveTrackInfoTypeView(activeTrackType: $value)
 }
