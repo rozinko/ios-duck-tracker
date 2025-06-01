@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -278,7 +278,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		30DBDF202DD77C4400E3DBA0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		30DBDF202DD77C4400E3DBA0 /* Exceptions for "LiveActivity" folder in "LiveActivityExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -288,7 +288,14 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		30DBDF102DD77C4200E3DBA0 /* LiveActivity */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (30DBDF202DD77C4400E3DBA0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = LiveActivity; sourceTree = "<group>"; };
+		30DBDF102DD77C4200E3DBA0 /* LiveActivity */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				30DBDF202DD77C4400E3DBA0 /* Exceptions for "LiveActivity" folder in "LiveActivityExtension" target */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -797,8 +804,6 @@
 				30DBDF102DD77C4200E3DBA0 /* LiveActivity */,
 			);
 			name = LiveActivityExtension;
-			packageProductDependencies = (
-			);
 			productName = LiveActivityExtension;
 			productReference = 30DBDF0B2DD77C4100E3DBA0 /* LiveActivityExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -830,7 +835,6 @@
 				};
 			};
 			buildConfigurationList = 30CFD2CC2A6EC7F000C106BE /* Build configuration list for PBXProject "DuckTracker" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -842,6 +846,7 @@
 			packageReferences = (
 				30C29E702DE708D0003BAEE2 /* XCRemoteSwiftPackageReference "dotlottie-ios" */,
 			);
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 30CFD2D22A6EC7F000C106BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -985,13 +990,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DuckTracker-DuckTrackerUITests/Pods-DuckTracker-DuckTrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DuckTracker-DuckTrackerUITests/Pods-DuckTracker-DuckTrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1006,13 +1007,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DuckTracker/Pods-DuckTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DuckTracker/Pods-DuckTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
