@@ -4,7 +4,7 @@ struct ActiveTrackInfoView: View {
 
     @Binding var activeTrackType: ActiveTrackType
 
-    @ObservedObject var activeTrackProvider = ActiveTrackProvider.shared
+    @ObservedObject private var activeTrackProvider = ActiveTrackProvider.shared
 
     @AppStorage("SettingSpeedDisplay") var settingSpeedDisplayValue: Int?
 
@@ -12,10 +12,11 @@ struct ActiveTrackInfoView: View {
     private var showPace: Bool { settingSpeedDisplay != .auto ? settingSpeedDisplay == .pace : activeTrackType.isPaceType }
 
     var body: some View {
-        VStack(spacing: 1) {
+        VStack(spacing: 5) {
             HStack(spacing: 1) {
-                ActiveTrackInfoGPSView()
-                ActiveTrackInfoTypeView(activeTrackType: $activeTrackType)
+                ActiveTrackInfoGPSView(isRecording: activeTrackProvider.isRecording)
+                Spacer()
+                ActiveTrackInfoTypeView(isRecording: activeTrackProvider.isRecording, activeTrackType: $activeTrackType)
             }
             ZStack {
                 TrackInfoCommonView(
@@ -47,6 +48,7 @@ struct ActiveTrackInfoView_Previews: PreviewProvider {
             Spacer()
             ActiveTrackInfoView(activeTrackType: .constant(.hike))
         }
-        .background(Color.commonBorder)
+        .padding()
+        .background(Color.yellow)
     }
 }

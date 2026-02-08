@@ -34,6 +34,7 @@
 		30B99B082AC47A41006ABA62 /* OSMHistoryTrackMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B072AC47A41006ABA62 /* OSMHistoryTrackMapView.swift */; };
 		30B99B0A2AC47AAE006ABA62 /* OSMHistoryTrackMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B99B092AC47AAE006ABA62 /* OSMHistoryTrackMapViewDelegate.swift */; };
 		30BC013F2D896C0E00E75C44 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BC013E2D896C0E00E75C44 /* LoadingView.swift */; };
+		30C1320C2F3241B700EE2CA2 /* DuckRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C1320B2F32419C00EE2CA2 /* DuckRoundedRectangle.swift */; };
 		30C29E722DE708D0003BAEE2 /* DotLottie in Frameworks */ = {isa = PBXBuildFile; productRef = 30C29E712DE708D0003BAEE2 /* DotLottie */; };
 		30CFD2D52A6EC7F000C106BE /* DuckTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */; };
 		30CFD2D92A6EC7F100C106BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD2D82A6EC7F100C106BE /* Assets.xcassets */; };
@@ -189,6 +190,7 @@
 		30B99B072AC47A41006ABA62 /* OSMHistoryTrackMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSMHistoryTrackMapView.swift; sourceTree = "<group>"; };
 		30B99B092AC47AAE006ABA62 /* OSMHistoryTrackMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSMHistoryTrackMapViewDelegate.swift; sourceTree = "<group>"; };
 		30BC013E2D896C0E00E75C44 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		30C1320B2F32419C00EE2CA2 /* DuckRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckRoundedRectangle.swift; sourceTree = "<group>"; };
 		30CFD2D12A6EC7F000C106BE /* DuckTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CFD2D42A6EC7F000C106BE /* DuckTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckTrackerApp.swift; sourceTree = "<group>"; };
 		30CFD2D82A6EC7F100C106BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 				30CFD3422A6EE29000C106BE /* ActiveTrackScreen */,
 				30CFD3742A6EE48E00C106BE /* HistoryScreen */,
 				30CFD3592A6EE37B00C106BE /* Common */,
+				30C1320B2F32419C00EE2CA2 /* DuckRoundedRectangle.swift */,
 				30BC013E2D896C0E00E75C44 /* LoadingView.swift */,
 			);
 			path = UI;
@@ -1084,6 +1087,7 @@
 				30CFD3072A6ECC2500C106BE /* ActiveTrackProvider.swift in Sources */,
 				304DD5E22ABA3A5A005AD827 /* SettingSpeedDisplay.swift in Sources */,
 				30CFD3142A6ECD0E00C106BE /* CoreDataTrack+Extensions.swift in Sources */,
+				30C1320C2F3241B700EE2CA2 /* DuckRoundedRectangle.swift in Sources */,
 				30CFD3892A6EE56B00C106BE /* HistoryTrackInfoChartsView.swift in Sources */,
 				305B787A2D74AAEE00EC3384 /* HistoryTrackInfoChartView.swift in Sources */,
 				30CFD31D2A6ECDA200C106BE /* CLLocationDistance.swift in Sources */,

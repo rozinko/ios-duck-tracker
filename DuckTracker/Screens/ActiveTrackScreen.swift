@@ -24,29 +24,63 @@ struct ActiveTrackScreen: View {
     }
 
     var body: some View {
-        VStack(spacing: 1) {
+        if #available(iOS 26.0, *) {
             ZStack(alignment: .top) {
                 ActiveTrackMapView(activeTrackMapRegion: $activeTrackMapRegion)
+                    .edgesIgnoringSafeArea(.all)
+
                 ActiveTrackFinishButtonView(showFinishModalView: $showFinishModalView)
+
+                VStack(spacing: 5) {
+                    Spacer()
+                    ActiveTrackInfoView(activeTrackType: $activeTrackType)
+                    ActiveTrackStartPauseResumeButtonView()
+                }
+                .padding()
             }
-            ActiveTrackInfoView(activeTrackType: $activeTrackType)
-            ActiveTrackStartPauseResumeButtonView()
+            .sheet(isPresented: $showFinishModalView) {
+                ActiveTrackFinishModalView(
+                    selectedTab: $selectedTab,
+                    showFinishModalView: $showFinishModalView,
+                    activeTrackTitle: $activeTrackTitle,
+                    activeTrackType: $activeTrackType)
+            }
+            .onAppear {
+                liveActivityService.setTrackType(self.activeTrackType)
+            }
+            .onChange(of: $activeTrackType.wrappedValue, perform: { value in
+                liveActivityService.updateActivity(trackType: value)
+            })
+        } else {
+            ZStack(alignment: .top) {
+                ActiveTrackMapView(activeTrackMapRegion: $activeTrackMapRegion)
+                    .edgesIgnoringSafeArea([.leading, .top, .trailing])
+
+                ActiveTrackFinishButtonView(showFinishModalView: $showFinishModalView)
+                    .padding()
+
+                VStack(spacing: 5) {
+                    Spacer()
+                    ActiveTrackInfoView(activeTrackType: $activeTrackType)
+                    ActiveTrackStartPauseResumeButtonView()
+                }
+                .padding()
+            }
+            .background(Color.commonBorder)
+            .sheet(isPresented: $showFinishModalView) {
+                ActiveTrackFinishModalView(
+                    selectedTab: $selectedTab,
+                    showFinishModalView: $showFinishModalView,
+                    activeTrackTitle: $activeTrackTitle,
+                    activeTrackType: $activeTrackType)
+            }
+            .onAppear {
+                liveActivityService.setTrackType(self.activeTrackType)
+            }
+            .onChange(of: $activeTrackType.wrappedValue, perform: { value in
+                liveActivityService.updateActivity(trackType: value)
+            })
         }
-        .background(Color.commonBorder)
-        .edgesIgnoringSafeArea(.top)
-        .sheet(isPresented: $showFinishModalView) {
-            ActiveTrackFinishModalView(
-                selectedTab: $selectedTab,
-                showFinishModalView: $showFinishModalView,
-                activeTrackTitle: $activeTrackTitle,
-                activeTrackType: $activeTrackType)
-        }
-        .onAppear {
-            liveActivityService.setTrackType(self.activeTrackType)
-        }
-        .onChange(of: $activeTrackType.wrappedValue, perform: { value in
-            liveActivityService.updateActivity(trackType: value)
-        })
     }
 }
 

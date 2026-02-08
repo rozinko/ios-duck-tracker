@@ -17,6 +17,11 @@ extension Color {
     static var commonGreen: Color { Color("CommonGreen") }
     static var commonOrange: Color { Color("CommonOrange") }
 
+    // GPS
+    static var gpsGood: Color { Color("gpsGood") }
+    static var gpsMedium: Color { Color("gpsMedium") }
+    static var gpsBad: Color { Color("gpsBad") }
+
     // CommonInformer
     static var commonInformerText: Color { Color("CommonInformerText") }
     static var commonInformerBlue: Color { Color("CommonInformerBlue") }

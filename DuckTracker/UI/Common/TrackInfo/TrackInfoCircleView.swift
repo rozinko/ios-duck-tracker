@@ -1,5 +1,21 @@
 import SwiftUI
 
+struct TrackInfoCircleLiquidGlassModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 26.0, *) {
+            content
+                .glassEffect(.regular, in: .circle)
+        } else if #available(iOS 16.0, *) {
+            content
+                .background(Color.commonElementBackground.opacity(0.7))
+                .clipShape(.circle)
+        } else {
+            content
+                .background(Color.commonElementBackground.opacity(0.7))
+        }
+    }
+}
+
 struct TrackInfoCircleView: View {
 
     let title: String
@@ -36,19 +52,20 @@ struct TrackInfoCircleView: View {
                     .multilineTextAlignment(.center)
                     .frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity, minHeight: 0, idealHeight: .infinity, maxHeight: .infinity, alignment: .top)
             }
-            .background(Color.commonElementBackground)
             .frame(width: 84, height: 84, alignment: .center)
-            .cornerRadius(42)
         }
-        .background(Color.commonBorder)
+        .modifier(TrackInfoCircleLiquidGlassModifier())
         .frame(width: 86, height: 86, alignment: .center)
-        .cornerRadius(43)
     }
 }
 
 struct TrackInfoCircleView_Previews: PreviewProvider {
     static var previews: some View {
-        TrackInfoCircleView(title: "Title", text: "000", unit: ".kmh".localized())
-        TrackInfoCircleView(title: "Title", text: nil, unit: nil)
+        VStack(spacing: 15) {
+            TrackInfoCircleView(title: "Title", text: "000", unit: ".kmh".localized())
+            TrackInfoCircleView(title: "Title", text: nil, unit: nil)
+        }
+        .padding()
+        .background(Color.yellow)
     }
 }

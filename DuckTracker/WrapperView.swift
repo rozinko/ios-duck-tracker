@@ -10,6 +10,21 @@ struct WrapperView: View {
     var body: some View {
         if isLaunchScreen || dataProvider.isInitializing {
             LaunchScreen(isLaunchScreenShowed: $isLaunchScreen)
+        } else if #available(iOS 26.0, *) {
+            TabView(selection: $selectedTab) {
+                Tab(".tab.home", systemImage: "flag.fill", value: 1) {
+                    MainScreen(selectedTab: $selectedTab)
+                }
+                Tab(".tab.track", systemImage: "play.fill", value: 2) {
+                    ActiveTrackScreen(selectedTab: $selectedTab)
+                }
+                Tab(".tab.history", systemImage: "calendar", value: 3) {
+                    HistoryScreen(selectedTab: $selectedTab)
+                }
+                Tab(".tab.settings", systemImage: "gear", value: 4) {
+                    SettingsScreen(selectedTab: $selectedTab)
+                }
+            }
         } else if #available(iOS 18.0, *) {
             TabView(selection: $selectedTab) {
                 Tab(".tab.home", systemImage: "flag.fill", value: 1) {

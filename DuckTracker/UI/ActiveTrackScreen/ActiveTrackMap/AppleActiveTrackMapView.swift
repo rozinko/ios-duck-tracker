@@ -24,6 +24,13 @@ struct AppleActiveTrackMapView: UIViewRepresentable {
         mapView.showsScale = true
         mapView.showsCompass = true
 
+        // костыль для отступов компаса в ios 26
+        if #available(iOS 26.0, *) {
+            mapView.layoutMargins = .init(top: 0, left: 0, bottom: 0, right: 0)
+        } else {
+            mapView.layoutMargins = .init(top: 11, left: 11, bottom: 11, right: 11)
+        }
+
         if showUserLocation {
             mapView.showsUserLocation = true
             mapView.userTrackingMode = .followWithHeading
@@ -46,8 +53,13 @@ struct AppleActiveTrackMapView: UIViewRepresentable {
 
             userTrackingButton.translatesAutoresizingMaskIntoConstraints = false
 
-            userTrackingButton.trailingAnchor.constraint(equalTo: mapView.layoutMarginsGuide.trailingAnchor, constant: -16).isActive = true
-            userTrackingButton.bottomAnchor.constraint(equalTo: mapView.layoutMarginsGuide.bottomAnchor, constant: -32).isActive = true
+            userTrackingButton.centerYAnchor.constraint(equalTo: mapView.centerYAnchor).isActive = true
+            // корректировка отступа юзер тракинг баттон из за костыля для отступов компаса в ios 26
+            if #available(iOS 26.0, *) {
+                userTrackingButton.trailingAnchor.constraint(equalTo: mapView.layoutMarginsGuide.trailingAnchor, constant: -16).isActive = true
+            } else {
+                userTrackingButton.trailingAnchor.constraint(equalTo: mapView.layoutMarginsGuide.trailingAnchor, constant: -5).isActive = true
+            }
         }
 
         mapView.setRegion(mapRegion, animated: true)

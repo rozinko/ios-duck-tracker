@@ -52,13 +52,25 @@ struct ActiveTrackFinishModalView: View {
 
             VStack(spacing: 20) {
                 HStack(spacing: 20) {
-                    Button("ActiveTrackFinishModalView.saveAndFinish".localized(), action: {
-                        activeTrackProvider.finish(title: activeTrackTitle, type: activeTrackType)
-                        showFinishModalView = false
-                        selectedTab = 1
-                    })
-                    .buttonStyle(ButtonOrangeFilledStyle())
-                    .disabled(activeTrackTitle.isEmpty)
+                    if #available(iOS 26.0, *) {
+                        Button("ActiveTrackFinishModalView.saveAndFinish".localized(), action: {
+                            activeTrackProvider.finish(title: activeTrackTitle, type: activeTrackType)
+                            showFinishModalView = false
+                            selectedTab = 1
+                        })
+                        .clipShape(.capsule)
+                        .buttonStyle(.glassProminent)
+                        .tint(Color.commonOrange)
+                        .disabled(activeTrackTitle.isEmpty)
+                    } else {
+                        Button("ActiveTrackFinishModalView.saveAndFinish".localized(), action: {
+                            activeTrackProvider.finish(title: activeTrackTitle, type: activeTrackType)
+                            showFinishModalView = false
+                            selectedTab = 1
+                        })
+                        .buttonStyle(ButtonOrangeFilledStyle())
+                        .disabled(activeTrackTitle.isEmpty)
+                    }
                 }
                 .font(.title3)
 
