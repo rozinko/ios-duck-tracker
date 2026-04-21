@@ -1,21 +1,5 @@
 import SwiftUI
 
-fileprivate struct ActiveTrackInfoTypeLiquidGlassModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        if #available(iOS 26.0, *) {
-            content
-                .glassEffect(.regular, in: .capsule)
-        } else if #available(iOS 16.0, *) {
-            content
-                .background(Color.commonElementBackground.opacity(0.7))
-                .clipShape(.capsule)
-        } else {
-            content
-                .background(Color.commonElementBackground.opacity(0.7))
-        }
-    }
-}
-
 struct ActiveTrackInfoTypeView: View {
 
     let isRecording: Bool
@@ -45,7 +29,7 @@ struct ActiveTrackInfoTypeView: View {
             })
         }
         .padding(10)
-        .modifier(ActiveTrackInfoTypeLiquidGlassModifier())
+        .modifier(LiquidGlassModifier(glassShape: .capsule, shape: .capsule))
     }
 }
 

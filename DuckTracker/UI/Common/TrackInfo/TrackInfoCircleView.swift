@@ -1,21 +1,5 @@
 import SwiftUI
 
-struct TrackInfoCircleLiquidGlassModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        if #available(iOS 26.0, *) {
-            content
-                .glassEffect(.regular, in: .circle)
-        } else if #available(iOS 16.0, *) {
-            content
-                .background(Color.commonElementBackground.opacity(0.7))
-                .clipShape(.circle)
-        } else {
-            content
-                .background(Color.commonElementBackground.opacity(0.7))
-        }
-    }
-}
-
 struct TrackInfoCircleView: View {
 
     let title: String
@@ -54,8 +38,8 @@ struct TrackInfoCircleView: View {
             }
             .frame(width: 84, height: 84, alignment: .center)
         }
-        .modifier(TrackInfoCircleLiquidGlassModifier())
-        .frame(width: 86, height: 86, alignment: .center)
+        .modifier(LiquidGlassModifier(glassShape: .circle, shape: .circle))
+//        .frame(width: 86, height: 86, alignment: .center)
     }
 }
 

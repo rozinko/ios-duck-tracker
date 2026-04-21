@@ -31,25 +31,6 @@ enum TrackInfoElementPosition {
     }
 }
 
-struct TrackInfoElementLiquidGlassModifier: ViewModifier {
-    let position: TrackInfoElementPosition
-
-    func body(content: Content) -> some View {
-        if #available(iOS 26.0, *) {
-            content
-                .glassEffect(.regular, in: .rect)
-                .clipShape(AnyShape(position.shape))
-        } else if #available(iOS 16.0, *) {
-            content
-                .background(Color.commonElementBackground.opacity(0.7))
-                .clipShape(AnyShape(position.shape))
-        } else {
-            content
-                .background(Color.commonElementBackground.opacity(0.7))
-        }
-    }
-}
-
 struct TrackInfoElementView: View {
 
     let title: String
@@ -105,7 +86,7 @@ struct TrackInfoElementView: View {
                 Spacer(minLength: 43)
             }
         }
-        .modifier(TrackInfoElementLiquidGlassModifier(position: position))
+        .modifier(LiquidGlassModifier(glassShape: .rect, shape: position.shape))
     }
 }
 

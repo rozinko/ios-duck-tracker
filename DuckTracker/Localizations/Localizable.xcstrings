@@ -89,6 +89,23 @@
         }
       }
     },
+    ".data" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Данные"
+          }
+        }
+      }
+    },
     ".delete" : {
       "localizations" : {
         "en" : {
@@ -1444,6 +1461,9 @@
           }
         }
       }
+    },
+    "Data tab" : {
+
     },
     "DEBUG MODE" : {
 

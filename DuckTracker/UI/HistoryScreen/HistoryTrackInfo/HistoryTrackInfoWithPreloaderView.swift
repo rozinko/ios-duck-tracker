@@ -1,6 +1,23 @@
 import SwiftUI
 import MapKit
 
+enum HistoryTrackInfoDataTab: String, CaseIterable {
+    case main, speed, altitude, distance
+
+    var title: String {
+        switch self {
+        case .main:
+            return ".data".localized()
+        case .speed:
+            return ".speed".localized()
+        case .altitude:
+            return ".altitude".localized()
+        case .distance:
+            return ".distance".localized()
+        }
+    }
+}
+
 struct HistoryTrackInfoWithPreloaderView: View {
 
     let shortTrack: ShortTrack
@@ -20,6 +37,26 @@ struct HistoryTrackInfoWithPreloaderView: View {
     @State var showDeleteAlert = false
 
     @State var selectedPoint: Int?
+    @State var selectedDataTab: HistoryTrackInfoDataTab = .main
+    @State var selectedChartTab: DuckTrackChartVisible = .speed
+
+    var dataTabShape: any Shape {
+        if #available(iOS 26.0, *) {
+            return .capsule
+        } else {
+            return RoundedRectangle(cornerRadius: 7.5)
+        }
+    }
+
+    var dataTabMainOffset: CGFloat { selectedDataTab == .main ? 0 : -UIScreen.main.nativeBounds.width }
+    var dataTabChartsOffset: CGFloat { selectedDataTab == .main ? UIScreen.main.nativeBounds.width : 0 }
+
+    var chartModel: DuckTrackChartModel {
+        DuckTrackChartModel(
+            data: fullTrack?.route.points.map { DuckTrackChartPoint(speed: $0.speed, altitude: $0.altitude, distance: $0.distance, date: $0.timestamp) },
+            avgSpeed: fullTrack?.avgSpeed ?? 0
+        )
+    }
 
     init(shortTrack: ShortTrack) {
         print("HistoryTrackInfoWithPreloaderView // init(): \(shortTrack.title)")
@@ -27,50 +64,85 @@ struct HistoryTrackInfoWithPreloaderView: View {
     }
 
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 1) {
+        VStack(spacing: 1) {
 
-                // Иконка типа поездки и дата поездки
-                HStack(spacing: 10) {
-                    Spacer()
-                    self.shortTrack.type.getIcon()
-                    Text(self.shortTrack.timeIntervalString)
-                    Spacer()
-                }
-                .padding(.bottom, 5)
-                .background(Color.commonElementBackground)
-
+            ZStack {
                 // Карта поездки
                 if fullTrack != nil {
-                    HistoryTrackMapView(selectedPoint: $selectedPoint, region: $region, trackCoordinates: fullTrack?.route.coordinates ?? [])
-                        .frame(height: UIScreen.main.nativeBounds.width / UIScreen.main.nativeScale)
-                        .onAppear {
-                            print("HistoryTrackMapView // onAppear{} dots: \(fullTrack?.route.coordinates.count ?? 0)")
-                        }
-                        .onDisappear {
-                            print("HistoryTrackMapView // onDisappear{}")
-                        }
+                    if #available(iOS 26.0, *) {
+                        HistoryTrackMapView(selectedPoint: $selectedPoint, region: $region, trackCoordinates: fullTrack?.route.coordinates ?? [])
+                            .ignoresSafeArea()
+                    } else {
+                        HistoryTrackMapView(selectedPoint: $selectedPoint, region: $region, trackCoordinates: fullTrack?.route.coordinates ?? [])
+                    }
                 } else {
                     LoadingView()
-                    .background(Color.commonBackground)
-                    .frame(height: UIScreen.main.nativeBounds.width / UIScreen.main.nativeScale)
+                        .background(Color.commonBackground)
                 }
 
-                // Параметры скорости дистанции и тд
-                TrackInfoFullView(
-                    distance: shortTrack.distance,
-                    avgSpeed: shortTrack.avgSpeed,
-                    maxSpeed: shortTrack.maxSpeed,
-                    uphill: fullTrack?.upHill,
-                    timeString: shortTrack.getTimeAsString(),
-                    paceString: shortTrack.getPaceAsString(),
-                    withSpacers: false
-                )
+                VStack {
+                    // Иконка типа поездки и дата поездки
+                    HStack(spacing: 10) {
+                        self.shortTrack.type.getIcon()
+                        Text(self.shortTrack.timeIntervalString)
+                    }
+                    .padding([.top, .bottom], 5)
+                    .padding([.leading, .trailing], 15)
+                    .modifier(LiquidGlassModifier(glassShape: .capsule, shape: .capsule))
 
-                // Графики
-                HistoryTrackInfoChartsView(selectedPoint: $selectedPoint, points: fullTrack?.route.points, avgSpeed: shortTrack.avgSpeed.toKmh())
+                    Spacer()
 
+                    ZStack {
+                        // Параметры скорости дистанции и тд
+                        TrackInfoFullView(
+                            distance: shortTrack.distance,
+                            avgSpeed: shortTrack.avgSpeed,
+                            maxSpeed: shortTrack.maxSpeed,
+                            uphill: fullTrack?.upHill,
+                            timeString: shortTrack.getTimeAsString(),
+                            paceString: shortTrack.getPaceAsString(),
+                            withSpacers: false
+                        )
+                            .offset(x: dataTabMainOffset)
+                            .animation(Animation.easeInOut(duration: 0.5), value: dataTabMainOffset)
+
+                        DuckTrackChartsView(selectedPoint: $selectedPoint, chartModel: chartModel, visible: selectedChartTab)
+                            .modifier(LiquidGlassModifier(glassShape: .rect(cornerRadius: 15), shape: .rect(cornerRadius: 15)))
+                            .offset(x: dataTabChartsOffset)
+                            .animation(Animation.easeInOut(duration: 0.5), value: dataTabChartsOffset)
+                    }
+//                    .frame(width: UIScreen.main.nativeBounds.width * 2, alignment: .leading)
+
+                    VStack {
+                        Picker("Data tab", selection: $selectedDataTab) {
+                            ForEach(HistoryTrackInfoDataTab.allCases, id: \.self) { tab in
+                                Text(tab.title).tag(tab.rawValue)
+                            }
+                        }
+                        .onChange(of: selectedDataTab) { newValue in
+                            switch newValue {
+                            case .main:
+                                break
+                            case .speed:
+                                selectedChartTab = .speed
+                            case .altitude:
+                                selectedChartTab = .altitude
+                            case .distance:
+                                selectedChartTab = .distance
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                    }
+                    .padding(0)
+                    .modifier(LiquidGlassModifier(glassShape: dataTabShape, shape: dataTabShape))
+                }
+                .padding([.top], 5)
+                .padding([.leading, .trailing, .bottom], 15)
             }
+
+            // Графики
+//                HistoryTrackInfoChartsView(selectedPoint: $selectedPoint, points: fullTrack?.route.points, avgSpeed: shortTrack.avgSpeed.toKmh())
+
         }
         .background(Color.commonBorder)
         .navigationTitle(shortTrack.title)
