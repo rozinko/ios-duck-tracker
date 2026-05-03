@@ -934,6 +934,23 @@
         }
       }
     },
+    "ActiveTrackInfoTypeView.getDefaultTitle.type.motorcycle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "motorcycle ride"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "поездка на мотоцикле"
+          }
+        }
+      }
+    },
     "ActiveTrackInfoTypeView.getDefaultTitle.type.other" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -981,6 +998,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "поездка на самокате"
+          }
+        }
+      }
+    },
+    "ActiveTrackInfoTypeView.getDefaultTitle.type.skateboard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "skateboard"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "катание на скейтборде"
+          }
+        }
+      }
+    },
+    "ActiveTrackInfoTypeView.getDefaultTitle.type.snowboard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "snowboard"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "катание на сноуборде"
           }
         }
       }
@@ -1151,6 +1202,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Поход"
+          }
+        }
+      }
+    },
+    "ActiveTrackInfoTypeView.type.motorcycle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motorcycle"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мотоцикл"
           }
         }
       }
@@ -1343,6 +1411,23 @@
         }
       }
     },
+    "ActiveTrackInfoTypeView.type.short.motorcycle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motorcycle"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мотоцикл"
+          }
+        }
+      }
+    },
     "ActiveTrackInfoTypeView.type.short.other" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1394,6 +1479,40 @@
         }
       }
     },
+    "ActiveTrackInfoTypeView.type.short.skateboard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skateboard"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скейтборд"
+          }
+        }
+      }
+    },
+    "ActiveTrackInfoTypeView.type.short.snowboard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snowboard"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сноуборд"
+          }
+        }
+      }
+    },
     "ActiveTrackInfoTypeView.type.short.train" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1424,6 +1543,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Прогулка"
+          }
+        }
+      }
+    },
+    "ActiveTrackInfoTypeView.type.skateboard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skateboard"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скейтборд"
+          }
+        }
+      }
+    },
+    "ActiveTrackInfoTypeView.type.snowboard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snowboard"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сноуборд"
           }
         }
       }

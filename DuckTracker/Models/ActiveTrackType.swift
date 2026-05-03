@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 public enum ActiveTrackType: String, CaseIterable, Codable {
-    case run, walk, scooter, bike, electroscooter, electrobike, hike, car, bus, train, boat, airplane, other
+    case run, walk, scooter, bike, electroscooter, electrobike, hike, car, bus, train, boat, airplane, skateboard, snowboard, motorcycle, other
 }
 
 enum ActiveTrackTypePrefix: String {
@@ -14,6 +14,7 @@ extension ActiveTrackType {
 
     var isPaceType: Bool { self == .run || self == .walk || self == .hike }
 
+    // swiftlint:disable:next cyclomatic_complexity
     func getSystemImageName() -> String {
         switch self {
         case .run:
@@ -43,6 +44,16 @@ extension ActiveTrackType {
             return "location.north.fill"
         case .airplane:
             return "airplane"
+        case .skateboard:
+            if #available(iOS 18.0, *) { return "figure.skateboarding" }
+            if #available(iOS 17.0, *) { return "skateboard" }
+            return "location.north.fill"
+        case .snowboard:
+            if #available(iOS 16.0, *) { return "figure.snowboarding" }
+            return "location.north.fill"
+        case .motorcycle:
+            if #available(iOS 18.0, *) { return "motorcycle" }
+            return "location.north.fill"
         case .other:
             return "location.north.fill"
         }
